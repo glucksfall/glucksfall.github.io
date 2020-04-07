@@ -1,0 +1,346 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Genome Graphs &mdash; atlas  documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Simulation" href="Simulation.html" />
+    <link rel="prev" title="Sigma Factor-Promoter Interaction Networks" href="NetSFsPromoters.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> atlas
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="Installation.html">Installation</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="Modeling.html">Modeling</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="NetMetabolic.html">Metabolic Networks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="NetProteinProtein.html">Protein-Protein Interaction Networks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="NetProteinSmallCompounds.html">Protein-Small compounds Interaction Networks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="NetTFsDNABindingSites.html">Transcription Factor-DNA Binding Site Interaction Networks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="NetSFsPromoters.html">Sigma Factor-Promoter Interaction Networks</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Genome Graphs</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Simulation.html">Simulation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Plotting.html">Plotting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Export_to.html">Export to</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">atlas</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="Modeling.html">Modeling</a> &raquo;</li>
+        
+      <li>Genome Graphs</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/NetGenomeGraphs.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="genome-graphs">
+<span id="net-genomegraphs"></span><h1>Genome Graphs<a class="headerlink" href="#genome-graphs" title="Permalink to this headline">¶</a></h1>
+<p>Metabolic networks have four columns. The first declares a unique name for the
+enzyme or enzymatic complex; the second declares a unique name for the reaction;
+the third column lists using comma unique names for substrates; and the last row
+list using comma unique names for products. To declare metabolites located at
+the periplasm or extracellular compartments, the user should employ the prefix
+“PER-” and “EX-”, respectively. Use <em>spontaneous</em> for non-enzymatic reactions.</p>
+<p>Examples:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<p>	SOURCE	TARGET
+	araB-pro1	araB-rbs
+	araB-rbs	araB-cds
+	araB-cds	araA-rbs
+	araA-rbs	araA-cds
+	araA-cds	araD-rbs
+	araD-rbs	araD-cds
+	araD-cds	araD-ter1</p>
+<p>	araC-pro1	araC-BS-56-72
+	araC-BS-56-72	araC-rbs
+	araC-rbs	araC-cds
+	araC-cds	araC-ter1</p>
+<p>	araE-pro1	araE-rbs
+	araE-rbs	araE-cds
+	araE-cds	araE-ter1</p>
+<p>	araF-pro1	araF-rbs
+	araF-rbs	araF-cds
+	araF-cds	araG-rbs
+	araG-rbs	araG-cds
+	araG-cds	araH-rbs
+	araH-rbs	araH-cds
+	araH-cds	araH-ter1</p>
+<p><em>OR</em></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<p>	SOURCE	TARGET
+	rpoA-pro1	rpoA-rbs
+	rpoA-rbs	rpoA-cds
+	rpoA-cds	rpoA-ter1</p>
+<p>	rpoB-pro1	rpoB-rbs
+	rpoB-rbs	rpoB-cds
+	rpoB-cds	rpoC-rbs
+	rpoC-rbs	rpoC-cds
+	rpoC-cds	rpoC-ter1</p>
+<p>	rpoD-pro1	rpoD-rbs
+	rpoD-rbs	rpoD-cds
+	rpoD-cds	rpoD-ter1</p>
+<p>	rpoE-pro1	rpoE-rbs
+	rpoE-rbs	rpoE-cds
+	rpoE-cds	rpoE-ter1</p>
+<p>	rpoH-pro1	rpoH-rbs
+	rpoH-rbs	rpoH-cds
+	rpoH-cds	rpoH-ter1</p>
+<p>	rpoN-pro1	rpoN-rbs
+	rpoN-rbs	rpoN-cds
+	rpoN-cds	rpoN-ter1</p>
+<p>	rpoS-pro1	rpoS-rbs
+	rpoS-rbs	rpoS-cds
+	rpoS-cds	rpoS-ter1</p>
+<p>	fliA-pro1	fliA-rbs
+	fliA-rbs	fliA-cds
+	fliA-cds	fliA-ter1</p>
+<p>	fecI-pro1	fecI-rbs
+	fecI-rbs	fecI-cds
+	fecI-cds	fecI-ter1</p>
+<p>	<strong>Visualization in Cytoscape.</strong> Colors and arrows remains to the user for
+	customization. The network could be complemented with a description of
+	sigma factor specifity for promoter, as the following network</p>
+<p>	.. image:: Fig_GenomeGraphs.png</p>
+<p>Finally, execute the “<em>Rules from metabolic network.ipynb</em>” to obtain the
+<em>Rules</em> to model the defined network. If using a Sigma Factor-Promoter
+Interaction Network, the user could use “<em>Rules from SigmaFactors x Architecture</em>”
+to obtain the <em>Rules</em> to model both network at once. The complete rule-based
+model can be found in the arabinose folder (1st example) and in the sigma
+folder (2nd example) from the Network Biology Lab GitHub repository <a class="reference external" href="https://github.com/networkbiolab/atlas/">here</a>.</p>
+<p>	<strong>Kappa BioBrick Framework.</strong> Rules for transcription and translation
+	come from the work of Stewart and Wilson-Kanamori (See more
+	<a class="reference external" href="https://www.sciencedirect.com/science/article/pii/S1571066111001289">here</a>).
+	A “pure” genome graph use the original defined rules, while a genome
+	graph + sigma factor specifity use a modify form to model the release
+	of the sigma factor from the RNA Polymerase at the transcription
+	initiation. Note the explicit modeling of the RNA Polymerase in the
+	second example.</p>
+<p>	.. code:: python3</p>
+<p>		Rule(‘docking_araB_pro1’,
+			cplx(name = ‘RNAP’, dna = None) + dna(name = ‘araB’, type = ‘pro1’, prot = None, free = ‘True’) |
+			cplx(name = ‘RNAP’, dna = 1) % dna(name = ‘araB’, type = ‘pro1’, prot = 1, free = ‘False’),
+			Parameter(‘fwd_docking_araB_pro1’, 1), Parameter(‘rvs_docking_araB_pro1’, 1))</p>
+<p>	<em>OR</em></p>
+<p>	.. code:: python</p>
+<p>		# [rpoA, rpoA, rpoB, rpoC, rpoD] interacts with BS_rpoA_pro1
+		Rule(‘docking_1_rpoA_pro1’,
+			prot(name = ‘rpoA’, dna = None, met = None, up = None, dw = 1) %
+			prot(name = ‘rpoA’, dna = None, met = None, up = 1, dw = 2) %
+			prot(name = ‘rpoB’, dna = None, met = None, up = 2, dw = 3) %
+			prot(name = ‘rpoC’, dna = None, met = None, up = 3, dw = 4) %
+			prot(name = ‘rpoD’, dna = None, met = None, up = 4, dw = None) +
+			dna(name = ‘rpoA’, type = ‘pro1’, prot = None, free = ‘True’, up = WILD, dw = WILD) |
+			prot(name = ‘rpoA’, dna = None, met = None, up = None, dw = 1) %
+			prot(name = ‘rpoA’, dna = None, met = None, up = 1, dw = 2) %
+			prot(name = ‘rpoB’, dna = None, met = None, up = 2, dw = 3) %
+			prot(name = ‘rpoC’, dna = None, met = None, up = 3, dw = 4) %
+			prot(name = ‘rpoD’, dna = 5, met = None, up = 4, dw = None) %
+			dna(name = ‘rpoA’, type = ‘pro1’, prot = 5, free = ‘False’, up = WILD, dw = WILD),
+			Parameter(‘fwd_docking_1_rpoA_rbs’, 1),
+			Parameter(‘rvs_docking_1_rpoA_pro1’, 0))</p>
+<p>	<strong>Reversibility of reactions</strong>. Atlas writes irreversible <em>Rules</em> for each
+	interaction between the RNA Polymerase and a promoter. The <code class="docutils literal notranslate"><span class="pre">Parameter('rvs_ReactionName',</span> <span class="pre">0))</span></code>
+	must be set to non-zero to define a reversible reaction. The remaining <em>Rules</em>
+	are irreversible without a way to define reversible reactions.</p>
+<p>	<strong>Simulation</strong>. The model can be simulated only with the instantiation of
+	<code class="docutils literal notranslate"><span class="pre">Monomers</span></code> and <code class="docutils literal notranslate"><span class="pre">Initials</span></code> (<a class="reference external" href="https://pysb.readthedocs.io/en/stable/tutorial.html#introduction">More here</a>).
+	Run <em>Monomer+Initials+Observables from metabolic network.ipynb</em> to obtain
+	automatically the necessary <code class="docutils literal notranslate"><span class="pre">Monomers</span></code> and <code class="docutils literal notranslate"><span class="pre">Initials</span></code> (including
+	proteins and enzymatic complexes). For initial genes, please refer to the
+	following example:</p>
+<p>	.. code:: python</p>
+<p>		Initial(
+			dna(name = ‘rpoB’, type = ‘pro1’, free = ‘True’, prot = None, rna = None, up = None, dw = 1) %
+			dna(name = ‘rpoB’, type = ‘rbs’, free = ‘True’, prot = None, rna = None, up = 1, dw = 2) %
+			dna(name = ‘rpoB’, type = ‘cds’, free = ‘True’, prot = None, rna = None, up = 2, dw = 3) %
+			dna(name = ‘rpoC’, type = ‘rbs’, free = ‘True’, prot = None, rna = None, up = 3, dw = 4) %
+			dna(name = ‘rpoC’, type = ‘cds’, free = ‘True’, prot = None, rna = None, up = 4, dw = 5) %
+			dna(name = ‘rpoC’, type = ‘ter1’, free = ‘True’, prot = None, rna = None, up = 5, dw = None),
+			Parameter(‘t0_rpoBC_operon’, 1))</p>
+<p>	<strong>Plotting</strong>. The model can be observed only with the instantation of
+	<code class="docutils literal notranslate"><span class="pre">Observables</span></code> (<a class="reference external" href="https://pysb.readthedocs.io/en/stable/tutorial.html#simulation-and-analysis">More here</a>).
+	Run <em>Monomer+Initials+Observables from metabolic network.ipynb</em> to obtain
+	automatically the all possible <code class="docutils literal notranslate"><span class="pre">Observables</span></code> for metabolites.</p>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="Simulation.html" class="btn btn-neutral float-right" title="Simulation" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="NetSFsPromoters.html" class="btn btn-neutral float-left" title="Sigma Factor-Promoter Interaction Networks" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, Rodrigo Santibáñez
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

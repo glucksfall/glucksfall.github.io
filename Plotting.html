@@ -1,0 +1,264 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Plotting &mdash; atlas  documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Export to" href="Export_to.html" />
+    <link rel="prev" title="Simulation" href="Simulation.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> atlas
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="Installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Modeling.html">Modeling</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Simulation.html">Simulation</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Plotting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Export_to.html">Export to</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">atlas</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>Plotting</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/Plotting.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="plotting">
+<span id="plotting-page"></span><h1>Plotting<a class="headerlink" href="#plotting" title="Permalink to this headline">¶</a></h1>
+<p>PySB could inform the results of a simulation to dataframes (See
+<a class="reference internal" href="Simulation.html#simulation-page"><span class="std std-ref">Simulation</span></a>) and visualization of results could be done with
+matplotlib or seaborn even (<a class="reference external" href="https://seaborn.pydata.org/">See more here</a>). To
+access the data, the dataframes columns reproduce the names of the <code class="docutils literal notranslate"><span class="pre">Observables</span></code>.
+The following example could be adapted to show the dynamics of any <code class="docutils literal notranslate"><span class="pre">Observable</span></code>.</p>
+<p>	Importantly, PySB allows the inspection of the model to find which
+	<code class="docutils literal notranslate"><span class="pre">Monomers</span></code> (and complexes of monomers) exists in the model, but as the
+	simulation is network-free, the possible formed complexes are up to the user
+	concern.</p>
+<p>	Atlas produces automatically <code class="docutils literal notranslate"><span class="pre">Observables</span></code> for metabolites, and other
+	components and complexes could also be observed and plotted, but their
+	declaration in the model is entirely up to the user.</p>
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<p>	fig, ax = plt.subplots(1, 2, figsize = (4*2, 3*1), dpi = 100)</p>
+<p>	# ax[0].plot(data1.index, data1[‘obs_alpha_L_arabinopyranose_cyt’], label = ‘__NOLABEL__’, color = palette[0])
+	# ax[0].plot(data1.index, data1[‘obs_ATP_cyt’], label = ‘__NOLABEL__’, color = palette[3])
+	ax[0].fill_between(avrg.index,
+		avrg[‘obs_alpha_L_arabinopyranose_cyt’] + stdv[‘obs_alpha_L_arabinopyranose_cyt’],
+		avrg[‘obs_alpha_L_arabinopyranose_cyt’] - stdv[‘obs_alpha_L_arabinopyranose_cyt’],
+		label = r’$alpha$-arabinopyranose’, <a href="#id1"><span class="problematic" id="id2">**</span></a>{‘color’ : palette[0], ‘alpha’ : 0.5})
+	ax[0].fill_between(avrg.index,
+		avrg[‘obs_ATP_cyt’] + stdv[‘obs_ATP_cyt’],
+		avrg[‘obs_ATP_cyt’] - stdv[‘obs_ATP_cyt’],
+		label = r’ATP’, <a href="#id3"><span class="problematic" id="id4">**</span></a>{‘color’ : palette[3], ‘alpha’ : 0.5})</p>
+<p>	# ax[1].plot(data1.index, data1[‘obs_PROTON_cyt’], label = ‘__NOLABEL__’, color = palette[0])
+	# ax[1].plot(data1.index, data1[‘obs_XYLULOSE_5_PHOSPHATE_cyt’], label = ‘__NOLABEL__’, color = palette[3])
+	ax[1].fill_between(avrg.index,
+		avrg[‘obs_PROTON_cyt’] + stdv[‘obs_PROTON_cyt’],
+		avrg[‘obs_PROTON_cyt’] - stdv[‘obs_PROTON_cyt’],
+		label = r’H$^+$’, <a href="#id5"><span class="problematic" id="id6">**</span></a>{‘color’ : palette[0], ‘alpha’ : 0.5})
+	ax[1].fill_between(avrg.index,
+		avrg[‘obs_WATER_cyt’] + stdv[‘obs_WATER_cyt’],
+		avrg[‘obs_WATER_cyt’] - stdv[‘obs_WATER_cyt’],
+		label = ‘WATER’, <a href="#id7"><span class="problematic" id="id8">**</span></a>{‘color’ : palette[1], ‘alpha’ : 0.5})
+	ax[1].fill_between(avrg.index,
+		avrg[‘obs_XYLULOSE_5_PHOSPHATE_cyt’] + stdv[‘obs_XYLULOSE_5_PHOSPHATE_cyt’],
+		avrg[‘obs_XYLULOSE_5_PHOSPHATE_cyt’] - stdv[‘obs_XYLULOSE_5_PHOSPHATE_cyt’],
+		label = r’xylulose 5-phosphate’, <a href="#id9"><span class="problematic" id="id10">**</span></a>{‘color’ : palette[3], ‘alpha’ : 0.5})</p>
+<p>	ax[0].set_xlabel(‘Time [A.U.]’)
+	ax[0].set_ylabel(‘Concentration [A.U.]’)
+	# ax[0].set_xlim(left = 0, right = 100)
+	ax[0].set_ylim(bottom = 0, top = 200)</p>
+<p>	ax[1].set_xlabel(‘Time [A.U.]’)
+	# ax[1].set_xlim(left = 0, right = 100)
+	ax[1].set_ylim(bottom = 0, top = 200)</p>
+<p>	ax[0].legend(frameon = False)
+	ax[1].legend(frameon = False)</p>
+<p>	seaborn.despine()
+	plt.savefig(‘Fig_Arabinose.png’, format = ‘png’, bbox_inches = ‘tight’, dpi = 350)
+	# for publication
+	# plt.savefig(‘Fig_Arabinose.pdf’, format = ‘pdf’, bbox_inches = ‘tight’, dpi = 350)</p>
+<p>	plt.show()</p>
+<p>And the results is</p>
+<img alt="_images/Fig_Arabinose.png" src="_images/Fig_Arabinose.png" />
+<p>	See the <a class="reference external" href="https://github.com/glucksfall/atlas/blob/master/arabinose/Model%20arabinose%20operon%20Met%20%2B%20PPI%20%2B%20TXTL%20%2B%20GRN.ipynb">Arabinose Model</a>
+	to inspect the rules and reproduce (at some extent because of stochasticity) the plot showed in this Manual.</p>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="Export_to.html" class="btn btn-neutral float-right" title="Export to" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="Simulation.html" class="btn btn-neutral float-left" title="Simulation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, Rodrigo Santibáñez
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

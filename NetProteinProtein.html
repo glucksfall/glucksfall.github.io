@@ -1,0 +1,293 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Protein-Protein Interaction Networks &mdash; atlas  documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Protein-Small compounds Interaction Networks" href="NetProteinSmallCompounds.html" />
+    <link rel="prev" title="Metabolic Networks" href="NetMetabolic.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> atlas
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="Installation.html">Installation</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="Modeling.html">Modeling</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="NetMetabolic.html">Metabolic Networks</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Protein-Protein Interaction Networks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="NetProteinSmallCompounds.html">Protein-Small compounds Interaction Networks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="NetTFsDNABindingSites.html">Transcription Factor-DNA Binding Site Interaction Networks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="NetSFsPromoters.html">Sigma Factor-Promoter Interaction Networks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="NetGenomeGraphs.html">Genome Graphs</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Simulation.html">Simulation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Plotting.html">Plotting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Export_to.html">Export to</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">atlas</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="Modeling.html">Modeling</a> &raquo;</li>
+        
+      <li>Protein-Protein Interaction Networks</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/NetProteinProtein.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="protein-protein-interaction-networks">
+<span id="net-proteinprotein"></span><h1>Protein-Protein Interaction Networks<a class="headerlink" href="#protein-protein-interaction-networks" title="Permalink to this headline">¶</a></h1>
+<p>Protein-protein interaction (PPI) interaction networks have two columns. In any
+order and for any number of components, each column lists using comma the
+interacting proteins or protein complexes. The user should employ brackets to
+enclose a list of proteins that are part of a complex.</p>
+<p>Examples:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<p>	SOURCE	TARGET
+	BETAGALACTOSID-MONOMER	BETAGALACTOSID-MONOMER
+	GALACTOACETYLTRAN-MONOMER	GALACTOACETYLTRAN-MONOMER</p>
+<p><em>OR</em></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<p>	SOURCE	TARGET
+	BETAGALACTOSID-MONOMER	BETAGALACTOSID-MONOMER
+	[BETAGALACTOSID-MONOMER, BETAGALACTOSID-MONOMER]	[BETAGALACTOSID-MONOMER, BETAGALACTOSID-MONOMER]
+	GALACTOACETYLTRAN-MONOMER	GALACTOACETYLTRAN-MONOMER
+	GALACTOACETYLTRAN-MONOMER	[GALACTOACETYLTRAN-MONOMER, GALACTOACETYLTRAN-MONOMER]</p>
+<p>	<strong>Visualization in Cytoscape.</strong> Cytoscape cannot import hyper-graphs. To do so,
+	Create simple network and right-click to embed a subnetwork in the corresponding node.</p>
+<p>	.. image:: Fig_Lactose_PPINetwork.png</p>
+<p>Finally, execute the “<em>Rules from protein-protein.ipynb</em>” to obtain the
+<em>Rules</em> to model the defined interaction network. The complete rule-based
+model can be found in the lactose folder from the Network Biology Lab
+GitHub repository <a class="reference external" href="https://github.com/networkbiolab/atlas/blob/master/lactose/Models/Model4%20PPI%20from%20automatic%20Rules.ipynb">here</a>.</p>
+<p>	Rule(‘complex_assembly_rule_0’,
+		prot(name = ‘BETAGALACTOSID_MONOMER’, up = None, dw = None) +
+		prot(name = ‘BETAGALACTOSID_MONOMER’, up = None, dw = None) |
+		prot(name = ‘BETAGALACTOSID_MONOMER’, up = 1, dw = None) %
+		prot(name = ‘BETAGALACTOSID_MONOMER’, up = None, dw = 1),
+		Parameter(‘fwd_complex_assembly_rule_0’, 1),
+		Parameter(‘rvs_complex_assembly_rule_0’, 0))</p>
+<p>	Rule(‘complex_assembly_rule_1’,
+		prot(name = ‘BETAGALACTOSID_MONOMER’, up = 1, dw = None) %
+		prot(name = ‘BETAGALACTOSID_MONOMER’, up = None, dw = 1) +
+		prot(name = ‘BETAGALACTOSID_MONOMER’, up = 1, dw = None) %
+		prot(name = ‘BETAGALACTOSID_MONOMER’, up = None, dw = 1) |
+		prot(name = ‘BETAGALACTOSID_MONOMER’, up = 1, dw = None) %
+		prot(name = ‘BETAGALACTOSID_MONOMER’, up = 2, dw = 1) %
+		prot(name = ‘BETAGALACTOSID_MONOMER’, up = 3, dw = 2) %
+		prot(name = ‘BETAGALACTOSID_MONOMER’, up = None, dw = 3),
+		Parameter(‘fwd_complex_assembly_rule_1’, 1),
+		Parameter(‘rvs_complex_assembly_rule_1’, 0))</p>
+<p>	Rule(‘complex_assembly_rule_2’,
+		prot(name = ‘GALACTOACETYLTRAN_MONOMER’, up = None, dw = None) +
+		prot(name = ‘GALACTOACETYLTRAN_MONOMER’, up = None, dw = None) |
+		prot(name = ‘GALACTOACETYLTRAN_MONOMER’, up = 1, dw = None) %
+		prot(name = ‘GALACTOACETYLTRAN_MONOMER’, up = None, dw = 1),
+		Parameter(‘fwd_complex_assembly_rule_2’, 1),
+		Parameter(‘rvs_complex_assembly_rule_2’, 0))</p>
+<p>	Rule(‘complex_assembly_rule_3’,
+		prot(name = ‘GALACTOACETYLTRAN_MONOMER’, up = None, dw = None) +
+		prot(name = ‘GALACTOACETYLTRAN_MONOMER’, up = 1, dw = None) %
+		prot(name = ‘GALACTOACETYLTRAN_MONOMER’, up = None, dw = 1) |
+		prot(name = ‘GALACTOACETYLTRAN_MONOMER’, up = 1, dw = None) %
+		prot(name = ‘GALACTOACETYLTRAN_MONOMER’, up = 2, dw = 1) %
+		prot(name = ‘GALACTOACETYLTRAN_MONOMER’, up = None, dw = 2),
+		Parameter(‘fwd_complex_assembly_rule_3’, 1),
+		Parameter(‘rvs_complex_assembly_rule_3’, 0))</p>
+<p>	<strong>Reversibility of Rules</strong>. Atlas writes irreversible <em>Rules</em> for each
+	reaction declared in the network file. The <code class="docutils literal notranslate"><span class="pre">Parameter('rvs_RuleName',</span> <span class="pre">0))</span></code>
+	must be set to non-zero to define an reversible reaction.</p>
+<p>	<strong>Uniqueness of Rule names</strong>. Atlas will write <em>Rules</em> with numbered
+	names. Use only one file to model the many interactions the system has.</p>
+<p>	<strong>Simulation</strong>. The model can be simulated only with the instantiation of
+	<code class="docutils literal notranslate"><span class="pre">Monomers</span></code> and <code class="docutils literal notranslate"><span class="pre">Initials</span></code> (<a class="reference external" href="https://pysb.readthedocs.io/en/stable/tutorial.html#introduction">More here</a>).
+	Run <em>Monomer+Initials+Observables from metabolic network.ipynb</em> to obtain
+	automatically the necessary <code class="docutils literal notranslate"><span class="pre">Monomers</span></code> and <code class="docutils literal notranslate"><span class="pre">Initials</span></code> (including
+	proteins and enzymatic complexes). Manually add the necessary <code class="docutils literal notranslate"><span class="pre">Monomers</span></code>
+	and <code class="docutils literal notranslate"><span class="pre">Initials</span></code> for non-enzymatic proteins.</p>
+<p>	<strong>Plotting</strong>. The model can be observed only with the instantation of
+	<code class="docutils literal notranslate"><span class="pre">Observables</span></code> (<a class="reference external" href="https://pysb.readthedocs.io/en/stable/tutorial.html#simulation-and-analysis">More here</a>).
+	Run <em>Monomer+Initials+Observables from metabolic network.ipynb</em> to obtain
+	automatically the all possible <code class="docutils literal notranslate"><span class="pre">Observables</span></code> for enzymatic proteins. Other
+	observables for proteins should be added manually.</p>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="NetProteinSmallCompounds.html" class="btn btn-neutral float-right" title="Protein-Small compounds Interaction Networks" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="NetMetabolic.html" class="btn btn-neutral float-left" title="Metabolic Networks" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, Rodrigo Santibáñez
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

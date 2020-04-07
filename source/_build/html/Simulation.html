@@ -1,0 +1,244 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Simulation &mdash; atlas  documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Plotting" href="Plotting.html" />
+    <link rel="prev" title="Genome Graphs" href="NetGenomeGraphs.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> atlas
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="Installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Modeling.html">Modeling</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Simulation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Plotting.html">Plotting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Export_to.html">Export to</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">atlas</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>Simulation</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/Simulation.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="simulation">
+<span id="simulation-page"></span><h1>Simulation<a class="headerlink" href="#simulation" title="Permalink to this headline">¶</a></h1>
+<p>Simulation could be done within the PySB python package (See more at <a class="reference external" href="https://pysb.readthedocs.io/en/stable/tutorial.html#simulation-and-analysis">PySB
+documentation</a>)
+. Here is the relevant code that able the simulation of any PySB model, albeit
+PySB exports the model, calls the simulator, and imports the results under the
+hood. See <a class="reference internal" href="Plotting.html#plotting-page"><span class="std std-ref">Plotting</span></a> for a simple example on how to plot simulation results.</p>
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<p>	from numpy import linspace
+	from pysb.bng import generate_network, generate_equations
+	from pysb.simulator import ScipyOdeSimulator, BngSimulator, KappaSimulator</p>
+<p>	# modify accordingly
+	from pysb.pathfinder import set_path
+	set_path(‘bng’, ‘/opt/git-repositories/bionetgen.RuleWorld/bng2/’)
+	set_path(‘kasim’, ‘/opt/git-repositories/KaSim4.Kappa-Dev/’)</p>
+<p>	## for network-based simulations:
+	## ScipyOdeSimulator and BngSimulator ode and ssa methods
+	# generate_network(model)
+	# generate_equations(model)</p>
+<p>	## set the number of stochastic simulations
+	runs = 100
+	# data1 = ScipyOdeSimulator(model, linspace(0, 100, 200)).run().dataframe
+	# data1 = BngSimulator(model, linspace(0, 200, 201)).run(method = ‘ode’).dataframe
+	# data2 = BngSimulator(model, linspace(0, 200, 201)).run(method = ‘ssa’, n_runs = runs).dataframe
+	# data2 = BngSimulator(model, linspace(0, 200, 201)).run(method = ‘nf’, n_runs = runs).dataframe
+	data2 = KappaSimulator(model, linspace(0, 100, 101)).run(n_runs = runs).dataframe</p>
+<p>	## process simulations
+	data = []
+	for i in range(0, runs):
+		data.append(data2.xs(i))</p>
+<p>	avrg = 0
+	for i in range(0, runs):
+		avrg += data[i]
+	avrg = avrg / runs</p>
+<p>	stdv = 0
+	for i in range(0, runs):
+		stdv += (data[i] - avrg)**2
+	stdv = (stdv / (runs-1))**0.5</p>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="Plotting.html" class="btn btn-neutral float-right" title="Plotting" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="NetGenomeGraphs.html" class="btn btn-neutral float-left" title="Genome Graphs" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, Rodrigo Santibáñez
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

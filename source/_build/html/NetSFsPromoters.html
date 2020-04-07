@@ -1,0 +1,718 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Sigma Factor-Promoter Interaction Networks &mdash; atlas  documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Genome Graphs" href="NetGenomeGraphs.html" />
+    <link rel="prev" title="Transcription Factor-DNA Binding Site Interaction Networks" href="NetTFsDNABindingSites.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> atlas
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="Installation.html">Installation</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="Modeling.html">Modeling</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="NetMetabolic.html">Metabolic Networks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="NetProteinProtein.html">Protein-Protein Interaction Networks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="NetProteinSmallCompounds.html">Protein-Small compounds Interaction Networks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="NetTFsDNABindingSites.html">Transcription Factor-DNA Binding Site Interaction Networks</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Sigma Factor-Promoter Interaction Networks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="NetGenomeGraphs.html">Genome Graphs</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Simulation.html">Simulation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Plotting.html">Plotting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Export_to.html">Export to</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">atlas</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="Modeling.html">Modeling</a> &raquo;</li>
+        
+      <li>Sigma Factor-Promoter Interaction Networks</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/NetSFsPromoters.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="sigma-factor-promoter-interaction-networks">
+<span id="net-sfspromoters"></span><h1>Sigma Factor-Promoter Interaction Networks<a class="headerlink" href="#sigma-factor-promoter-interaction-networks" title="Permalink to this headline">¶</a></h1>
+<p>The Sigma Factor-Promoter network have two columns and for the former network, the first column lists using comma all components of a TF enclosed in brackets (optionally with small compounds) and in the second column declares the DNA binding site. Users should use the prefix “SMALL-” for small compounds and the prefix “BS-” to encode DNA binding sites using unique names. The second type of GRN shows in the first column the RNA polymerase holoenzyme complex (components in brackets) and in the second the promoter. Users should name promoters with the gene name followed by the suffix “-pro#” where # is an integer.</p>
+<p>Examples:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<p>	SOURCE	TARGET
+	# Docking to promoters
+	[rpoA, rpoA, rpoB, rpoC, rpoD]	BS-rpoA-pro1
+	[rpoA, rpoA, rpoB, rpoC, rpoD]	BS-rpoB-pro1
+	# [rpoA, rpoA, rpoB, rpoC, rpoD]	BS-rpoC-pro1
+	[rpoA, rpoA, rpoB, rpoC, rpoD]	BS-rpoD-pro1
+	[rpoA, rpoA, rpoB, rpoC, rpoD]	BS-rpoE-pro1
+	[rpoA, rpoA, rpoB, rpoC, rpoD]	BS-rpoH-pro1
+	[rpoA, rpoA, rpoB, rpoC, rpoD]	BS-rpoN-pro1
+	[rpoA, rpoA, rpoB, rpoC, rpoD]	BS-rpoS-pro1
+	[rpoA, rpoA, rpoB, rpoC, rpoD]	BS-fliA-pro1
+	[rpoA, rpoA, rpoB, rpoC, rpoD]	BS-fecI-pro1</p>
+<p>	[rpoA, rpoA, rpoB, rpoC, rpoE]	BS-rpoD-pro1
+	[rpoA, rpoA, rpoB, rpoC, rpoE]	BS-rpoE-pro1
+	[rpoA, rpoA, rpoB, rpoC, rpoE]	BS-rpoH-pro1
+	[rpoA, rpoA, rpoB, rpoC, rpoE]	BS-rpoN-pro1</p>
+<p>	[rpoA, rpoA, rpoB, rpoC, rpoH]	BS-rpoA-pro1
+	[rpoA, rpoA, rpoB, rpoC, rpoH]	BS-rpoD-pro1</p>
+<p>	[rpoA, rpoA, rpoB, rpoC, rpoN]	BS-rpoA-pro1
+	[rpoA, rpoA, rpoB, rpoC, rpoN]	BS-rpoD-pro1
+	[rpoA, rpoA, rpoB, rpoC, rpoN]	BS-rpoH-pro1</p>
+<p>	[rpoA, rpoA, rpoB, rpoC, rpoS]	BS-fecI-pro1
+	[rpoA, rpoA, rpoB, rpoC, rpoS]	BS-rpoA-pro1
+	[rpoA, rpoA, rpoB, rpoC, rpoS]	BS-rpoB-pro1
+	# [rpoA, rpoA, rpoB, rpoC, rpoS]	BS-rpoC-pro1
+	[rpoA, rpoA, rpoB, rpoC, rpoS]	BS-rpoD-pro1
+	[rpoA, rpoA, rpoB, rpoC, rpoS]	BS-rpoE-pro1
+	[rpoA, rpoA, rpoB, rpoC, rpoS]	BS-rpoH-pro1
+	[rpoA, rpoA, rpoB, rpoC, rpoS]	BS-rpoN-pro1</p>
+<p>	[rpoA, rpoA, rpoB, rpoC, fliA]	BS-rpoD-pro1
+	[rpoA, rpoA, rpoB, rpoC, fliA]	BS-rpoN-pro1
+	[rpoA, rpoA, rpoB, rpoC, fliA]	BS-fliA-pro1</p>
+<p>Finally, execute the “<em>Rules from SigmaFactors x Architecture.ipynb</em>” to obtain the
+<em>Rules</em> to model the defined interaction network. The complete rule-based
+model can be found in the sigma folder from the Network Biology Lab
+GitHub repository <a class="reference external" href="https://github.com/networkbiolab/atlas/blob/master/sigma/Model%20sigma.ipynb/">here</a>.</p>
+<p>	# [rpoA, rpoA, rpoB, rpoC, rpoD] interacts with BS_rpoA_pro1
+	Rule(‘docking_1_rpoA_pro1’,
+		prot(name = ‘rpoA’, dna = None, met = None, up = None, dw = 1) %
+		prot(name = ‘rpoA’, dna = None, met = None, up = 1, dw = 2) %
+		prot(name = ‘rpoB’, dna = None, met = None, up = 2, dw = 3) %
+		prot(name = ‘rpoC’, dna = None, met = None, up = 3, dw = 4) %
+		prot(name = ‘rpoD’, dna = None, met = None, up = 4, dw = None) +
+		dna(name = ‘rpoA’, type = ‘pro1’, prot = None, free = ‘True’, up = WILD, dw = WILD) |
+		prot(name = ‘rpoA’, dna = None, met = None, up = None, dw = 1) %
+		prot(name = ‘rpoA’, dna = None, met = None, up = 1, dw = 2) %
+		prot(name = ‘rpoB’, dna = None, met = None, up = 2, dw = 3) %
+		prot(name = ‘rpoC’, dna = None, met = None, up = 3, dw = 4) %
+		prot(name = ‘rpoD’, dna = 5, met = None, up = 4, dw = None) %
+		dna(name = ‘rpoA’, type = ‘pro1’, prot = 5, free = ‘False’, up = WILD, dw = WILD),
+		Parameter(‘fwd_docking_1_rpoA_pro1’, 0),
+		Parameter(‘rvs_docking_1_rpoA_pro1’, 0))</p>
+<p>	# [rpoA, rpoA, rpoB, rpoC, rpoD] interacts with BS_rpoB_pro1
+	Rule(‘docking_2_rpoB_pro1’,
+		prot(name = ‘rpoA’, dna = None, met = None, up = None, dw = 1) %
+		prot(name = ‘rpoA’, dna = None, met = None, up = 1, dw = 2) %
+		prot(name = ‘rpoB’, dna = None, met = None, up = 2, dw = 3) %
+		prot(name = ‘rpoC’, dna = None, met = None, up = 3, dw = 4) %
+		prot(name = ‘rpoD’, dna = None, met = None, up = 4, dw = None) +
+		dna(name = ‘rpoB’, type = ‘pro1’, prot = None, free = ‘True’, up = WILD, dw = WILD) |
+		prot(name = ‘rpoA’, dna = None, met = None, up = None, dw = 1) %
+		prot(name = ‘rpoA’, dna = None, met = None, up = 1, dw = 2) %
+		prot(name = ‘rpoB’, dna = None, met = None, up = 2, dw = 3) %
+		prot(name = ‘rpoC’, dna = None, met = None, up = 3, dw = 4) %
+		prot(name = ‘rpoD’, dna = 5, met = None, up = 4, dw = None) %
+		dna(name = ‘rpoB’, type = ‘pro1’, prot = 5, free = ‘False’, up = WILD, dw = WILD),
+		Parameter(‘fwd_docking_2_rpoB_pro1’, 0),
+		Parameter(‘rvs_docking_2_rpoB_pro1’, 0))</p>
+<p>	# [rpoA, rpoA, rpoB, rpoC, rpoD] interacts with BS_rpoD_pro1
+	Rule(‘docking_3_rpoD_pro1’,
+		prot(name = ‘rpoA’, dna = None, met = None, up = None, dw = 1) %
+		prot(name = ‘rpoA’, dna = None, met = None, up = 1, dw = 2) %
+		prot(name = ‘rpoB’, dna = None, met = None, up = 2, dw = 3) %
+		prot(name = ‘rpoC’, dna = None, met = None, up = 3, dw = 4) %
+		prot(name = ‘rpoD’, dna = None, met = None, up = 4, dw = None) +
+		dna(name = ‘rpoD’, type = ‘pro1’, prot = None, free = ‘True’, up = WILD, dw = WILD) |
+		prot(name = ‘rpoA’, dna = None, met = None, up = None, dw = 1) %
+		prot(name = ‘rpoA’, dna = None, met = None, up = 1, dw = 2) %
+		prot(name = ‘rpoB’, dna = None, met = None, up = 2, dw = 3) %
+		prot(name = ‘rpoC’, dna = None, met = None, up = 3, dw = 4) %
+		prot(name = ‘rpoD’, dna = 5, met = None, up = 4, dw = None) %
+		dna(name = ‘rpoD’, type = ‘pro1’, prot = 5, free = ‘False’, up = WILD, dw = WILD),
+		Parameter(‘fwd_docking_3_rpoD_pro1’, 0),
+		Parameter(‘rvs_docking_3_rpoD_pro1’, 0))</p>
+<p>	# [rpoA, rpoA, rpoB, rpoC, rpoD] interacts with BS_rpoE_pro1
+	Rule(‘docking_4_rpoE_pro1’,
+		prot(name = ‘rpoA’, dna = None, met = None, up = None, dw = 1) %
+		prot(name = ‘rpoA’, dna = None, met = None, up = 1, dw = 2) %
+		prot(name = ‘rpoB’, dna = None, met = None, up = 2, dw = 3) %
+		prot(name = ‘rpoC’, dna = None, met = None, up = 3, dw = 4) %
+		prot(name = ‘rpoD’, dna = None, met = None, up = 4, dw = None) +
+		dna(name = ‘rpoE’, type = ‘pro1’, prot = None, free = ‘True’, up = WILD, dw = WILD) |
+		prot(name = ‘rpoA’, dna = None, met = None, up = None, dw = 1) %
+		prot(name = ‘rpoA’, dna = None, met = None, up = 1, dw = 2) %
+		prot(name = ‘rpoB’, dna = None, met = None, up = 2, dw = 3) %
+		prot(name = ‘rpoC’, dna = None, met = None, up = 3, dw = 4) %
+		prot(name = ‘rpoD’, dna = 5, met = None, up = 4, dw = None) %
+		dna(name = ‘rpoE’, type = ‘pro1’, prot = 5, free = ‘False’, up = WILD, dw = WILD),
+		Parameter(‘fwd_docking_4_rpoE_pro1’, 0),
+		Parameter(‘rvs_docking_4_rpoE_pro1’, 0))</p>
+<p>	# [rpoA, rpoA, rpoB, rpoC, rpoD] interacts with BS_rpoH_pro1
+	Rule(‘docking_5_rpoH_pro1’,
+		prot(name = ‘rpoA’, dna = None, met = None, up = None, dw = 1) %
+		prot(name = ‘rpoA’, dna = None, met = None, up = 1, dw = 2) %
+		prot(name = ‘rpoB’, dna = None, met = None, up = 2, dw = 3) %
+		prot(name = ‘rpoC’, dna = None, met = None, up = 3, dw = 4) %
+		prot(name = ‘rpoD’, dna = None, met = None, up = 4, dw = None) +
+		dna(name = ‘rpoH’, type = ‘pro1’, prot = None, free = ‘True’, up = WILD, dw = WILD) |
+		prot(name = ‘rpoA’, dna = None, met = None, up = None, dw = 1) %
+		prot(name = ‘rpoA’, dna = None, met = None, up = 1, dw = 2) %
+		prot(name = ‘rpoB’, dna = None, met = None, up = 2, dw = 3) %
+		prot(name = ‘rpoC’, dna = None, met = None, up = 3, dw = 4) %
+		prot(name = ‘rpoD’, dna = 5, met = None, up = 4, dw = None) %
+		dna(name = ‘rpoH’, type = ‘pro1’, prot = 5, free = ‘False’, up = WILD, dw = WILD),
+		Parameter(‘fwd_docking_5_rpoH_pro1’, 0),
+		Parameter(‘rvs_docking_5_rpoH_pro1’, 0))</p>
+<p>	# [rpoA, rpoA, rpoB, rpoC, rpoD] interacts with BS_rpoN_pro1
+	Rule(‘docking_6_rpoN_pro1’,
+		prot(name = ‘rpoA’, dna = None, met = None, up = None, dw = 1) %
+		prot(name = ‘rpoA’, dna = None, met = None, up = 1, dw = 2) %
+		prot(name = ‘rpoB’, dna = None, met = None, up = 2, dw = 3) %
+		prot(name = ‘rpoC’, dna = None, met = None, up = 3, dw = 4) %
+		prot(name = ‘rpoD’, dna = None, met = None, up = 4, dw = None) +
+		dna(name = ‘rpoN’, type = ‘pro1’, prot = None, free = ‘True’, up = WILD, dw = WILD) |
+		prot(name = ‘rpoA’, dna = None, met = None, up = None, dw = 1) %
+		prot(name = ‘rpoA’, dna = None, met = None, up = 1, dw = 2) %
+		prot(name = ‘rpoB’, dna = None, met = None, up = 2, dw = 3) %
+		prot(name = ‘rpoC’, dna = None, met = None, up = 3, dw = 4) %
+		prot(name = ‘rpoD’, dna = 5, met = None, up = 4, dw = None) %
+		dna(name = ‘rpoN’, type = ‘pro1’, prot = 5, free = ‘False’, up = WILD, dw = WILD),
+		Parameter(‘fwd_docking_6_rpoN_pro1’, 0),
+		Parameter(‘rvs_docking_6_rpoN_pro1’, 0))</p>
+<p>	# [rpoA, rpoA, rpoB, rpoC, rpoD] interacts with BS_rpoS_pro1
+	Rule(‘docking_7_rpoS_pro1’,
+		prot(name = ‘rpoA’, dna = None, met = None, up = None, dw = 1) %
+		prot(name = ‘rpoA’, dna = None, met = None, up = 1, dw = 2) %
+		prot(name = ‘rpoB’, dna = None, met = None, up = 2, dw = 3) %
+		prot(name = ‘rpoC’, dna = None, met = None, up = 3, dw = 4) %
+		prot(name = ‘rpoD’, dna = None, met = None, up = 4, dw = None) +
+		dna(name = ‘rpoS’, type = ‘pro1’, prot = None, free = ‘True’, up = WILD, dw = WILD) |
+		prot(name = ‘rpoA’, dna = None, met = None, up = None, dw = 1) %
+		prot(name = ‘rpoA’, dna = None, met = None, up = 1, dw = 2) %
+		prot(name = ‘rpoB’, dna = None, met = None, up = 2, dw = 3) %
+		prot(name = ‘rpoC’, dna = None, met = None, up = 3, dw = 4) %
+		prot(name = ‘rpoD’, dna = 5, met = None, up = 4, dw = None) %
+		dna(name = ‘rpoS’, type = ‘pro1’, prot = 5, free = ‘False’, up = WILD, dw = WILD),
+		Parameter(‘fwd_docking_7_rpoS_pro1’, 0),
+		Parameter(‘rvs_docking_7_rpoS_pro1’, 0))</p>
+<p>	# [rpoA, rpoA, rpoB, rpoC, rpoD] interacts with BS_fliA_pro1
+	Rule(‘docking_8_fliA_pro1’,
+		prot(name = ‘rpoA’, dna = None, met = None, up = None, dw = 1) %
+		prot(name = ‘rpoA’, dna = None, met = None, up = 1, dw = 2) %
+		prot(name = ‘rpoB’, dna = None, met = None, up = 2, dw = 3) %
+		prot(name = ‘rpoC’, dna = None, met = None, up = 3, dw = 4) %
+		prot(name = ‘rpoD’, dna = None, met = None, up = 4, dw = None) +
+		dna(name = ‘fliA’, type = ‘pro1’, prot = None, free = ‘True’, up = WILD, dw = WILD) |
+		prot(name = ‘rpoA’, dna = None, met = None, up = None, dw = 1) %
+		prot(name = ‘rpoA’, dna = None, met = None, up = 1, dw = 2) %
+		prot(name = ‘rpoB’, dna = None, met = None, up = 2, dw = 3) %
+		prot(name = ‘rpoC’, dna = None, met = None, up = 3, dw = 4) %
+		prot(name = ‘rpoD’, dna = 5, met = None, up = 4, dw = None) %
+		dna(name = ‘fliA’, type = ‘pro1’, prot = 5, free = ‘False’, up = WILD, dw = WILD),
+		Parameter(‘fwd_docking_8_fliA_pro1’, 0),
+		Parameter(‘rvs_docking_8_fliA_pro1’, 0))</p>
+<p>	# [rpoA, rpoA, rpoB, rpoC, rpoD] interacts with BS_fecI_pro1
+	Rule(‘docking_9_fecI_pro1’,
+		prot(name = ‘rpoA’, dna = None, met = None, up = None, dw = 1) %
+		prot(name = ‘rpoA’, dna = None, met = None, up = 1, dw = 2) %
+		prot(name = ‘rpoB’, dna = None, met = None, up = 2, dw = 3) %
+		prot(name = ‘rpoC’, dna = None, met = None, up = 3, dw = 4) %
+		prot(name = ‘rpoD’, dna = None, met = None, up = 4, dw = None) +
+		dna(name = ‘fecI’, type = ‘pro1’, prot = None, free = ‘True’, up = WILD, dw = WILD) |
+		prot(name = ‘rpoA’, dna = None, met = None, up = None, dw = 1) %
+		prot(name = ‘rpoA’, dna = None, met = None, up = 1, dw = 2) %
+		prot(name = ‘rpoB’, dna = None, met = None, up = 2, dw = 3) %
+		prot(name = ‘rpoC’, dna = None, met = None, up = 3, dw = 4) %
+		prot(name = ‘rpoD’, dna = 5, met = None, up = 4, dw = None) %
+		dna(name = ‘fecI’, type = ‘pro1’, prot = 5, free = ‘False’, up = WILD, dw = WILD),
+		Parameter(‘fwd_docking_9_fecI_pro1’, 0),
+		Parameter(‘rvs_docking_9_fecI_pro1’, 0))</p>
+<p>	# [rpoA, rpoA, rpoB, rpoC, rpoE] interacts with BS_rpoD_pro1
+	Rule(‘docking_10_rpoD_pro1’,
+		prot(name = ‘rpoA’, dna = None, met = None, up = None, dw = 1) %
+		prot(name = ‘rpoA’, dna = None, met = None, up = 1, dw = 2) %
+		prot(name = ‘rpoB’, dna = None, met = None, up = 2, dw = 3) %
+		prot(name = ‘rpoC’, dna = None, met = None, up = 3, dw = 4) %
+		prot(name = ‘rpoE’, dna = None, met = None, up = 4, dw = None) +
+		dna(name = ‘rpoD’, type = ‘pro1’, prot = None, free = ‘True’, up = WILD, dw = WILD) |
+		prot(name = ‘rpoA’, dna = None, met = None, up = None, dw = 1) %
+		prot(name = ‘rpoA’, dna = None, met = None, up = 1, dw = 2) %
+		prot(name = ‘rpoB’, dna = None, met = None, up = 2, dw = 3) %
+		prot(name = ‘rpoC’, dna = None, met = None, up = 3, dw = 4) %
+		prot(name = ‘rpoE’, dna = 5, met = None, up = 4, dw = None) %
+		dna(name = ‘rpoD’, type = ‘pro1’, prot = 5, free = ‘False’, up = WILD, dw = WILD),
+		Parameter(‘fwd_docking_10_rpoD_pro1’, 0),
+		Parameter(‘rvs_docking_10_rpoD_pro1’, 0))</p>
+<p>	# [rpoA, rpoA, rpoB, rpoC, rpoE] interacts with BS_rpoE_pro1
+	Rule(‘docking_11_rpoE_pro1’,
+		prot(name = ‘rpoA’, dna = None, met = None, up = None, dw = 1) %
+		prot(name = ‘rpoA’, dna = None, met = None, up = 1, dw = 2) %
+		prot(name = ‘rpoB’, dna = None, met = None, up = 2, dw = 3) %
+		prot(name = ‘rpoC’, dna = None, met = None, up = 3, dw = 4) %
+		prot(name = ‘rpoE’, dna = None, met = None, up = 4, dw = None) +
+		dna(name = ‘rpoE’, type = ‘pro1’, prot = None, free = ‘True’, up = WILD, dw = WILD) |
+		prot(name = ‘rpoA’, dna = None, met = None, up = None, dw = 1) %
+		prot(name = ‘rpoA’, dna = None, met = None, up = 1, dw = 2) %
+		prot(name = ‘rpoB’, dna = None, met = None, up = 2, dw = 3) %
+		prot(name = ‘rpoC’, dna = None, met = None, up = 3, dw = 4) %
+		prot(name = ‘rpoE’, dna = 5, met = None, up = 4, dw = None) %
+		dna(name = ‘rpoE’, type = ‘pro1’, prot = 5, free = ‘False’, up = WILD, dw = WILD),
+		Parameter(‘fwd_docking_11_rpoE_pro1’, 0),
+		Parameter(‘rvs_docking_11_rpoE_pro1’, 0))</p>
+<p>	# [rpoA, rpoA, rpoB, rpoC, rpoE] interacts with BS_rpoH_pro1
+	Rule(‘docking_12_rpoH_pro1’,
+		prot(name = ‘rpoA’, dna = None, met = None, up = None, dw = 1) %
+		prot(name = ‘rpoA’, dna = None, met = None, up = 1, dw = 2) %
+		prot(name = ‘rpoB’, dna = None, met = None, up = 2, dw = 3) %
+		prot(name = ‘rpoC’, dna = None, met = None, up = 3, dw = 4) %
+		prot(name = ‘rpoE’, dna = None, met = None, up = 4, dw = None) +
+		dna(name = ‘rpoH’, type = ‘pro1’, prot = None, free = ‘True’, up = WILD, dw = WILD) |
+		prot(name = ‘rpoA’, dna = None, met = None, up = None, dw = 1) %
+		prot(name = ‘rpoA’, dna = None, met = None, up = 1, dw = 2) %
+		prot(name = ‘rpoB’, dna = None, met = None, up = 2, dw = 3) %
+		prot(name = ‘rpoC’, dna = None, met = None, up = 3, dw = 4) %
+		prot(name = ‘rpoE’, dna = 5, met = None, up = 4, dw = None) %
+		dna(name = ‘rpoH’, type = ‘pro1’, prot = 5, free = ‘False’, up = WILD, dw = WILD),
+		Parameter(‘fwd_docking_12_rpoH_pro1’, 0),
+		Parameter(‘rvs_docking_12_rpoH_pro1’, 0))</p>
+<p>	# [rpoA, rpoA, rpoB, rpoC, rpoE] interacts with BS_rpoN_pro1
+	Rule(‘docking_13_rpoN_pro1’,
+		prot(name = ‘rpoA’, dna = None, met = None, up = None, dw = 1) %
+		prot(name = ‘rpoA’, dna = None, met = None, up = 1, dw = 2) %
+		prot(name = ‘rpoB’, dna = None, met = None, up = 2, dw = 3) %
+		prot(name = ‘rpoC’, dna = None, met = None, up = 3, dw = 4) %
+		prot(name = ‘rpoE’, dna = None, met = None, up = 4, dw = None) +
+		dna(name = ‘rpoN’, type = ‘pro1’, prot = None, free = ‘True’, up = WILD, dw = WILD) |
+		prot(name = ‘rpoA’, dna = None, met = None, up = None, dw = 1) %
+		prot(name = ‘rpoA’, dna = None, met = None, up = 1, dw = 2) %
+		prot(name = ‘rpoB’, dna = None, met = None, up = 2, dw = 3) %
+		prot(name = ‘rpoC’, dna = None, met = None, up = 3, dw = 4) %
+		prot(name = ‘rpoE’, dna = 5, met = None, up = 4, dw = None) %
+		dna(name = ‘rpoN’, type = ‘pro1’, prot = 5, free = ‘False’, up = WILD, dw = WILD),
+		Parameter(‘fwd_docking_13_rpoN_pro1’, 0),
+		Parameter(‘rvs_docking_13_rpoN_pro1’, 0))</p>
+<p>	# [rpoA, rpoA, rpoB, rpoC, rpoH] interacts with BS_rpoA_pro1
+	Rule(‘docking_14_rpoA_pro1’,
+		prot(name = ‘rpoA’, dna = None, met = None, up = None, dw = 1) %
+		prot(name = ‘rpoA’, dna = None, met = None, up = 1, dw = 2) %
+		prot(name = ‘rpoB’, dna = None, met = None, up = 2, dw = 3) %
+		prot(name = ‘rpoC’, dna = None, met = None, up = 3, dw = 4) %
+		prot(name = ‘rpoH’, dna = None, met = None, up = 4, dw = None) +
+		dna(name = ‘rpoA’, type = ‘pro1’, prot = None, free = ‘True’, up = WILD, dw = WILD) |
+		prot(name = ‘rpoA’, dna = None, met = None, up = None, dw = 1) %
+		prot(name = ‘rpoA’, dna = None, met = None, up = 1, dw = 2) %
+		prot(name = ‘rpoB’, dna = None, met = None, up = 2, dw = 3) %
+		prot(name = ‘rpoC’, dna = None, met = None, up = 3, dw = 4) %
+		prot(name = ‘rpoH’, dna = 5, met = None, up = 4, dw = None) %
+		dna(name = ‘rpoA’, type = ‘pro1’, prot = 5, free = ‘False’, up = WILD, dw = WILD),
+		Parameter(‘fwd_docking_14_rpoA_pro1’, 0),
+		Parameter(‘rvs_docking_14_rpoA_pro1’, 0))</p>
+<p>	# [rpoA, rpoA, rpoB, rpoC, rpoH] interacts with BS_rpoD_pro1
+	Rule(‘docking_15_rpoD_pro1’,
+		prot(name = ‘rpoA’, dna = None, met = None, up = None, dw = 1) %
+		prot(name = ‘rpoA’, dna = None, met = None, up = 1, dw = 2) %
+		prot(name = ‘rpoB’, dna = None, met = None, up = 2, dw = 3) %
+		prot(name = ‘rpoC’, dna = None, met = None, up = 3, dw = 4) %
+		prot(name = ‘rpoH’, dna = None, met = None, up = 4, dw = None) +
+		dna(name = ‘rpoD’, type = ‘pro1’, prot = None, free = ‘True’, up = WILD, dw = WILD) |
+		prot(name = ‘rpoA’, dna = None, met = None, up = None, dw = 1) %
+		prot(name = ‘rpoA’, dna = None, met = None, up = 1, dw = 2) %
+		prot(name = ‘rpoB’, dna = None, met = None, up = 2, dw = 3) %
+		prot(name = ‘rpoC’, dna = None, met = None, up = 3, dw = 4) %
+		prot(name = ‘rpoH’, dna = 5, met = None, up = 4, dw = None) %
+		dna(name = ‘rpoD’, type = ‘pro1’, prot = 5, free = ‘False’, up = WILD, dw = WILD),
+		Parameter(‘fwd_docking_15_rpoD_pro1’, 0),
+		Parameter(‘rvs_docking_15_rpoD_pro1’, 0))</p>
+<p>	# [rpoA, rpoA, rpoB, rpoC, rpoN] interacts with BS_rpoA_pro1
+	Rule(‘docking_16_rpoA_pro1’,
+		prot(name = ‘rpoA’, dna = None, met = None, up = None, dw = 1) %
+		prot(name = ‘rpoA’, dna = None, met = None, up = 1, dw = 2) %
+		prot(name = ‘rpoB’, dna = None, met = None, up = 2, dw = 3) %
+		prot(name = ‘rpoC’, dna = None, met = None, up = 3, dw = 4) %
+		prot(name = ‘rpoN’, dna = None, met = None, up = 4, dw = None) +
+		dna(name = ‘rpoA’, type = ‘pro1’, prot = None, free = ‘True’, up = WILD, dw = WILD) |
+		prot(name = ‘rpoA’, dna = None, met = None, up = None, dw = 1) %
+		prot(name = ‘rpoA’, dna = None, met = None, up = 1, dw = 2) %
+		prot(name = ‘rpoB’, dna = None, met = None, up = 2, dw = 3) %
+		prot(name = ‘rpoC’, dna = None, met = None, up = 3, dw = 4) %
+		prot(name = ‘rpoN’, dna = 5, met = None, up = 4, dw = None) %
+		dna(name = ‘rpoA’, type = ‘pro1’, prot = 5, free = ‘False’, up = WILD, dw = WILD),
+		Parameter(‘fwd_docking_16_rpoA_pro1’, 0),
+		Parameter(‘rvs_docking_16_rpoA_pro1’, 0))</p>
+<p>	# [rpoA, rpoA, rpoB, rpoC, rpoN] interacts with BS_rpoD_pro1
+	Rule(‘docking_17_rpoD_pro1’,
+		prot(name = ‘rpoA’, dna = None, met = None, up = None, dw = 1) %
+		prot(name = ‘rpoA’, dna = None, met = None, up = 1, dw = 2) %
+		prot(name = ‘rpoB’, dna = None, met = None, up = 2, dw = 3) %
+		prot(name = ‘rpoC’, dna = None, met = None, up = 3, dw = 4) %
+		prot(name = ‘rpoN’, dna = None, met = None, up = 4, dw = None) +
+		dna(name = ‘rpoD’, type = ‘pro1’, prot = None, free = ‘True’, up = WILD, dw = WILD) |
+		prot(name = ‘rpoA’, dna = None, met = None, up = None, dw = 1) %
+		prot(name = ‘rpoA’, dna = None, met = None, up = 1, dw = 2) %
+		prot(name = ‘rpoB’, dna = None, met = None, up = 2, dw = 3) %
+		prot(name = ‘rpoC’, dna = None, met = None, up = 3, dw = 4) %
+		prot(name = ‘rpoN’, dna = 5, met = None, up = 4, dw = None) %
+		dna(name = ‘rpoD’, type = ‘pro1’, prot = 5, free = ‘False’, up = WILD, dw = WILD),
+		Parameter(‘fwd_docking_17_rpoD_pro1’, 0),
+		Parameter(‘rvs_docking_17_rpoD_pro1’, 0))</p>
+<p>	# [rpoA, rpoA, rpoB, rpoC, rpoN] interacts with BS_rpoH_pro1
+	Rule(‘docking_18_rpoH_pro1’,
+		prot(name = ‘rpoA’, dna = None, met = None, up = None, dw = 1) %
+		prot(name = ‘rpoA’, dna = None, met = None, up = 1, dw = 2) %
+		prot(name = ‘rpoB’, dna = None, met = None, up = 2, dw = 3) %
+		prot(name = ‘rpoC’, dna = None, met = None, up = 3, dw = 4) %
+		prot(name = ‘rpoN’, dna = None, met = None, up = 4, dw = None) +
+		dna(name = ‘rpoH’, type = ‘pro1’, prot = None, free = ‘True’, up = WILD, dw = WILD) |
+		prot(name = ‘rpoA’, dna = None, met = None, up = None, dw = 1) %
+		prot(name = ‘rpoA’, dna = None, met = None, up = 1, dw = 2) %
+		prot(name = ‘rpoB’, dna = None, met = None, up = 2, dw = 3) %
+		prot(name = ‘rpoC’, dna = None, met = None, up = 3, dw = 4) %
+		prot(name = ‘rpoN’, dna = 5, met = None, up = 4, dw = None) %
+		dna(name = ‘rpoH’, type = ‘pro1’, prot = 5, free = ‘False’, up = WILD, dw = WILD),
+		Parameter(‘fwd_docking_18_rpoH_pro1’, 0),
+		Parameter(‘rvs_docking_18_rpoH_pro1’, 0))</p>
+<p>	# [rpoA, rpoA, rpoB, rpoC, rpoS] interacts with BS_fecI_pro1
+	Rule(‘docking_19_fecI_pro1’,
+		prot(name = ‘rpoA’, dna = None, met = None, up = None, dw = 1) %
+		prot(name = ‘rpoA’, dna = None, met = None, up = 1, dw = 2) %
+		prot(name = ‘rpoB’, dna = None, met = None, up = 2, dw = 3) %
+		prot(name = ‘rpoC’, dna = None, met = None, up = 3, dw = 4) %
+		prot(name = ‘rpoS’, dna = None, met = None, up = 4, dw = None) +
+		dna(name = ‘fecI’, type = ‘pro1’, prot = None, free = ‘True’, up = WILD, dw = WILD) |
+		prot(name = ‘rpoA’, dna = None, met = None, up = None, dw = 1) %
+		prot(name = ‘rpoA’, dna = None, met = None, up = 1, dw = 2) %
+		prot(name = ‘rpoB’, dna = None, met = None, up = 2, dw = 3) %
+		prot(name = ‘rpoC’, dna = None, met = None, up = 3, dw = 4) %
+		prot(name = ‘rpoS’, dna = 5, met = None, up = 4, dw = None) %
+		dna(name = ‘fecI’, type = ‘pro1’, prot = 5, free = ‘False’, up = WILD, dw = WILD),
+		Parameter(‘fwd_docking_19_fecI_pro1’, 0),
+		Parameter(‘rvs_docking_19_fecI_pro1’, 0))</p>
+<p>	# [rpoA, rpoA, rpoB, rpoC, rpoS] interacts with BS_rpoA_pro1
+	Rule(‘docking_20_rpoA_pro1’,
+		prot(name = ‘rpoA’, dna = None, met = None, up = None, dw = 1) %
+		prot(name = ‘rpoA’, dna = None, met = None, up = 1, dw = 2) %
+		prot(name = ‘rpoB’, dna = None, met = None, up = 2, dw = 3) %
+		prot(name = ‘rpoC’, dna = None, met = None, up = 3, dw = 4) %
+		prot(name = ‘rpoS’, dna = None, met = None, up = 4, dw = None) +
+		dna(name = ‘rpoA’, type = ‘pro1’, prot = None, free = ‘True’, up = WILD, dw = WILD) |
+		prot(name = ‘rpoA’, dna = None, met = None, up = None, dw = 1) %
+		prot(name = ‘rpoA’, dna = None, met = None, up = 1, dw = 2) %
+		prot(name = ‘rpoB’, dna = None, met = None, up = 2, dw = 3) %
+		prot(name = ‘rpoC’, dna = None, met = None, up = 3, dw = 4) %
+		prot(name = ‘rpoS’, dna = 5, met = None, up = 4, dw = None) %
+		dna(name = ‘rpoA’, type = ‘pro1’, prot = 5, free = ‘False’, up = WILD, dw = WILD),
+		Parameter(‘fwd_docking_20_rpoA_pro1’, 0),
+		Parameter(‘rvs_docking_20_rpoA_pro1’, 0))</p>
+<p>	# [rpoA, rpoA, rpoB, rpoC, rpoS] interacts with BS_rpoB_pro1
+	Rule(‘docking_21_rpoB_pro1’,
+		prot(name = ‘rpoA’, dna = None, met = None, up = None, dw = 1) %
+		prot(name = ‘rpoA’, dna = None, met = None, up = 1, dw = 2) %
+		prot(name = ‘rpoB’, dna = None, met = None, up = 2, dw = 3) %
+		prot(name = ‘rpoC’, dna = None, met = None, up = 3, dw = 4) %
+		prot(name = ‘rpoS’, dna = None, met = None, up = 4, dw = None) +
+		dna(name = ‘rpoB’, type = ‘pro1’, prot = None, free = ‘True’, up = WILD, dw = WILD) |
+		prot(name = ‘rpoA’, dna = None, met = None, up = None, dw = 1) %
+		prot(name = ‘rpoA’, dna = None, met = None, up = 1, dw = 2) %
+		prot(name = ‘rpoB’, dna = None, met = None, up = 2, dw = 3) %
+		prot(name = ‘rpoC’, dna = None, met = None, up = 3, dw = 4) %
+		prot(name = ‘rpoS’, dna = 5, met = None, up = 4, dw = None) %
+		dna(name = ‘rpoB’, type = ‘pro1’, prot = 5, free = ‘False’, up = WILD, dw = WILD),
+		Parameter(‘fwd_docking_21_rpoB_pro1’, 0),
+		Parameter(‘rvs_docking_21_rpoB_pro1’, 0))</p>
+<p>	# [rpoA, rpoA, rpoB, rpoC, rpoS] interacts with BS_rpoD_pro1
+	Rule(‘docking_22_rpoD_pro1’,
+		prot(name = ‘rpoA’, dna = None, met = None, up = None, dw = 1) %
+		prot(name = ‘rpoA’, dna = None, met = None, up = 1, dw = 2) %
+		prot(name = ‘rpoB’, dna = None, met = None, up = 2, dw = 3) %
+		prot(name = ‘rpoC’, dna = None, met = None, up = 3, dw = 4) %
+		prot(name = ‘rpoS’, dna = None, met = None, up = 4, dw = None) +
+		dna(name = ‘rpoD’, type = ‘pro1’, prot = None, free = ‘True’, up = WILD, dw = WILD) |
+		prot(name = ‘rpoA’, dna = None, met = None, up = None, dw = 1) %
+		prot(name = ‘rpoA’, dna = None, met = None, up = 1, dw = 2) %
+		prot(name = ‘rpoB’, dna = None, met = None, up = 2, dw = 3) %
+		prot(name = ‘rpoC’, dna = None, met = None, up = 3, dw = 4) %
+		prot(name = ‘rpoS’, dna = 5, met = None, up = 4, dw = None) %
+		dna(name = ‘rpoD’, type = ‘pro1’, prot = 5, free = ‘False’, up = WILD, dw = WILD),
+		Parameter(‘fwd_docking_22_rpoD_pro1’, 0),
+		Parameter(‘rvs_docking_22_rpoD_pro1’, 0))</p>
+<p>	# [rpoA, rpoA, rpoB, rpoC, rpoS] interacts with BS_rpoE_pro1
+	Rule(‘docking_23_rpoE_pro1’,
+		prot(name = ‘rpoA’, dna = None, met = None, up = None, dw = 1) %
+		prot(name = ‘rpoA’, dna = None, met = None, up = 1, dw = 2) %
+		prot(name = ‘rpoB’, dna = None, met = None, up = 2, dw = 3) %
+		prot(name = ‘rpoC’, dna = None, met = None, up = 3, dw = 4) %
+		prot(name = ‘rpoS’, dna = None, met = None, up = 4, dw = None) +
+		dna(name = ‘rpoE’, type = ‘pro1’, prot = None, free = ‘True’, up = WILD, dw = WILD) |
+		prot(name = ‘rpoA’, dna = None, met = None, up = None, dw = 1) %
+		prot(name = ‘rpoA’, dna = None, met = None, up = 1, dw = 2) %
+		prot(name = ‘rpoB’, dna = None, met = None, up = 2, dw = 3) %
+		prot(name = ‘rpoC’, dna = None, met = None, up = 3, dw = 4) %
+		prot(name = ‘rpoS’, dna = 5, met = None, up = 4, dw = None) %
+		dna(name = ‘rpoE’, type = ‘pro1’, prot = 5, free = ‘False’, up = WILD, dw = WILD),
+		Parameter(‘fwd_docking_23_rpoE_pro1’, 0),
+		Parameter(‘rvs_docking_23_rpoE_pro1’, 0))</p>
+<p>	# [rpoA, rpoA, rpoB, rpoC, rpoS] interacts with BS_rpoH_pro1
+	Rule(‘docking_24_rpoH_pro1’,
+		prot(name = ‘rpoA’, dna = None, met = None, up = None, dw = 1) %
+		prot(name = ‘rpoA’, dna = None, met = None, up = 1, dw = 2) %
+		prot(name = ‘rpoB’, dna = None, met = None, up = 2, dw = 3) %
+		prot(name = ‘rpoC’, dna = None, met = None, up = 3, dw = 4) %
+		prot(name = ‘rpoS’, dna = None, met = None, up = 4, dw = None) +
+		dna(name = ‘rpoH’, type = ‘pro1’, prot = None, free = ‘True’, up = WILD, dw = WILD) |
+		prot(name = ‘rpoA’, dna = None, met = None, up = None, dw = 1) %
+		prot(name = ‘rpoA’, dna = None, met = None, up = 1, dw = 2) %
+		prot(name = ‘rpoB’, dna = None, met = None, up = 2, dw = 3) %
+		prot(name = ‘rpoC’, dna = None, met = None, up = 3, dw = 4) %
+		prot(name = ‘rpoS’, dna = 5, met = None, up = 4, dw = None) %
+		dna(name = ‘rpoH’, type = ‘pro1’, prot = 5, free = ‘False’, up = WILD, dw = WILD),
+		Parameter(‘fwd_docking_24_rpoH_pro1’, 0),
+		Parameter(‘rvs_docking_24_rpoH_pro1’, 0))</p>
+<p>	# [rpoA, rpoA, rpoB, rpoC, rpoS] interacts with BS_rpoN_pro1
+	Rule(‘docking_25_rpoN_pro1’,
+		prot(name = ‘rpoA’, dna = None, met = None, up = None, dw = 1) %
+		prot(name = ‘rpoA’, dna = None, met = None, up = 1, dw = 2) %
+		prot(name = ‘rpoB’, dna = None, met = None, up = 2, dw = 3) %
+		prot(name = ‘rpoC’, dna = None, met = None, up = 3, dw = 4) %
+		prot(name = ‘rpoS’, dna = None, met = None, up = 4, dw = None) +
+		dna(name = ‘rpoN’, type = ‘pro1’, prot = None, free = ‘True’, up = WILD, dw = WILD) |
+		prot(name = ‘rpoA’, dna = None, met = None, up = None, dw = 1) %
+		prot(name = ‘rpoA’, dna = None, met = None, up = 1, dw = 2) %
+		prot(name = ‘rpoB’, dna = None, met = None, up = 2, dw = 3) %
+		prot(name = ‘rpoC’, dna = None, met = None, up = 3, dw = 4) %
+		prot(name = ‘rpoS’, dna = 5, met = None, up = 4, dw = None) %
+		dna(name = ‘rpoN’, type = ‘pro1’, prot = 5, free = ‘False’, up = WILD, dw = WILD),
+		Parameter(‘fwd_docking_25_rpoN_pro1’, 0),
+		Parameter(‘rvs_docking_25_rpoN_pro1’, 0))</p>
+<p>	# [rpoA, rpoA, rpoB, rpoC, fliA] interacts with BS_rpoD_pro1
+	Rule(‘docking_26_rpoD_pro1’,
+		prot(name = ‘rpoA’, dna = None, met = None, up = None, dw = 1) %
+		prot(name = ‘rpoA’, dna = None, met = None, up = 1, dw = 2) %
+		prot(name = ‘rpoB’, dna = None, met = None, up = 2, dw = 3) %
+		prot(name = ‘rpoC’, dna = None, met = None, up = 3, dw = 4) %
+		prot(name = ‘fliA’, dna = None, met = None, up = 4, dw = None) +
+		dna(name = ‘rpoD’, type = ‘pro1’, prot = None, free = ‘True’, up = WILD, dw = WILD) |
+		prot(name = ‘rpoA’, dna = None, met = None, up = None, dw = 1) %
+		prot(name = ‘rpoA’, dna = None, met = None, up = 1, dw = 2) %
+		prot(name = ‘rpoB’, dna = None, met = None, up = 2, dw = 3) %
+		prot(name = ‘rpoC’, dna = None, met = None, up = 3, dw = 4) %
+		prot(name = ‘fliA’, dna = 5, met = None, up = 4, dw = None) %
+		dna(name = ‘rpoD’, type = ‘pro1’, prot = 5, free = ‘False’, up = WILD, dw = WILD),
+		Parameter(‘fwd_docking_26_rpoD_pro1’, 0),
+		Parameter(‘rvs_docking_26_rpoD_pro1’, 0))</p>
+<p>	# [rpoA, rpoA, rpoB, rpoC, fliA] interacts with BS_rpoN_pro1
+	Rule(‘docking_27_rpoN_pro1’,
+		prot(name = ‘rpoA’, dna = None, met = None, up = None, dw = 1) %
+		prot(name = ‘rpoA’, dna = None, met = None, up = 1, dw = 2) %
+		prot(name = ‘rpoB’, dna = None, met = None, up = 2, dw = 3) %
+		prot(name = ‘rpoC’, dna = None, met = None, up = 3, dw = 4) %
+		prot(name = ‘fliA’, dna = None, met = None, up = 4, dw = None) +
+		dna(name = ‘rpoN’, type = ‘pro1’, prot = None, free = ‘True’, up = WILD, dw = WILD) |
+		prot(name = ‘rpoA’, dna = None, met = None, up = None, dw = 1) %
+		prot(name = ‘rpoA’, dna = None, met = None, up = 1, dw = 2) %
+		prot(name = ‘rpoB’, dna = None, met = None, up = 2, dw = 3) %
+		prot(name = ‘rpoC’, dna = None, met = None, up = 3, dw = 4) %
+		prot(name = ‘fliA’, dna = 5, met = None, up = 4, dw = None) %
+		dna(name = ‘rpoN’, type = ‘pro1’, prot = 5, free = ‘False’, up = WILD, dw = WILD),
+		Parameter(‘fwd_docking_27_rpoN_pro1’, 0),
+		Parameter(‘rvs_docking_27_rpoN_pro1’, 0))</p>
+<p>	# [rpoA, rpoA, rpoB, rpoC, fliA] interacts with BS_fliA_pro1
+	Rule(‘docking_28_fliA_pro1’,
+		prot(name = ‘rpoA’, dna = None, met = None, up = None, dw = 1) %
+		prot(name = ‘rpoA’, dna = None, met = None, up = 1, dw = 2) %
+		prot(name = ‘rpoB’, dna = None, met = None, up = 2, dw = 3) %
+		prot(name = ‘rpoC’, dna = None, met = None, up = 3, dw = 4) %
+		prot(name = ‘fliA’, dna = None, met = None, up = 4, dw = None) +
+		dna(name = ‘fliA’, type = ‘pro1’, prot = None, free = ‘True’, up = WILD, dw = WILD) |
+		prot(name = ‘rpoA’, dna = None, met = None, up = None, dw = 1) %
+		prot(name = ‘rpoA’, dna = None, met = None, up = 1, dw = 2) %
+		prot(name = ‘rpoB’, dna = None, met = None, up = 2, dw = 3) %
+		prot(name = ‘rpoC’, dna = None, met = None, up = 3, dw = 4) %
+		prot(name = ‘fliA’, dna = 5, met = None, up = 4, dw = None) %
+		dna(name = ‘fliA’, type = ‘pro1’, prot = 5, free = ‘False’, up = WILD, dw = WILD),
+		Parameter(‘fwd_docking_28_fliA_pro1’, 0),
+		Parameter(‘rvs_docking_28_fliA_pro1’, 0))</p>
+<p>	<strong>Reversibility of reactions</strong>. Atlas writes dead <em>Rules</em> for each
+	reaction declared in the network file. The <code class="docutils literal notranslate"><span class="pre">Parameter('fwd_ReactionName',</span> <span class="pre">0))</span></code>
+	must be set to non-zero to activate the rule and <code class="docutils literal notranslate"><span class="pre">Parameter('rvs_ReactionName',</span> <span class="pre">0))</span></code>
+	must be set to non-zero to define a reversible reaction.</p>
+<p>	<strong>Simulation</strong>. The model can be simulated only with the instantiation of
+	<code class="docutils literal notranslate"><span class="pre">Monomers</span></code> and <code class="docutils literal notranslate"><span class="pre">Initials</span></code> (<a class="reference external" href="https://pysb.readthedocs.io/en/stable/tutorial.html#introduction">More here</a>).
+	Run <em>Monomer+Initials+Observables from metabolic network.ipynb</em> to obtain
+	automatically the necessary <code class="docutils literal notranslate"><span class="pre">Monomers</span></code> and <code class="docutils literal notranslate"><span class="pre">Initials</span></code> (including
+	proteins and enzymatic complexes).</p>
+<p>	<strong>Plotting</strong>. The model can be observed only with the instantation of
+	<code class="docutils literal notranslate"><span class="pre">Observables</span></code> (<a class="reference external" href="https://pysb.readthedocs.io/en/stable/tutorial.html#simulation-and-analysis">More here</a>).
+	Run <em>Monomer+Initials+Observables from metabolic network.ipynb</em> to obtain
+	automatically the all possible <code class="docutils literal notranslate"><span class="pre">Observables</span></code> for metabolites.</p>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="NetGenomeGraphs.html" class="btn btn-neutral float-right" title="Genome Graphs" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="NetTFsDNABindingSites.html" class="btn btn-neutral float-left" title="Transcription Factor-DNA Binding Site Interaction Networks" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, Rodrigo Santibáñez
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

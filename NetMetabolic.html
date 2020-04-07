@@ -1,0 +1,690 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Metabolic Networks &mdash; atlas  documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Protein-Protein Interaction Networks" href="NetProteinProtein.html" />
+    <link rel="prev" title="Modeling" href="Modeling.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> atlas
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="Installation.html">Installation</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="Modeling.html">Modeling</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Metabolic Networks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="NetProteinProtein.html">Protein-Protein Interaction Networks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="NetProteinSmallCompounds.html">Protein-Small compounds Interaction Networks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="NetTFsDNABindingSites.html">Transcription Factor-DNA Binding Site Interaction Networks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="NetSFsPromoters.html">Sigma Factor-Promoter Interaction Networks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="NetGenomeGraphs.html">Genome Graphs</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Simulation.html">Simulation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Plotting.html">Plotting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Export_to.html">Export to</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">atlas</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="Modeling.html">Modeling</a> &raquo;</li>
+        
+      <li>Metabolic Networks</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/NetMetabolic.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="metabolic-networks">
+<span id="net-metabolic"></span><h1>Metabolic Networks<a class="headerlink" href="#metabolic-networks" title="Permalink to this headline">¶</a></h1>
+<p>Metabolic networks have four columns. The first declares a unique name for the
+enzyme or enzymatic complex; the second declares a unique name for the reaction;
+the third column lists using comma unique names for substrates; and the last row
+list using comma unique names for products. To declare metabolites located at
+the periplasm or extracellular compartments, the user should employ the prefix
+“PER-” and “EX-”, respectively. Use <em>spontaneous</em> for non-enzymatic reactions.</p>
+<p>Examples:</p>
+<div class="highlight-default notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">GENE</span>	<span class="n">REACTION</span>	<span class="n">SUBSTRATES</span>	<span class="n">PRODUCTS</span>
+<span class="n">spontaneous</span>	<span class="n">LACTOSE</span><span class="o">-</span><span class="n">MUTAROTATION</span>	<span class="n">alpha</span><span class="o">-</span><span class="n">lactose</span>	<span class="n">beta</span><span class="o">-</span><span class="n">lactose</span>
+<span class="n">spontaneous</span>	<span class="n">GALACTOSE</span><span class="o">-</span><span class="n">MUTAROTATION</span>	<span class="n">alpha</span><span class="o">-</span><span class="n">GALACTOSE</span>	<span class="n">beta</span><span class="o">-</span><span class="n">GALACTOSE</span>
+<span class="n">spontaneous</span>	<span class="n">GLUCOSE</span><span class="o">-</span><span class="n">MUTAROTATION</span>	<span class="n">alpha</span><span class="o">-</span><span class="n">glucose</span>	<span class="n">beta</span><span class="o">-</span><span class="n">glucose</span>
+<span class="n">LACY</span><span class="o">-</span><span class="n">MONOMER</span>	<span class="n">TRANS</span><span class="o">-</span><span class="n">RXN</span><span class="o">-</span><span class="mi">24</span>	<span class="n">PER</span><span class="o">-</span><span class="n">PROTON</span><span class="p">,</span> <span class="n">PER</span><span class="o">-</span><span class="n">alpha</span><span class="o">-</span><span class="n">lactose</span>	<span class="n">PROTON</span><span class="p">,</span> <span class="n">alpha</span><span class="o">-</span><span class="n">lactose</span>
+<span class="n">LACY</span><span class="o">-</span><span class="n">MONOMER</span>	<span class="n">TRANS</span><span class="o">-</span><span class="n">RXN</span><span class="o">-</span><span class="mi">24</span><span class="o">-</span><span class="n">beta</span>	<span class="n">PER</span><span class="o">-</span><span class="n">PROTON</span><span class="p">,</span> <span class="n">PER</span><span class="o">-</span><span class="n">beta</span><span class="o">-</span><span class="n">lactose</span>	<span class="n">PROTON</span><span class="p">,</span> <span class="n">beta</span><span class="o">-</span><span class="n">lactose</span>
+<span class="n">LACY</span><span class="o">-</span><span class="n">MONOMER</span>	<span class="n">TRANS</span><span class="o">-</span><span class="n">RXN</span><span class="o">-</span><span class="mi">94</span>	<span class="n">PER</span><span class="o">-</span><span class="n">PROTON</span><span class="p">,</span> <span class="n">PER</span><span class="o">-</span><span class="n">MELIBIOSE</span>	<span class="n">PROTON</span><span class="p">,</span> <span class="n">MELIBIOSE</span>
+<span class="n">LACY</span><span class="o">-</span><span class="n">MONOMER</span>	<span class="n">RXN0</span><span class="o">-</span><span class="mi">7215</span>	<span class="n">PER</span><span class="o">-</span><span class="n">PROTON</span><span class="p">,</span> <span class="n">PER</span><span class="o">-</span><span class="n">CPD</span><span class="o">-</span><span class="mi">3561</span>	<span class="n">PROTON</span><span class="p">,</span> <span class="n">CPD</span><span class="o">-</span><span class="mi">3561</span>
+<span class="n">LACY</span><span class="o">-</span><span class="n">MONOMER</span>	<span class="n">RXN0</span><span class="o">-</span><span class="mi">7217</span>	<span class="n">PER</span><span class="o">-</span><span class="n">PROTON</span><span class="p">,</span> <span class="n">PER</span><span class="o">-</span><span class="n">CPD</span><span class="o">-</span><span class="mi">3785</span>	<span class="n">PROTON</span><span class="p">,</span> <span class="n">CPD</span><span class="o">-</span><span class="mi">3785</span>
+<span class="n">LACY</span><span class="o">-</span><span class="n">MONOMER</span>	<span class="n">RXN</span><span class="o">-</span><span class="mi">17755</span>	<span class="n">PER</span><span class="o">-</span><span class="n">PROTON</span><span class="p">,</span> <span class="n">PER</span><span class="o">-</span><span class="n">CPD</span><span class="o">-</span><span class="mi">3801</span>	<span class="n">PROTON</span><span class="p">,</span> <span class="n">CPD</span><span class="o">-</span><span class="mi">3801</span>
+<span class="n">BETAGALACTOSID</span><span class="o">-</span><span class="n">CPLX</span>	<span class="n">BETAGALACTOSID</span><span class="o">-</span><span class="n">RXN</span>	<span class="n">beta</span><span class="o">-</span><span class="n">lactose</span><span class="p">,</span> <span class="n">WATER</span>	<span class="n">beta</span><span class="o">-</span><span class="n">GALACTOSE</span><span class="p">,</span> <span class="n">beta</span><span class="o">-</span><span class="n">glucose</span>
+<span class="n">BETAGALACTOSID</span><span class="o">-</span><span class="n">CPLX</span>	<span class="n">BETAGALACTOSID</span><span class="o">-</span><span class="n">RXN</span><span class="o">-</span><span class="n">alpha</span>	<span class="n">alpha</span><span class="o">-</span><span class="n">lactose</span><span class="p">,</span> <span class="n">WATER</span>	<span class="n">alpha</span><span class="o">-</span><span class="n">GALACTOSE</span><span class="p">,</span> <span class="n">alpha</span><span class="o">-</span><span class="n">glucose</span>
+<span class="n">BETAGALACTOSID</span><span class="o">-</span><span class="n">CPLX</span>	<span class="n">RXN0</span><span class="o">-</span><span class="mi">5363</span>	<span class="n">alpha</span><span class="o">-</span><span class="n">lactose</span>	<span class="n">alpha</span><span class="o">-</span><span class="n">ALLOLACTOSE</span>
+<span class="n">BETAGALACTOSID</span><span class="o">-</span><span class="n">CPLX</span>	<span class="n">RXN0</span><span class="o">-</span><span class="mi">5363</span><span class="o">-</span><span class="n">beta</span>	<span class="n">beta</span><span class="o">-</span><span class="n">lactose</span>	<span class="n">beta</span><span class="o">-</span><span class="n">ALLOLACTOSE</span>
+<span class="n">BETAGALACTOSID</span><span class="o">-</span><span class="n">CPLX</span>	<span class="n">ALLOLACTOSE</span><span class="o">-</span><span class="n">DEG</span><span class="o">-</span><span class="n">alpha</span>	<span class="n">alpha</span><span class="o">-</span><span class="n">ALLOLACTOSE</span>	<span class="n">alpha</span><span class="o">-</span><span class="n">GALACTOSE</span><span class="p">,</span> <span class="n">alpha</span><span class="o">-</span><span class="n">glucose</span>
+<span class="n">BETAGALACTOSID</span><span class="o">-</span><span class="n">CPLX</span>	<span class="n">ALLOLACTOSE</span><span class="o">-</span><span class="n">DEG</span><span class="o">-</span><span class="n">beta</span>	<span class="n">beta</span><span class="o">-</span><span class="n">ALLOLACTOSE</span>	<span class="n">beta</span><span class="o">-</span><span class="n">GALACTOSE</span><span class="p">,</span> <span class="n">beta</span><span class="o">-</span><span class="n">glucose</span>
+<span class="n">BETAGALACTOSID</span><span class="o">-</span><span class="n">CPLX</span>	<span class="n">RXN</span><span class="o">-</span><span class="mi">17726</span>	<span class="n">CPD</span><span class="o">-</span><span class="mi">3561</span><span class="p">,</span> <span class="n">WATER</span>	<span class="n">beta</span><span class="o">-</span><span class="n">GALACTOSE</span><span class="p">,</span> <span class="n">Fructofuranose</span>
+<span class="n">BETAGALACTOSID</span><span class="o">-</span><span class="n">CPLX</span>	<span class="n">RXN0</span><span class="o">-</span><span class="mi">7219</span>	<span class="n">CPD</span><span class="o">-</span><span class="mi">3785</span><span class="p">,</span> <span class="n">WATER</span>	<span class="n">beta</span><span class="o">-</span><span class="n">GALACTOSE</span><span class="p">,</span> <span class="n">D</span><span class="o">-</span><span class="n">ARABINOSE</span>
+<span class="n">GALACTOACETYLTRAN</span><span class="o">-</span><span class="n">CPLX</span>	<span class="n">GALACTOACETYLTRAN</span><span class="o">-</span><span class="n">RXN</span><span class="o">-</span><span class="n">galactose</span>	<span class="n">beta</span><span class="o">-</span><span class="n">GALACTOSE</span><span class="p">,</span> <span class="n">ACETYL</span><span class="o">-</span><span class="n">COA</span>	<span class="mi">6</span><span class="o">-</span><span class="n">Acetyl</span><span class="o">-</span><span class="n">beta</span><span class="o">-</span><span class="n">D</span><span class="o">-</span><span class="n">Galactose</span><span class="p">,</span> <span class="n">CO</span><span class="o">-</span><span class="n">A</span>
+</pre></div>
+</td></tr></table></div>
+<p><em>OR</em></p>
+<div class="highlight-default notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">GENE</span>	<span class="n">REACTION</span>	<span class="n">SUBSTRATES</span>	<span class="n">PRODUCTS</span>
+<span class="n">spontaneous</span>	<span class="n">LACTOSE</span><span class="o">-</span><span class="n">MUTAROTATION</span>	<span class="n">alpha</span><span class="o">-</span><span class="n">lactose</span>	<span class="n">beta</span><span class="o">-</span><span class="n">lactose</span>
+<span class="n">spontaneous</span>	<span class="n">GALACTOSE</span><span class="o">-</span><span class="n">MUTAROTATION</span>	<span class="n">alpha</span><span class="o">-</span><span class="n">GALACTOSE</span>	<span class="n">beta</span><span class="o">-</span><span class="n">GALACTOSE</span>
+<span class="n">spontaneous</span>	<span class="n">GLUCOSE</span><span class="o">-</span><span class="n">MUTAROTATION</span>	<span class="n">alpha</span><span class="o">-</span><span class="n">glucose</span>	<span class="n">beta</span><span class="o">-</span><span class="n">glucose</span>
+<span class="n">lacY</span>	<span class="n">TRANS</span><span class="o">-</span><span class="n">RXN</span><span class="o">-</span><span class="mi">24</span>	<span class="n">PER</span><span class="o">-</span><span class="n">PROTON</span><span class="p">,</span> <span class="n">PER</span><span class="o">-</span><span class="n">alpha</span><span class="o">-</span><span class="n">lactose</span>	<span class="n">PROTON</span><span class="p">,</span> <span class="n">alpha</span><span class="o">-</span><span class="n">lactose</span>
+<span class="n">lacY</span>	<span class="n">TRANS</span><span class="o">-</span><span class="n">RXN</span><span class="o">-</span><span class="mi">24</span><span class="o">-</span><span class="n">beta</span>	<span class="n">PER</span><span class="o">-</span><span class="n">PROTON</span><span class="p">,</span> <span class="n">PER</span><span class="o">-</span><span class="n">beta</span><span class="o">-</span><span class="n">lactose</span>	<span class="n">PROTON</span><span class="p">,</span> <span class="n">beta</span><span class="o">-</span><span class="n">lactose</span>
+<span class="n">lacY</span>	<span class="n">TRANS</span><span class="o">-</span><span class="n">RXN</span><span class="o">-</span><span class="mi">94</span>	<span class="n">PER</span><span class="o">-</span><span class="n">PROTON</span><span class="p">,</span> <span class="n">PER</span><span class="o">-</span><span class="n">MELIBIOSE</span>	<span class="n">PROTON</span><span class="p">,</span> <span class="n">MELIBIOSE</span>
+<span class="n">lacY</span>	<span class="n">RXN0</span><span class="o">-</span><span class="mi">7215</span>	<span class="n">PER</span><span class="o">-</span><span class="n">PROTON</span><span class="p">,</span> <span class="n">PER</span><span class="o">-</span><span class="n">CPD</span><span class="o">-</span><span class="mi">3561</span>	<span class="n">PROTON</span><span class="p">,</span> <span class="n">CPD</span><span class="o">-</span><span class="mi">3561</span>
+<span class="n">lacY</span>	<span class="n">RXN0</span><span class="o">-</span><span class="mi">7217</span>	<span class="n">PER</span><span class="o">-</span><span class="n">PROTON</span><span class="p">,</span> <span class="n">PER</span><span class="o">-</span><span class="n">CPD</span><span class="o">-</span><span class="mi">3785</span>	<span class="n">PROTON</span><span class="p">,</span> <span class="n">CPD</span><span class="o">-</span><span class="mi">3785</span>
+<span class="n">lacY</span>	<span class="n">RXN</span><span class="o">-</span><span class="mi">17755</span>	<span class="n">PER</span><span class="o">-</span><span class="n">PROTON</span><span class="p">,</span> <span class="n">PER</span><span class="o">-</span><span class="n">CPD</span><span class="o">-</span><span class="mi">3801</span>	<span class="n">PROTON</span><span class="p">,</span> <span class="n">CPD</span><span class="o">-</span><span class="mi">3801</span>
+<span class="n">lacZ</span>	<span class="n">BETAGALACTOSID</span><span class="o">-</span><span class="n">RXN</span>	<span class="n">beta</span><span class="o">-</span><span class="n">lactose</span><span class="p">,</span> <span class="n">WATER</span>	<span class="n">beta</span><span class="o">-</span><span class="n">GALACTOSE</span><span class="p">,</span> <span class="n">beta</span><span class="o">-</span><span class="n">glucose</span>
+<span class="n">lacZ</span>	<span class="n">BETAGALACTOSID</span><span class="o">-</span><span class="n">RXN</span><span class="o">-</span><span class="n">alpha</span>	<span class="n">alpha</span><span class="o">-</span><span class="n">lactose</span><span class="p">,</span> <span class="n">WATER</span>	<span class="n">alpha</span><span class="o">-</span><span class="n">GALACTOSE</span><span class="p">,</span> <span class="n">alpha</span><span class="o">-</span><span class="n">glucose</span>
+<span class="n">lacZ</span>	<span class="n">RXN0</span><span class="o">-</span><span class="mi">5363</span>	<span class="n">alpha</span><span class="o">-</span><span class="n">lactose</span>	<span class="n">alpha</span><span class="o">-</span><span class="n">ALLOLACTOSE</span>
+<span class="n">lacZ</span>	<span class="n">RXN0</span><span class="o">-</span><span class="mi">5363</span><span class="o">-</span><span class="n">beta</span>	<span class="n">beta</span><span class="o">-</span><span class="n">lactose</span>	<span class="n">beta</span><span class="o">-</span><span class="n">ALLOLACTOSE</span>
+<span class="n">lacZ</span>	<span class="n">ALLOLACTOSE</span><span class="o">-</span><span class="n">DEG</span><span class="o">-</span><span class="n">alpha</span>	<span class="n">alpha</span><span class="o">-</span><span class="n">ALLOLACTOSE</span><span class="p">,</span> <span class="n">WATER</span>	<span class="n">alpha</span><span class="o">-</span><span class="n">GALACTOSE</span><span class="p">,</span> <span class="n">alpha</span><span class="o">-</span><span class="n">glucose</span>
+<span class="n">lacZ</span>	<span class="n">ALLOLACTOSE</span><span class="o">-</span><span class="n">DEG</span><span class="o">-</span><span class="n">beta</span>	<span class="n">beta</span><span class="o">-</span><span class="n">ALLOLACTOSE</span><span class="p">,</span> <span class="n">WATER</span>	<span class="n">beta</span><span class="o">-</span><span class="n">GALACTOSE</span><span class="p">,</span> <span class="n">beta</span><span class="o">-</span><span class="n">glucose</span>
+<span class="n">lacZ</span>	<span class="n">RXN</span><span class="o">-</span><span class="mi">17726</span>	<span class="n">CPD</span><span class="o">-</span><span class="mi">3561</span><span class="p">,</span> <span class="n">WATER</span>	<span class="n">beta</span><span class="o">-</span><span class="n">GALACTOSE</span><span class="p">,</span> <span class="n">Fructofuranose</span>
+<span class="n">lacZ</span>	<span class="n">RXN0</span><span class="o">-</span><span class="mi">7219</span>	<span class="n">CPD</span><span class="o">-</span><span class="mi">3785</span><span class="p">,</span> <span class="n">WATER</span>	<span class="n">beta</span><span class="o">-</span><span class="n">GALACTOSE</span><span class="p">,</span> <span class="n">D</span><span class="o">-</span><span class="n">ARABINOSE</span>
+<span class="n">lacA</span>	<span class="n">GALACTOACETYLTRAN</span><span class="o">-</span><span class="n">RXN</span><span class="o">-</span><span class="n">galactose</span>	<span class="n">beta</span><span class="o">-</span><span class="n">GALACTOSE</span><span class="p">,</span> <span class="n">ACETYL</span><span class="o">-</span><span class="n">COA</span>	<span class="mi">6</span><span class="o">-</span><span class="n">Acetyl</span><span class="o">-</span><span class="n">beta</span><span class="o">-</span><span class="n">D</span><span class="o">-</span><span class="n">Galactose</span><span class="p">,</span> <span class="n">CO</span><span class="o">-</span><span class="n">A</span>
+</pre></div>
+</td></tr></table></div>
+<p><em>OR</em></p>
+<div class="highlight-default notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">GENE</span>	<span class="n">REACTION</span>	<span class="n">SUBSTRATES</span>	<span class="n">PRODUCTS</span>
+<span class="n">spontaneous</span>	<span class="n">LACTOSE</span><span class="o">-</span><span class="n">MUTAROTATION</span>	<span class="n">alpha</span><span class="o">-</span><span class="n">lactose</span>	<span class="n">beta</span><span class="o">-</span><span class="n">lactose</span>
+<span class="n">spontaneous</span>	<span class="n">GALACTOSE</span><span class="o">-</span><span class="n">MUTAROTATION</span>	<span class="n">alpha</span><span class="o">-</span><span class="n">GALACTOSE</span>	<span class="n">beta</span><span class="o">-</span><span class="n">GALACTOSE</span>
+<span class="n">spontaneous</span>	<span class="n">GLUCOSE</span><span class="o">-</span><span class="n">MUTAROTATION</span>	<span class="n">alpha</span><span class="o">-</span><span class="n">glucose</span>	<span class="n">beta</span><span class="o">-</span><span class="n">glucose</span>
+<span class="n">lacY</span>	<span class="n">TRANS</span><span class="o">-</span><span class="n">RXN</span><span class="o">-</span><span class="mi">24</span>	<span class="n">PER</span><span class="o">-</span><span class="n">PROTON</span><span class="p">,</span> <span class="n">PER</span><span class="o">-</span><span class="n">alpha</span><span class="o">-</span><span class="n">lactose</span>	<span class="n">PROTON</span><span class="p">,</span> <span class="n">alpha</span><span class="o">-</span><span class="n">lactose</span>
+<span class="n">lacY</span>	<span class="n">TRANS</span><span class="o">-</span><span class="n">RXN</span><span class="o">-</span><span class="mi">24</span><span class="o">-</span><span class="n">beta</span>	<span class="n">PER</span><span class="o">-</span><span class="n">PROTON</span><span class="p">,</span> <span class="n">PER</span><span class="o">-</span><span class="n">beta</span><span class="o">-</span><span class="n">lactose</span>	<span class="n">PROTON</span><span class="p">,</span> <span class="n">beta</span><span class="o">-</span><span class="n">lactose</span>
+<span class="n">lacY</span>	<span class="n">TRANS</span><span class="o">-</span><span class="n">RXN</span><span class="o">-</span><span class="mi">94</span>	<span class="n">PER</span><span class="o">-</span><span class="n">PROTON</span><span class="p">,</span> <span class="n">PER</span><span class="o">-</span><span class="n">MELIBIOSE</span>	<span class="n">PROTON</span><span class="p">,</span> <span class="n">MELIBIOSE</span>
+<span class="n">lacY</span>	<span class="n">RXN0</span><span class="o">-</span><span class="mi">7215</span>	<span class="n">PER</span><span class="o">-</span><span class="n">PROTON</span><span class="p">,</span> <span class="n">PER</span><span class="o">-</span><span class="n">CPD</span><span class="o">-</span><span class="mi">3561</span>	<span class="n">PROTON</span><span class="p">,</span> <span class="n">CPD</span><span class="o">-</span><span class="mi">3561</span>
+<span class="n">lacY</span>	<span class="n">RXN0</span><span class="o">-</span><span class="mi">7217</span>	<span class="n">PER</span><span class="o">-</span><span class="n">PROTON</span><span class="p">,</span> <span class="n">PER</span><span class="o">-</span><span class="n">CPD</span><span class="o">-</span><span class="mi">3785</span>	<span class="n">PROTON</span><span class="p">,</span> <span class="n">CPD</span><span class="o">-</span><span class="mi">3785</span>
+<span class="n">lacY</span>	<span class="n">RXN</span><span class="o">-</span><span class="mi">17755</span>	<span class="n">PER</span><span class="o">-</span><span class="n">PROTON</span><span class="p">,</span> <span class="n">PER</span><span class="o">-</span><span class="n">CPD</span><span class="o">-</span><span class="mi">3801</span>	<span class="n">PROTON</span><span class="p">,</span> <span class="n">CPD</span><span class="o">-</span><span class="mi">3801</span>
+<span class="p">[</span><span class="n">lacZ</span><span class="p">,</span><span class="n">lacZ</span><span class="p">,</span><span class="n">lacZ</span><span class="p">,</span><span class="n">lacZ</span><span class="p">]</span>	<span class="n">BETAGALACTOSID</span><span class="o">-</span><span class="n">RXN</span>	<span class="n">beta</span><span class="o">-</span><span class="n">lactose</span><span class="p">,</span> <span class="n">WATER</span>	<span class="n">beta</span><span class="o">-</span><span class="n">GALACTOSE</span><span class="p">,</span> <span class="n">beta</span><span class="o">-</span><span class="n">glucose</span>
+<span class="p">[</span><span class="n">lacZ</span><span class="p">,</span><span class="n">lacZ</span><span class="p">,</span><span class="n">lacZ</span><span class="p">,</span><span class="n">lacZ</span><span class="p">]</span>	<span class="n">BETAGALACTOSID</span><span class="o">-</span><span class="n">RXN</span><span class="o">-</span><span class="n">alpha</span>	<span class="n">alpha</span><span class="o">-</span><span class="n">lactose</span><span class="p">,</span> <span class="n">WATER</span>	<span class="n">alpha</span><span class="o">-</span><span class="n">GALACTOSE</span><span class="p">,</span> <span class="n">alpha</span><span class="o">-</span><span class="n">glucose</span>
+<span class="p">[</span><span class="n">lacZ</span><span class="p">,</span><span class="n">lacZ</span><span class="p">,</span><span class="n">lacZ</span><span class="p">,</span><span class="n">lacZ</span><span class="p">]</span>	<span class="n">RXN0</span><span class="o">-</span><span class="mi">5363</span>	<span class="n">alpha</span><span class="o">-</span><span class="n">lactose</span>	<span class="n">alpha</span><span class="o">-</span><span class="n">ALLOLACTOSE</span>
+<span class="p">[</span><span class="n">lacZ</span><span class="p">,</span><span class="n">lacZ</span><span class="p">,</span><span class="n">lacZ</span><span class="p">,</span><span class="n">lacZ</span><span class="p">]</span>	<span class="n">RXN0</span><span class="o">-</span><span class="mi">5363</span><span class="o">-</span><span class="n">beta</span>	<span class="n">beta</span><span class="o">-</span><span class="n">lactose</span>	<span class="n">beta</span><span class="o">-</span><span class="n">ALLOLACTOSE</span>
+<span class="p">[</span><span class="n">lacZ</span><span class="p">,</span><span class="n">lacZ</span><span class="p">,</span><span class="n">lacZ</span><span class="p">,</span><span class="n">lacZ</span><span class="p">]</span>	<span class="n">ALLOLACTOSE</span><span class="o">-</span><span class="n">DEG</span><span class="o">-</span><span class="n">alpha</span>	<span class="n">alpha</span><span class="o">-</span><span class="n">ALLOLACTOSE</span><span class="p">,</span> <span class="n">WATER</span>	<span class="n">alpha</span><span class="o">-</span><span class="n">GALACTOSE</span><span class="p">,</span> <span class="n">alpha</span><span class="o">-</span><span class="n">glucose</span>
+<span class="p">[</span><span class="n">lacZ</span><span class="p">,</span><span class="n">lacZ</span><span class="p">,</span><span class="n">lacZ</span><span class="p">,</span><span class="n">lacZ</span><span class="p">]</span>	<span class="n">ALLOLACTOSE</span><span class="o">-</span><span class="n">DEG</span><span class="o">-</span><span class="n">beta</span>	<span class="n">beta</span><span class="o">-</span><span class="n">ALLOLACTOSE</span><span class="p">,</span> <span class="n">WATER</span>	<span class="n">beta</span><span class="o">-</span><span class="n">GALACTOSE</span><span class="p">,</span> <span class="n">beta</span><span class="o">-</span><span class="n">glucose</span>
+<span class="p">[</span><span class="n">lacZ</span><span class="p">,</span><span class="n">lacZ</span><span class="p">,</span><span class="n">lacZ</span><span class="p">,</span><span class="n">lacZ</span><span class="p">]</span>	<span class="n">RXN</span><span class="o">-</span><span class="mi">17726</span>	<span class="n">CPD</span><span class="o">-</span><span class="mi">3561</span><span class="p">,</span> <span class="n">WATER</span>	<span class="n">beta</span><span class="o">-</span><span class="n">GALACTOSE</span><span class="p">,</span> <span class="n">Fructofuranose</span>
+<span class="p">[</span><span class="n">lacZ</span><span class="p">,</span><span class="n">lacZ</span><span class="p">,</span><span class="n">lacZ</span><span class="p">,</span><span class="n">lacZ</span><span class="p">]</span>	<span class="n">RXN0</span><span class="o">-</span><span class="mi">7219</span>	<span class="n">CPD</span><span class="o">-</span><span class="mi">3785</span><span class="p">,</span> <span class="n">WATER</span>	<span class="n">beta</span><span class="o">-</span><span class="n">GALACTOSE</span><span class="p">,</span> <span class="n">D</span><span class="o">-</span><span class="n">ARABINOSE</span>
+<span class="p">[</span><span class="n">lacA</span><span class="p">,</span><span class="n">lacA</span><span class="p">,</span><span class="n">lacA</span><span class="p">]</span>	<span class="n">GALACTOACETYLTRAN</span><span class="o">-</span><span class="n">RXN</span><span class="o">-</span><span class="n">galactose</span>	<span class="n">beta</span><span class="o">-</span><span class="n">GALACTOSE</span><span class="p">,</span> <span class="n">ACETYL</span><span class="o">-</span><span class="n">COA</span>	<span class="mi">6</span><span class="o">-</span><span class="n">Acetyl</span><span class="o">-</span><span class="n">beta</span><span class="o">-</span><span class="n">D</span><span class="o">-</span><span class="n">Galactose</span><span class="p">,</span> <span class="n">CO</span><span class="o">-</span><span class="n">A</span>
+</pre></div>
+</td></tr></table></div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><strong>Visualization in Cytoscape.</strong> Transform the four-columns file into a
+two-columns file with the helper script “<em>Expand metabolic network.ipynb</em>”, paste
+the results in a new file, and import the network into Cytoscape. Colors and
+arrows remains to the user for customization.</p>
+<img alt="_images/Fig_Lactose_MetNetwork.png" src="_images/Fig_Lactose_MetNetwork.png" />
+</div>
+<p>Finally, execute the “<em>Rules from metabolic network.ipynb</em>” to obtain the
+<em>Rules</em> to model the defined metabolic network. The complete rule-based
+model can be found in the lactose folder from the Network Biology Lab
+GitHub repository <a class="reference external" href="https://github.com/networkbiolab/atlas/blob/master/lactose/Models/Model3%20MetNet%20fully%20automatized.ipynb/">here</a>.</p>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>  1
+  2
+  3
+  4
+  5
+  6
+  7
+  8
+  9
+ 10
+ 11
+ 12
+ 13
+ 14
+ 15
+ 16
+ 17
+ 18
+ 19
+ 20
+ 21
+ 22
+ 23
+ 24
+ 25
+ 26
+ 27
+ 28
+ 29
+ 30
+ 31
+ 32
+ 33
+ 34
+ 35
+ 36
+ 37
+ 38
+ 39
+ 40
+ 41
+ 42
+ 43
+ 44
+ 45
+ 46
+ 47
+ 48
+ 49
+ 50
+ 51
+ 52
+ 53
+ 54
+ 55
+ 56
+ 57
+ 58
+ 59
+ 60
+ 61
+ 62
+ 63
+ 64
+ 65
+ 66
+ 67
+ 68
+ 69
+ 70
+ 71
+ 72
+ 73
+ 74
+ 75
+ 76
+ 77
+ 78
+ 79
+ 80
+ 81
+ 82
+ 83
+ 84
+ 85
+ 86
+ 87
+ 88
+ 89
+ 90
+ 91
+ 92
+ 93
+ 94
+ 95
+ 96
+ 97
+ 98
+ 99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">Rule</span><span class="p">(</span><span class="s1">&#39;LACTOSE_MUTAROTATION&#39;</span><span class="p">,</span>
+	<span class="n">met</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;alpha_lactose&#39;</span><span class="p">,</span> <span class="n">loc</span> <span class="o">=</span> <span class="s1">&#39;cyt&#39;</span><span class="p">)</span> <span class="o">|</span>
+	<span class="n">met</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;beta_lactose&#39;</span><span class="p">,</span> <span class="n">loc</span> <span class="o">=</span> <span class="s1">&#39;cyt&#39;</span><span class="p">),</span>
+	<span class="n">Parameter</span><span class="p">(</span><span class="s1">&#39;fwd_LACTOSE_MUTAROTATION&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span>
+	<span class="n">Parameter</span><span class="p">(</span><span class="s1">&#39;rvs_LACTOSE_MUTAROTATION&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
+
+<span class="n">Rule</span><span class="p">(</span><span class="s1">&#39;GALACTOSE_MUTAROTATION&#39;</span><span class="p">,</span>
+	<span class="n">met</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;alpha_GALACTOSE&#39;</span><span class="p">,</span> <span class="n">loc</span> <span class="o">=</span> <span class="s1">&#39;cyt&#39;</span><span class="p">)</span> <span class="o">|</span>
+	<span class="n">met</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;beta_GALACTOSE&#39;</span><span class="p">,</span> <span class="n">loc</span> <span class="o">=</span> <span class="s1">&#39;cyt&#39;</span><span class="p">),</span>
+	<span class="n">Parameter</span><span class="p">(</span><span class="s1">&#39;fwd_GALACTOSE_MUTAROTATION&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span>
+	<span class="n">Parameter</span><span class="p">(</span><span class="s1">&#39;rvs_GALACTOSE_MUTAROTATION&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
+
+<span class="n">Rule</span><span class="p">(</span><span class="s1">&#39;GLUCOSE_MUTAROTATION&#39;</span><span class="p">,</span>
+	<span class="n">met</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;alpha_glucose&#39;</span><span class="p">,</span> <span class="n">loc</span> <span class="o">=</span> <span class="s1">&#39;cyt&#39;</span><span class="p">)</span> <span class="o">|</span>
+	<span class="n">met</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;beta_glucose&#39;</span><span class="p">,</span> <span class="n">loc</span> <span class="o">=</span> <span class="s1">&#39;cyt&#39;</span><span class="p">),</span>
+	<span class="n">Parameter</span><span class="p">(</span><span class="s1">&#39;fwd_GLUCOSE_MUTAROTATION&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span>
+	<span class="n">Parameter</span><span class="p">(</span><span class="s1">&#39;rvs_GLUCOSE_MUTAROTATION&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
+
+<span class="n">Rule</span><span class="p">(</span><span class="s1">&#39;TRANS_RXN_24&#39;</span><span class="p">,</span>
+	<span class="n">prot</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;LACY_MONOMER&#39;</span><span class="p">)</span> <span class="o">+</span>
+	<span class="n">met</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;PROTON&#39;</span><span class="p">,</span> <span class="n">loc</span> <span class="o">=</span> <span class="s1">&#39;per&#39;</span><span class="p">)</span> <span class="o">+</span>
+	<span class="n">met</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;alpha_lactose&#39;</span><span class="p">,</span> <span class="n">loc</span> <span class="o">=</span> <span class="s1">&#39;per&#39;</span><span class="p">)</span> <span class="o">|</span>
+	<span class="n">prot</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;LACY_MONOMER&#39;</span><span class="p">)</span> <span class="o">+</span>
+	<span class="n">met</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;PROTON&#39;</span><span class="p">,</span> <span class="n">loc</span> <span class="o">=</span> <span class="s1">&#39;cyt&#39;</span><span class="p">)</span> <span class="o">+</span>
+	<span class="n">met</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;alpha_lactose&#39;</span><span class="p">,</span> <span class="n">loc</span> <span class="o">=</span> <span class="s1">&#39;cyt&#39;</span><span class="p">),</span>
+	<span class="n">Parameter</span><span class="p">(</span><span class="s1">&#39;fwd_TRANS_RXN_24&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span>
+	<span class="n">Parameter</span><span class="p">(</span><span class="s1">&#39;rvs_TRANS_RXN_24&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
+
+<span class="n">Rule</span><span class="p">(</span><span class="s1">&#39;TRANS_RXN_24_beta&#39;</span><span class="p">,</span>
+	<span class="n">prot</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;LACY_MONOMER&#39;</span><span class="p">)</span> <span class="o">+</span>
+	<span class="n">met</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;PROTON&#39;</span><span class="p">,</span> <span class="n">loc</span> <span class="o">=</span> <span class="s1">&#39;per&#39;</span><span class="p">)</span> <span class="o">+</span>
+	<span class="n">met</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;beta_lactose&#39;</span><span class="p">,</span> <span class="n">loc</span> <span class="o">=</span> <span class="s1">&#39;per&#39;</span><span class="p">)</span> <span class="o">|</span>
+	<span class="n">prot</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;LACY_MONOMER&#39;</span><span class="p">)</span> <span class="o">+</span>
+	<span class="n">met</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;PROTON&#39;</span><span class="p">,</span> <span class="n">loc</span> <span class="o">=</span> <span class="s1">&#39;cyt&#39;</span><span class="p">)</span> <span class="o">+</span>
+	<span class="n">met</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;beta_lactose&#39;</span><span class="p">,</span> <span class="n">loc</span> <span class="o">=</span> <span class="s1">&#39;cyt&#39;</span><span class="p">),</span>
+	<span class="n">Parameter</span><span class="p">(</span><span class="s1">&#39;fwd_TRANS_RXN_24_beta&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span>
+	<span class="n">Parameter</span><span class="p">(</span><span class="s1">&#39;rvs_TRANS_RXN_24_beta&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
+
+<span class="n">Rule</span><span class="p">(</span><span class="s1">&#39;TRANS_RXN_94&#39;</span><span class="p">,</span>
+	<span class="n">prot</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;LACY_MONOMER&#39;</span><span class="p">)</span> <span class="o">+</span>
+	<span class="n">met</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;PROTON&#39;</span><span class="p">,</span> <span class="n">loc</span> <span class="o">=</span> <span class="s1">&#39;per&#39;</span><span class="p">)</span> <span class="o">+</span>
+	<span class="n">met</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;MELIBIOSE&#39;</span><span class="p">,</span> <span class="n">loc</span> <span class="o">=</span> <span class="s1">&#39;per&#39;</span><span class="p">)</span> <span class="o">|</span>
+	<span class="n">prot</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;LACY_MONOMER&#39;</span><span class="p">)</span> <span class="o">+</span>
+	<span class="n">met</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;PROTON&#39;</span><span class="p">,</span> <span class="n">loc</span> <span class="o">=</span> <span class="s1">&#39;cyt&#39;</span><span class="p">)</span> <span class="o">+</span>
+	<span class="n">met</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;MELIBIOSE&#39;</span><span class="p">,</span> <span class="n">loc</span> <span class="o">=</span> <span class="s1">&#39;cyt&#39;</span><span class="p">),</span>
+	<span class="n">Parameter</span><span class="p">(</span><span class="s1">&#39;fwd_TRANS_RXN_94&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span>
+	<span class="n">Parameter</span><span class="p">(</span><span class="s1">&#39;rvs_TRANS_RXN_94&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
+
+<span class="n">Rule</span><span class="p">(</span><span class="s1">&#39;RXN0_7215&#39;</span><span class="p">,</span> <span class="n">prot</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;LACY_MONOMER&#39;</span><span class="p">)</span> <span class="o">+</span>
+	<span class="n">met</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;PROTON&#39;</span><span class="p">,</span> <span class="n">loc</span> <span class="o">=</span> <span class="s1">&#39;per&#39;</span><span class="p">)</span> <span class="o">+</span>
+	<span class="n">met</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;CPD_3561&#39;</span><span class="p">,</span> <span class="n">loc</span> <span class="o">=</span> <span class="s1">&#39;per&#39;</span><span class="p">)</span> <span class="o">|</span>
+	<span class="n">prot</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;LACY_MONOMER&#39;</span><span class="p">)</span> <span class="o">+</span>
+	<span class="n">met</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;PROTON&#39;</span><span class="p">,</span> <span class="n">loc</span> <span class="o">=</span> <span class="s1">&#39;cyt&#39;</span><span class="p">)</span> <span class="o">+</span>
+	<span class="n">met</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;CPD_3561&#39;</span><span class="p">,</span> <span class="n">loc</span> <span class="o">=</span> <span class="s1">&#39;cyt&#39;</span><span class="p">),</span>
+	<span class="n">Parameter</span><span class="p">(</span><span class="s1">&#39;fwd_RXN0_7215&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span>
+	<span class="n">Parameter</span><span class="p">(</span><span class="s1">&#39;rvs_RXN0_7215&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
+
+<span class="n">Rule</span><span class="p">(</span><span class="s1">&#39;RXN0_7217&#39;</span><span class="p">,</span> <span class="n">prot</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;LACY_MONOMER&#39;</span><span class="p">)</span> <span class="o">+</span>
+	<span class="n">met</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;PROTON&#39;</span><span class="p">,</span> <span class="n">loc</span> <span class="o">=</span> <span class="s1">&#39;per&#39;</span><span class="p">)</span> <span class="o">+</span>
+	<span class="n">met</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;CPD_3785&#39;</span><span class="p">,</span> <span class="n">loc</span> <span class="o">=</span> <span class="s1">&#39;per&#39;</span><span class="p">)</span> <span class="o">|</span>
+	<span class="n">prot</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;LACY_MONOMER&#39;</span><span class="p">)</span> <span class="o">+</span>
+	<span class="n">met</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;PROTON&#39;</span><span class="p">,</span> <span class="n">loc</span> <span class="o">=</span> <span class="s1">&#39;cyt&#39;</span><span class="p">)</span> <span class="o">+</span>
+	<span class="n">met</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;CPD_3785&#39;</span><span class="p">,</span> <span class="n">loc</span> <span class="o">=</span> <span class="s1">&#39;cyt&#39;</span><span class="p">),</span>
+	<span class="n">Parameter</span><span class="p">(</span><span class="s1">&#39;fwd_RXN0_7217&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span>
+	<span class="n">Parameter</span><span class="p">(</span><span class="s1">&#39;rvs_RXN0_7217&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
+
+<span class="n">Rule</span><span class="p">(</span><span class="s1">&#39;RXN_17755&#39;</span><span class="p">,</span> <span class="n">prot</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;LACY_MONOMER&#39;</span><span class="p">)</span> <span class="o">+</span>
+	<span class="n">met</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;PROTON&#39;</span><span class="p">,</span> <span class="n">loc</span> <span class="o">=</span> <span class="s1">&#39;per&#39;</span><span class="p">)</span> <span class="o">+</span>
+	<span class="n">met</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;CPD_3801&#39;</span><span class="p">,</span> <span class="n">loc</span> <span class="o">=</span> <span class="s1">&#39;per&#39;</span><span class="p">)</span> <span class="o">|</span>
+	<span class="n">prot</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;LACY_MONOMER&#39;</span><span class="p">)</span> <span class="o">+</span>
+	<span class="n">met</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;PROTON&#39;</span><span class="p">,</span> <span class="n">loc</span> <span class="o">=</span> <span class="s1">&#39;cyt&#39;</span><span class="p">)</span> <span class="o">+</span>
+	<span class="n">met</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;CPD_3801&#39;</span><span class="p">,</span> <span class="n">loc</span> <span class="o">=</span> <span class="s1">&#39;cyt&#39;</span><span class="p">),</span>
+	<span class="n">Parameter</span><span class="p">(</span><span class="s1">&#39;fwd_RXN_17755&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span>
+	<span class="n">Parameter</span><span class="p">(</span><span class="s1">&#39;rvs_RXN_17755&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
+
+<span class="n">Rule</span><span class="p">(</span><span class="s1">&#39;BETAGALACTOSID_RXN&#39;</span><span class="p">,</span>
+	<span class="n">cplx</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;BETAGALACTOSID_CPLX&#39;</span><span class="p">)</span> <span class="o">+</span>
+	<span class="n">met</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;beta_lactose&#39;</span><span class="p">,</span> <span class="n">loc</span> <span class="o">=</span> <span class="s1">&#39;cyt&#39;</span><span class="p">)</span> <span class="o">+</span>
+	<span class="n">met</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;WATER&#39;</span><span class="p">,</span> <span class="n">loc</span> <span class="o">=</span> <span class="s1">&#39;cyt&#39;</span><span class="p">)</span> <span class="o">|</span>
+	<span class="n">cplx</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;BETAGALACTOSID_CPLX&#39;</span><span class="p">)</span> <span class="o">+</span>
+	<span class="n">met</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;beta_GALACTOSE&#39;</span><span class="p">,</span> <span class="n">loc</span> <span class="o">=</span> <span class="s1">&#39;cyt&#39;</span><span class="p">)</span> <span class="o">+</span>
+	<span class="n">met</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;beta_glucose&#39;</span><span class="p">,</span> <span class="n">loc</span> <span class="o">=</span> <span class="s1">&#39;cyt&#39;</span><span class="p">),</span>
+	<span class="n">Parameter</span><span class="p">(</span><span class="s1">&#39;fwd_BETAGALACTOSID_RXN&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span>
+	<span class="n">Parameter</span><span class="p">(</span><span class="s1">&#39;rvs_BETAGALACTOSID_RXN&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
+
+<span class="n">Rule</span><span class="p">(</span><span class="s1">&#39;BETAGALACTOSID_RXN_alpha&#39;</span><span class="p">,</span>
+	<span class="n">cplx</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;BETAGALACTOSID_CPLX&#39;</span><span class="p">)</span> <span class="o">+</span>
+	<span class="n">met</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;alpha_lactose&#39;</span><span class="p">,</span> <span class="n">loc</span> <span class="o">=</span> <span class="s1">&#39;cyt&#39;</span><span class="p">)</span> <span class="o">+</span>
+	<span class="n">met</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;WATER&#39;</span><span class="p">,</span> <span class="n">loc</span> <span class="o">=</span> <span class="s1">&#39;cyt&#39;</span><span class="p">)</span> <span class="o">|</span>
+	<span class="n">cplx</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;BETAGALACTOSID_CPLX&#39;</span><span class="p">)</span> <span class="o">+</span>
+	<span class="n">met</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;alpha_GALACTOSE&#39;</span><span class="p">,</span> <span class="n">loc</span> <span class="o">=</span> <span class="s1">&#39;cyt&#39;</span><span class="p">)</span> <span class="o">+</span>
+	<span class="n">met</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;alpha_glucose&#39;</span><span class="p">,</span> <span class="n">loc</span> <span class="o">=</span> <span class="s1">&#39;cyt&#39;</span><span class="p">),</span>
+	<span class="n">Parameter</span><span class="p">(</span><span class="s1">&#39;fwd_BETAGALACTOSID_RXN_alpha&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span>
+	<span class="n">Parameter</span><span class="p">(</span><span class="s1">&#39;rvs_BETAGALACTOSID_RXN_alpha&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
+
+<span class="n">Rule</span><span class="p">(</span><span class="s1">&#39;RXN0_5363&#39;</span><span class="p">,</span>
+	<span class="n">cplx</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;BETAGALACTOSID_CPLX&#39;</span><span class="p">)</span> <span class="o">+</span>
+	<span class="n">met</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;alpha_lactose&#39;</span><span class="p">,</span> <span class="n">loc</span> <span class="o">=</span> <span class="s1">&#39;cyt&#39;</span><span class="p">)</span> <span class="o">|</span>
+	<span class="n">cplx</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;BETAGALACTOSID_CPLX&#39;</span><span class="p">)</span> <span class="o">+</span>
+	<span class="n">met</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;alpha_ALLOLACTOSE&#39;</span><span class="p">,</span> <span class="n">loc</span> <span class="o">=</span> <span class="s1">&#39;cyt&#39;</span><span class="p">),</span>
+	<span class="n">Parameter</span><span class="p">(</span><span class="s1">&#39;fwd_RXN0_5363&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span>
+	<span class="n">Parameter</span><span class="p">(</span><span class="s1">&#39;rvs_RXN0_5363&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
+
+<span class="n">Rule</span><span class="p">(</span><span class="s1">&#39;RXN0_5363_beta&#39;</span><span class="p">,</span>
+	<span class="n">cplx</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;BETAGALACTOSID_CPLX&#39;</span><span class="p">)</span> <span class="o">+</span>
+	<span class="n">met</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;beta_lactose&#39;</span><span class="p">,</span> <span class="n">loc</span> <span class="o">=</span> <span class="s1">&#39;cyt&#39;</span><span class="p">)</span> <span class="o">|</span>
+	<span class="n">cplx</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;BETAGALACTOSID_CPLX&#39;</span><span class="p">)</span> <span class="o">+</span>
+	<span class="n">met</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;beta_ALLOLACTOSE&#39;</span><span class="p">,</span> <span class="n">loc</span> <span class="o">=</span> <span class="s1">&#39;cyt&#39;</span><span class="p">),</span>
+	<span class="n">Parameter</span><span class="p">(</span><span class="s1">&#39;fwd_RXN0_5363_beta&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span>
+	<span class="n">Parameter</span><span class="p">(</span><span class="s1">&#39;rvs_RXN0_5363_beta&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
+
+<span class="n">Rule</span><span class="p">(</span><span class="s1">&#39;ALLOLACTOSE_DEG_alpha&#39;</span><span class="p">,</span>
+	<span class="n">cplx</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;BETAGALACTOSID_CPLX&#39;</span><span class="p">)</span> <span class="o">+</span>
+	<span class="n">met</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;alpha_ALLOLACTOSE&#39;</span><span class="p">,</span> <span class="n">loc</span> <span class="o">=</span> <span class="s1">&#39;cyt&#39;</span><span class="p">)</span> <span class="o">|</span>
+	<span class="n">cplx</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;BETAGALACTOSID_CPLX&#39;</span><span class="p">)</span> <span class="o">+</span>
+	<span class="n">met</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;alpha_GALACTOSE&#39;</span><span class="p">,</span> <span class="n">loc</span> <span class="o">=</span> <span class="s1">&#39;cyt&#39;</span><span class="p">),</span>
+	<span class="n">Parameter</span><span class="p">(</span><span class="s1">&#39;fwd_ALLOLACTOSE_DEG_alpha&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span>
+	<span class="n">Parameter</span><span class="p">(</span><span class="s1">&#39;rvs_ALLOLACTOSE_DEG_alpha&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
+
+<span class="n">Rule</span><span class="p">(</span><span class="s1">&#39;ALLOLACTOSE_DEG_beta&#39;</span><span class="p">,</span>
+	<span class="n">cplx</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;BETAGALACTOSID_CPLX&#39;</span><span class="p">)</span> <span class="o">+</span>
+	<span class="n">met</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;beta_ALLOLACTOSE&#39;</span><span class="p">,</span> <span class="n">loc</span> <span class="o">=</span> <span class="s1">&#39;cyt&#39;</span><span class="p">)</span> <span class="o">|</span>
+	<span class="n">cplx</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;BETAGALACTOSID_CPLX&#39;</span><span class="p">)</span> <span class="o">+</span>
+	<span class="n">met</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;beta_GALACTOSE&#39;</span><span class="p">,</span> <span class="n">loc</span> <span class="o">=</span> <span class="s1">&#39;cyt&#39;</span><span class="p">),</span>
+	<span class="n">Parameter</span><span class="p">(</span><span class="s1">&#39;fwd_ALLOLACTOSE_DEG_beta&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span>
+	<span class="n">Parameter</span><span class="p">(</span><span class="s1">&#39;rvs_ALLOLACTOSE_DEG_beta&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
+
+<span class="n">Rule</span><span class="p">(</span><span class="s1">&#39;RXN_17726&#39;</span><span class="p">,</span>
+	<span class="n">cplx</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;BETAGALACTOSID_CPLX&#39;</span><span class="p">)</span> <span class="o">+</span>
+	<span class="n">met</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;CPD_3561&#39;</span><span class="p">,</span> <span class="n">loc</span> <span class="o">=</span> <span class="s1">&#39;cyt&#39;</span><span class="p">)</span> <span class="o">+</span>
+	<span class="n">met</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;WATER&#39;</span><span class="p">,</span> <span class="n">loc</span> <span class="o">=</span> <span class="s1">&#39;cyt&#39;</span><span class="p">)</span> <span class="o">|</span>
+	<span class="n">cplx</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;BETAGALACTOSID_CPLX&#39;</span><span class="p">)</span> <span class="o">+</span>
+	<span class="n">met</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;beta_GALACTOSE&#39;</span><span class="p">,</span> <span class="n">loc</span> <span class="o">=</span> <span class="s1">&#39;cyt&#39;</span><span class="p">)</span> <span class="o">+</span>
+	<span class="n">met</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;Fructofuranose&#39;</span><span class="p">,</span> <span class="n">loc</span> <span class="o">=</span> <span class="s1">&#39;cyt&#39;</span><span class="p">),</span>
+	<span class="n">Parameter</span><span class="p">(</span><span class="s1">&#39;fwd_RXN_17726&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span>
+	<span class="n">Parameter</span><span class="p">(</span><span class="s1">&#39;rvs_RXN_17726&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
+
+<span class="n">Rule</span><span class="p">(</span><span class="s1">&#39;RXN0_7219&#39;</span><span class="p">,</span>
+	<span class="n">cplx</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;BETAGALACTOSID_CPLX&#39;</span><span class="p">)</span> <span class="o">+</span>
+	<span class="n">met</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;CPD_3785&#39;</span><span class="p">,</span> <span class="n">loc</span> <span class="o">=</span> <span class="s1">&#39;cyt&#39;</span><span class="p">)</span> <span class="o">+</span>
+	<span class="n">met</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;WATER&#39;</span><span class="p">,</span> <span class="n">loc</span> <span class="o">=</span> <span class="s1">&#39;cyt&#39;</span><span class="p">)</span> <span class="o">|</span>
+	<span class="n">cplx</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;BETAGALACTOSID_CPLX&#39;</span><span class="p">)</span> <span class="o">+</span>
+	<span class="n">met</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;beta_GALACTOSE&#39;</span><span class="p">,</span> <span class="n">loc</span> <span class="o">=</span> <span class="s1">&#39;cyt&#39;</span><span class="p">)</span> <span class="o">+</span>
+	<span class="n">met</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;D_ARABINOSE&#39;</span><span class="p">,</span> <span class="n">loc</span> <span class="o">=</span> <span class="s1">&#39;cyt&#39;</span><span class="p">),</span>
+	<span class="n">Parameter</span><span class="p">(</span><span class="s1">&#39;fwd_RXN0_7219&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span>
+	<span class="n">Parameter</span><span class="p">(</span><span class="s1">&#39;rvs_RXN0_7219&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
+
+<span class="n">Rule</span><span class="p">(</span><span class="s1">&#39;GALACTOACETYLTRAN_RXN_galactose&#39;</span><span class="p">,</span>
+	<span class="n">cplx</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;GALACTOACETYLTRAN_CPLX&#39;</span><span class="p">)</span> <span class="o">+</span>
+	<span class="n">met</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;beta_GALACTOSE&#39;</span><span class="p">,</span> <span class="n">loc</span> <span class="o">=</span> <span class="s1">&#39;cyt&#39;</span><span class="p">)</span> <span class="o">+</span>
+	<span class="n">met</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;ACETYL_COA&#39;</span><span class="p">,</span> <span class="n">loc</span> <span class="o">=</span> <span class="s1">&#39;cyt&#39;</span><span class="p">)</span> <span class="o">|</span>
+	<span class="n">cplx</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;GALACTOACETYLTRAN_CPLX&#39;</span><span class="p">)</span> <span class="o">+</span>
+	<span class="n">met</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;_6_Acetyl_beta_D_Galactose&#39;</span><span class="p">,</span> <span class="n">loc</span> <span class="o">=</span> <span class="s1">&#39;cyt&#39;</span><span class="p">)</span> <span class="o">+</span>
+	<span class="n">met</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;CO_A&#39;</span><span class="p">,</span> <span class="n">loc</span> <span class="o">=</span> <span class="s1">&#39;cyt&#39;</span><span class="p">),</span>
+	<span class="n">Parameter</span><span class="p">(</span><span class="s1">&#39;fwd_GALACTOACETYLTRAN_RXN_galactose&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span>
+	<span class="n">Parameter</span><span class="p">(</span><span class="s1">&#39;rvs_GALACTOACETYLTRAN_RXN_galactose&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
+</pre></div>
+</td></tr></table></div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><strong>Reversibility of Rules</strong>. Atlas writes reversible <em>Rules</em> for each
+reaction declared in the network file. The <code class="docutils literal notranslate"><span class="pre">Parameter('rvs_RuleName',</span> <span class="pre">1))</span></code>
+must be set to zero to define an irreversible reaction.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><strong>Uniqueness of Rule names</strong>. Atlas will write <em>Rules</em> for unique
+metabolic reactions. Identical names will be reported for further curation.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><strong>Simulation</strong>. The model can be simulated only with the instantiation of
+<code class="docutils literal notranslate"><span class="pre">Monomers</span></code> and <code class="docutils literal notranslate"><span class="pre">Initials</span></code> (<a class="reference external" href="https://pysb.readthedocs.io/en/stable/tutorial.html#introduction">More here</a>).
+Run <em>Monomer+Initials+Observables from metabolic network.ipynb</em> to obtain
+automatically the necessary <code class="docutils literal notranslate"><span class="pre">Monomers</span></code> and <code class="docutils literal notranslate"><span class="pre">Initials</span></code> (including
+proteins and enzymatic complexes).</p>
+<p><strong>Plotting</strong>. The model can be observed only with the instantation of
+<code class="docutils literal notranslate"><span class="pre">Observables</span></code> (<a class="reference external" href="https://pysb.readthedocs.io/en/stable/tutorial.html#simulation-and-analysis">More here</a>).
+Run <em>Monomer+Initials+Observables from metabolic network.ipynb</em> to obtain
+automatically the all possible <code class="docutils literal notranslate"><span class="pre">Observables</span></code> for metabolites.</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="NetProteinProtein.html" class="btn btn-neutral float-right" title="Protein-Protein Interaction Networks" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="Modeling.html" class="btn btn-neutral float-left" title="Modeling" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, Rodrigo Santibáñez
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
