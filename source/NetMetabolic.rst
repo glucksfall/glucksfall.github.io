@@ -12,19 +12,19 @@ the periplasm or extracellular compartments, the user should employ the prefix
 
 Examples:
 
-.. literalinclude:: ./metabolic_network1.tsv
+.. literalinclude:: ./networks/metabolic_network1.tsv
    :linenos:
    :encoding: latin-1
 
 *OR*
 
-.. literalinclude:: ./metabolic_network2.tsv
+.. literalinclude:: ./networks/metabolic_network2.tsv
    :linenos:
    :encoding: latin-1
 
 *OR*
 
-.. literalinclude:: ./metabolic_network3.tsv
+.. literalinclude:: ./networks/metabolic_network3.tsv
    :linenos:
    :encoding: latin-1
 
@@ -41,7 +41,7 @@ Finally, execute the "*Rules from metabolic network.ipynb*" to obtain the
 model can be found in the lactose folder from the Network Biology Lab
 GitHub repository `here <https://github.com/networkbiolab/atlas/blob/master/lactose/Models/Model3%20MetNet%20fully%20automatized.ipynb/>`_.
 
-.. literalinclude:: ./metabolic_model.py
+.. literalinclude:: ./model_metabolic_network1.py
    :language: python
    :encoding: latin-1
    :linenos:

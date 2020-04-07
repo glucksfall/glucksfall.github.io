@@ -1,0 +1,32 @@
+SOURCE	TARGET
+# araBAD and araC
+[crp, SMALL-CAMP, crp, SMALL-CAMP]	BS-83-104
+[crp, SMALL-CAMP, crp, SMALL-CAMP]	[BS-83-104, BS-araB-pro1]
+
+araC	BS-35-51
+araC	BS-56-72
+araC	BS-109-125
+araC	BS-130-146
+araC	BS-267-283
+
+[araC, BS-56-72]	[araC, BS-267-283, BS-araC-pro1]
+
+[araC, SMALL-alpha-L-arabinopyranose]	BS-35-51
+[araC, BS-56-72]	SMALL-alpha-L-arabinopyranose
+[araC, BS-267-283]	SMALL-alpha-L-arabinopyranose
+
+[araC, SMALL-alpha-L-arabinopyranose, BS-56-72]	[araC, SMALL-alpha-L-arabinopyranose, BS-35-51, BS-araB-pro1]
+
+# araFGH
+[araC, SMALL-alpha-L-arabinopyranose]	BS-158-174
+[araC, SMALL-alpha-L-arabinopyranose]	BS-137-153
+[araC, SMALL-alpha-L-arabinopyranose]	BS-83-99
+[araC, SMALL-alpha-L-arabinopyranose]	BS-62-78
+
+[araC, SMALL-alpha-L-arabinopyranose, BS-83-99]	[araC, SMALL-alpha-L-arabinopyranose, BS-62-78, BS-araF-pro1]
+
+# araE
+[araC, SMALL-alpha-L-arabinopyranose]	BS-57-73
+[araC, SMALL-alpha-L-arabinopyranose]	BS-36-52
+
+[araC, SMALL-alpha-L-arabinopyranose, BS-57-73]	[araC, SMALL-alpha-L-arabinopyranose, BS-36-52, BS-araE-pro1]

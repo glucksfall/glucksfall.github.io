@@ -1,0 +1,37 @@
+SOURCE	TARGET
+# Docking to promoters
+[rpoA, rpoA, rpoB, rpoC, rpoD]	BS-rpoA-pro1
+[rpoA, rpoA, rpoB, rpoC, rpoD]	BS-rpoB-pro1
+# [rpoA, rpoA, rpoB, rpoC, rpoD]	BS-rpoC-pro1
+[rpoA, rpoA, rpoB, rpoC, rpoD]	BS-rpoD-pro1
+[rpoA, rpoA, rpoB, rpoC, rpoD]	BS-rpoE-pro1
+[rpoA, rpoA, rpoB, rpoC, rpoD]	BS-rpoH-pro1
+[rpoA, rpoA, rpoB, rpoC, rpoD]	BS-rpoN-pro1
+[rpoA, rpoA, rpoB, rpoC, rpoD]	BS-rpoS-pro1
+[rpoA, rpoA, rpoB, rpoC, rpoD]	BS-fliA-pro1
+[rpoA, rpoA, rpoB, rpoC, rpoD]	BS-fecI-pro1
+
+[rpoA, rpoA, rpoB, rpoC, rpoE]	BS-rpoD-pro1
+[rpoA, rpoA, rpoB, rpoC, rpoE]	BS-rpoE-pro1
+[rpoA, rpoA, rpoB, rpoC, rpoE]	BS-rpoH-pro1
+[rpoA, rpoA, rpoB, rpoC, rpoE]	BS-rpoN-pro1
+
+[rpoA, rpoA, rpoB, rpoC, rpoH]	BS-rpoA-pro1
+[rpoA, rpoA, rpoB, rpoC, rpoH]	BS-rpoD-pro1
+
+[rpoA, rpoA, rpoB, rpoC, rpoN]	BS-rpoA-pro1
+[rpoA, rpoA, rpoB, rpoC, rpoN]	BS-rpoD-pro1
+[rpoA, rpoA, rpoB, rpoC, rpoN]	BS-rpoH-pro1
+
+[rpoA, rpoA, rpoB, rpoC, rpoS]	BS-fecI-pro1
+[rpoA, rpoA, rpoB, rpoC, rpoS]	BS-rpoA-pro1
+[rpoA, rpoA, rpoB, rpoC, rpoS]	BS-rpoB-pro1
+# [rpoA, rpoA, rpoB, rpoC, rpoS]	BS-rpoC-pro1
+[rpoA, rpoA, rpoB, rpoC, rpoS]	BS-rpoD-pro1
+[rpoA, rpoA, rpoB, rpoC, rpoS]	BS-rpoE-pro1
+[rpoA, rpoA, rpoB, rpoC, rpoS]	BS-rpoH-pro1
+[rpoA, rpoA, rpoB, rpoC, rpoS]	BS-rpoN-pro1
+
+[rpoA, rpoA, rpoB, rpoC, fliA]	BS-rpoD-pro1
+[rpoA, rpoA, rpoB, rpoC, fliA]	BS-rpoN-pro1
+[rpoA, rpoA, rpoB, rpoC, fliA]	BS-fliA-pro1

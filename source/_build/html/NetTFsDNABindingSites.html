@@ -173,278 +173,589 @@ complex (components in brackets) and in the second the promoter. Users should
 name promoters with the gene name followed by the suffix “-pro#” where # is an
 integer.</p>
 <p>Examples:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>
+<div class="highlight-default notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">SOURCE</span>	<span class="n">TARGET</span>
+<span class="c1"># araBAD and araC</span>
+<span class="p">[</span><span class="n">crp</span><span class="p">,</span> <span class="n">SMALL</span><span class="o">-</span><span class="n">CAMP</span><span class="p">,</span> <span class="n">crp</span><span class="p">,</span> <span class="n">SMALL</span><span class="o">-</span><span class="n">CAMP</span><span class="p">]</span>	<span class="n">BS</span><span class="o">-</span><span class="mi">83</span><span class="o">-</span><span class="mi">104</span>
+<span class="p">[</span><span class="n">crp</span><span class="p">,</span> <span class="n">SMALL</span><span class="o">-</span><span class="n">CAMP</span><span class="p">,</span> <span class="n">crp</span><span class="p">,</span> <span class="n">SMALL</span><span class="o">-</span><span class="n">CAMP</span><span class="p">]</span>	<span class="p">[</span><span class="n">BS</span><span class="o">-</span><span class="mi">83</span><span class="o">-</span><span class="mi">104</span><span class="p">,</span> <span class="n">BS</span><span class="o">-</span><span class="n">araB</span><span class="o">-</span><span class="n">pro1</span><span class="p">]</span>
+
+<span class="n">araC</span>	<span class="n">BS</span><span class="o">-</span><span class="mi">35</span><span class="o">-</span><span class="mi">51</span>
+<span class="n">araC</span>	<span class="n">BS</span><span class="o">-</span><span class="mi">56</span><span class="o">-</span><span class="mi">72</span>
+<span class="n">araC</span>	<span class="n">BS</span><span class="o">-</span><span class="mi">109</span><span class="o">-</span><span class="mi">125</span>
+<span class="n">araC</span>	<span class="n">BS</span><span class="o">-</span><span class="mi">130</span><span class="o">-</span><span class="mi">146</span>
+<span class="n">araC</span>	<span class="n">BS</span><span class="o">-</span><span class="mi">267</span><span class="o">-</span><span class="mi">283</span>
+
+<span class="p">[</span><span class="n">araC</span><span class="p">,</span> <span class="n">BS</span><span class="o">-</span><span class="mi">56</span><span class="o">-</span><span class="mi">72</span><span class="p">]</span>	<span class="p">[</span><span class="n">araC</span><span class="p">,</span> <span class="n">BS</span><span class="o">-</span><span class="mi">267</span><span class="o">-</span><span class="mi">283</span><span class="p">,</span> <span class="n">BS</span><span class="o">-</span><span class="n">araC</span><span class="o">-</span><span class="n">pro1</span><span class="p">]</span>
+
+<span class="p">[</span><span class="n">araC</span><span class="p">,</span> <span class="n">SMALL</span><span class="o">-</span><span class="n">alpha</span><span class="o">-</span><span class="n">L</span><span class="o">-</span><span class="n">arabinopyranose</span><span class="p">]</span>	<span class="n">BS</span><span class="o">-</span><span class="mi">35</span><span class="o">-</span><span class="mi">51</span>
+<span class="p">[</span><span class="n">araC</span><span class="p">,</span> <span class="n">BS</span><span class="o">-</span><span class="mi">56</span><span class="o">-</span><span class="mi">72</span><span class="p">]</span>	<span class="n">SMALL</span><span class="o">-</span><span class="n">alpha</span><span class="o">-</span><span class="n">L</span><span class="o">-</span><span class="n">arabinopyranose</span>
+<span class="p">[</span><span class="n">araC</span><span class="p">,</span> <span class="n">BS</span><span class="o">-</span><span class="mi">267</span><span class="o">-</span><span class="mi">283</span><span class="p">]</span>	<span class="n">SMALL</span><span class="o">-</span><span class="n">alpha</span><span class="o">-</span><span class="n">L</span><span class="o">-</span><span class="n">arabinopyranose</span>
+
+<span class="p">[</span><span class="n">araC</span><span class="p">,</span> <span class="n">SMALL</span><span class="o">-</span><span class="n">alpha</span><span class="o">-</span><span class="n">L</span><span class="o">-</span><span class="n">arabinopyranose</span><span class="p">,</span> <span class="n">BS</span><span class="o">-</span><span class="mi">56</span><span class="o">-</span><span class="mi">72</span><span class="p">]</span>	<span class="p">[</span><span class="n">araC</span><span class="p">,</span> <span class="n">SMALL</span><span class="o">-</span><span class="n">alpha</span><span class="o">-</span><span class="n">L</span><span class="o">-</span><span class="n">arabinopyranose</span><span class="p">,</span> <span class="n">BS</span><span class="o">-</span><span class="mi">35</span><span class="o">-</span><span class="mi">51</span><span class="p">,</span> <span class="n">BS</span><span class="o">-</span><span class="n">araB</span><span class="o">-</span><span class="n">pro1</span><span class="p">]</span>
+
+<span class="c1"># araFGH</span>
+<span class="p">[</span><span class="n">araC</span><span class="p">,</span> <span class="n">SMALL</span><span class="o">-</span><span class="n">alpha</span><span class="o">-</span><span class="n">L</span><span class="o">-</span><span class="n">arabinopyranose</span><span class="p">]</span>	<span class="n">BS</span><span class="o">-</span><span class="mi">158</span><span class="o">-</span><span class="mi">174</span>
+<span class="p">[</span><span class="n">araC</span><span class="p">,</span> <span class="n">SMALL</span><span class="o">-</span><span class="n">alpha</span><span class="o">-</span><span class="n">L</span><span class="o">-</span><span class="n">arabinopyranose</span><span class="p">]</span>	<span class="n">BS</span><span class="o">-</span><span class="mi">137</span><span class="o">-</span><span class="mi">153</span>
+<span class="p">[</span><span class="n">araC</span><span class="p">,</span> <span class="n">SMALL</span><span class="o">-</span><span class="n">alpha</span><span class="o">-</span><span class="n">L</span><span class="o">-</span><span class="n">arabinopyranose</span><span class="p">]</span>	<span class="n">BS</span><span class="o">-</span><span class="mi">83</span><span class="o">-</span><span class="mi">99</span>
+<span class="p">[</span><span class="n">araC</span><span class="p">,</span> <span class="n">SMALL</span><span class="o">-</span><span class="n">alpha</span><span class="o">-</span><span class="n">L</span><span class="o">-</span><span class="n">arabinopyranose</span><span class="p">]</span>	<span class="n">BS</span><span class="o">-</span><span class="mi">62</span><span class="o">-</span><span class="mi">78</span>
+
+<span class="p">[</span><span class="n">araC</span><span class="p">,</span> <span class="n">SMALL</span><span class="o">-</span><span class="n">alpha</span><span class="o">-</span><span class="n">L</span><span class="o">-</span><span class="n">arabinopyranose</span><span class="p">,</span> <span class="n">BS</span><span class="o">-</span><span class="mi">83</span><span class="o">-</span><span class="mi">99</span><span class="p">]</span>	<span class="p">[</span><span class="n">araC</span><span class="p">,</span> <span class="n">SMALL</span><span class="o">-</span><span class="n">alpha</span><span class="o">-</span><span class="n">L</span><span class="o">-</span><span class="n">arabinopyranose</span><span class="p">,</span> <span class="n">BS</span><span class="o">-</span><span class="mi">62</span><span class="o">-</span><span class="mi">78</span><span class="p">,</span> <span class="n">BS</span><span class="o">-</span><span class="n">araF</span><span class="o">-</span><span class="n">pro1</span><span class="p">]</span>
+
+<span class="c1"># araE</span>
+<span class="p">[</span><span class="n">araC</span><span class="p">,</span> <span class="n">SMALL</span><span class="o">-</span><span class="n">alpha</span><span class="o">-</span><span class="n">L</span><span class="o">-</span><span class="n">arabinopyranose</span><span class="p">]</span>	<span class="n">BS</span><span class="o">-</span><span class="mi">57</span><span class="o">-</span><span class="mi">73</span>
+<span class="p">[</span><span class="n">araC</span><span class="p">,</span> <span class="n">SMALL</span><span class="o">-</span><span class="n">alpha</span><span class="o">-</span><span class="n">L</span><span class="o">-</span><span class="n">arabinopyranose</span><span class="p">]</span>	<span class="n">BS</span><span class="o">-</span><span class="mi">36</span><span class="o">-</span><span class="mi">52</span>
+
+<span class="p">[</span><span class="n">araC</span><span class="p">,</span> <span class="n">SMALL</span><span class="o">-</span><span class="n">alpha</span><span class="o">-</span><span class="n">L</span><span class="o">-</span><span class="n">arabinopyranose</span><span class="p">,</span> <span class="n">BS</span><span class="o">-</span><span class="mi">57</span><span class="o">-</span><span class="mi">73</span><span class="p">]</span>	<span class="p">[</span><span class="n">araC</span><span class="p">,</span> <span class="n">SMALL</span><span class="o">-</span><span class="n">alpha</span><span class="o">-</span><span class="n">L</span><span class="o">-</span><span class="n">arabinopyranose</span><span class="p">,</span> <span class="n">BS</span><span class="o">-</span><span class="mi">36</span><span class="o">-</span><span class="mi">52</span><span class="p">,</span> <span class="n">BS</span><span class="o">-</span><span class="n">araE</span><span class="o">-</span><span class="n">pro1</span><span class="p">]</span>
 </pre></div>
-</div>
-<p>	SOURCE	TARGET
-	# araBAD and araC
-	[crp, SMALL-CAMP, crp, SMALL-CAMP]	BS-83-104
-	[crp, SMALL-CAMP, crp, SMALL-CAMP]	[BS-83-104, BS-araB-pro1]</p>
-<p>	araC	BS-35-51
-	araC	BS-56-72
-	araC	BS-109-125
-	araC	BS-130-146
-	araC	BS-267-283</p>
-<p>	[araC, BS-56-72]	[araC, BS-267-283, BS-araC-pro1]</p>
-<p>	[araC, SMALL-alpha-L-arabinopyranose]	BS-35-51
-	[araC, BS-56-72]	SMALL-alpha-L-arabinopyranose
-	[araC, BS-267-283]	SMALL-alpha-L-arabinopyranose</p>
-<p>	[araC, SMALL-alpha-L-arabinopyranose, BS-56-72]	[araC, SMALL-alpha-L-arabinopyranose, BS-35-51, BS-araB-pro1]</p>
-<p>	# araFGH
-	[araC, SMALL-alpha-L-arabinopyranose]	BS-158-174
-	[araC, SMALL-alpha-L-arabinopyranose]	BS-137-153
-	[araC, SMALL-alpha-L-arabinopyranose]	BS-83-99
-	[araC, SMALL-alpha-L-arabinopyranose]	BS-62-78</p>
-<p>	[araC, SMALL-alpha-L-arabinopyranose, BS-83-99]	[araC, SMALL-alpha-L-arabinopyranose, BS-62-78, BS-araF-pro1]</p>
-<p>	# araE
-	[araC, SMALL-alpha-L-arabinopyranose]	BS-57-73
-	[araC, SMALL-alpha-L-arabinopyranose]	BS-36-52</p>
-<p>	[araC, SMALL-alpha-L-arabinopyranose, BS-57-73]	[araC, SMALL-alpha-L-arabinopyranose, BS-36-52, BS-araE-pro1]</p>
+</td></tr></table></div>
 <p>Finally, execute the “<em>Rules from tf-tfbs.ipynb</em>” to obtain the
 <em>Rules</em> to model the defined interaction network. The complete rule-based
 model can be found in the arabinose folder from the Network Biology Lab
 GitHub repository <a class="reference external" href="https://github.com/networkbiolab/atlas/blob/master/arabinose/Model%20arabinose%20operon%20Met%20%2B%20PPI%20%2B%20TXTL%20%2B%20GRN.ipynb">here</a>.</p>
-<p>	# [crp, SMALL_CAMP, crp, SMALL_CAMP] interacts with BS_83_104
-	Rule(‘TranscriptionFactorMet_AssemblyRule_1’,
-		prot(name = ‘crp’, dna = None, met = 2, up = None, dw = 1) %
-		met(name = ‘CAMP’, prot = 3) %
-		prot(name = ‘crp’, dna = None, met = 3, up = 1, dw = None) %
-		met(name = ‘CAMP’, prot = 2) +
-		dna(name = ‘BS_83_104’, prot = None, free = ‘True’, up = WILD, dw = WILD) |
-		prot(name = ‘crp’, dna = None, met = 2, up = None, dw = 1) %
-		met(name = ‘CAMP’, prot = 3) %
-		prot(name = ‘crp’, dna = 4, met = 3, up = 1, dw = None) %
-		met(name = ‘CAMP’, prot = 2) %
-		dna(name = ‘BS_83_104’, prot = 4, free = ‘False’, up = WILD, dw = WILD),
-		Parameter(‘fwd_TranscriptionFactorMet_AssemblyRule_1’, 0),
-		Parameter(‘rvs_TranscriptionFactorMet_AssemblyRule_1’, 0))</p>
-<p>	# [crp, SMALL_CAMP, crp, SMALL_CAMP] interacts with [BS_83_104, BS_araB_pro1]
-	Rule(‘TranscriptionFactorMet_AssemblyRule_2’,
-		prot(name = ‘crp’, dna = None, met = 2, up = None, dw = 1) %
-		met(name = ‘CAMP’, prot = 3) %
-		prot(name = ‘crp’, dna = None, met = 3, up = 1, dw = None) %
-		met(name = ‘CAMP’, prot = 2) +
-		dna(name = ‘BS_83_104’, prot = None, free = ‘True’, up = WILD, dw = WILD) %
-		dna(name = ‘araB’, type = ‘pro1’, prot = None, free = ‘True’, up = WILD, dw = WILD) |
-		prot(name = ‘crp’, dna = None, met = 2, up = None, dw = 1) %
-		met(name = ‘CAMP’, prot = 3) %
-		prot(name = ‘crp’, dna = 4, met = 3, up = 1, dw = None) %
-		met(name = ‘CAMP’, prot = 2) %
-		dna(name = ‘BS_83_104’, prot = 4, free = ‘False’, up = WILD, dw = WILD) %
-		dna(name = ‘araB’, type = ‘pro1’, prot = None, free = ‘False’, up = WILD, dw = WILD),
-		Parameter(‘fwd_TranscriptionFactorMet_AssemblyRule_2’, 0),
-		Parameter(‘rvs_TranscriptionFactorMet_AssemblyRule_2’, 0))</p>
-<p>	# araC interacts with BS_35_51
-	Rule(‘TranscriptionFactorMet_AssemblyRule_3’,
-		prot(name = ‘araC’, dna = None, met = None, up = None, dw = None) +
-		dna(name = ‘BS_35_51’, prot = None, free = ‘True’, up = WILD, dw = WILD) |
-		prot(name = ‘araC’, dna = 1, met = None, up = None, dw = None) %
-		dna(name = ‘BS_35_51’, prot = 1, free = ‘False’, up = WILD, dw = WILD),
-		Parameter(‘fwd_TranscriptionFactorMet_AssemblyRule_3’, 0),
-		Parameter(‘rvs_TranscriptionFactorMet_AssemblyRule_3’, 0))</p>
-<p>	# araC interacts with BS_56_72
-	Rule(‘TranscriptionFactorMet_AssemblyRule_4’,
-		prot(name = ‘araC’, dna = None, met = None, up = None, dw = None) +
-		dna(name = ‘BS_56_72’, prot = None, free = ‘True’, up = WILD, dw = WILD) |
-		prot(name = ‘araC’, dna = 1, met = None, up = None, dw = None) %
-		dna(name = ‘BS_56_72’, prot = 1, free = ‘False’, up = WILD, dw = WILD),
-		Parameter(‘fwd_TranscriptionFactorMet_AssemblyRule_4’, 0),
-		Parameter(‘rvs_TranscriptionFactorMet_AssemblyRule_4’, 0))</p>
-<p>	# araC interacts with BS_109_125
-	Rule(‘TranscriptionFactorMet_AssemblyRule_5’,
-		prot(name = ‘araC’, dna = None, met = None, up = None, dw = None) +
-		dna(name = ‘BS_109_125’, prot = None, free = ‘True’, up = WILD, dw = WILD) |
-		prot(name = ‘araC’, dna = 1, met = None, up = None, dw = None) %
-		dna(name = ‘BS_109_125’, prot = 1, free = ‘False’, up = WILD, dw = WILD),
-		Parameter(‘fwd_TranscriptionFactorMet_AssemblyRule_5’, 0),
-		Parameter(‘rvs_TranscriptionFactorMet_AssemblyRule_5’, 0))</p>
-<p>	# araC interacts with BS_130_146
-	Rule(‘TranscriptionFactorMet_AssemblyRule_6’,
-		prot(name = ‘araC’, dna = None, met = None, up = None, dw = None) +
-		dna(name = ‘BS_130_146’, prot = None, free = ‘True’, up = WILD, dw = WILD) |
-		prot(name = ‘araC’, dna = 1, met = None, up = None, dw = None) %
-		dna(name = ‘BS_130_146’, prot = 1, free = ‘False’, up = WILD, dw = WILD),
-		Parameter(‘fwd_TranscriptionFactorMet_AssemblyRule_6’, 0),
-		Parameter(‘rvs_TranscriptionFactorMet_AssemblyRule_6’, 0))</p>
-<p>	# araC interacts with BS_267_283
-	Rule(‘TranscriptionFactorMet_AssemblyRule_7’,
-		prot(name = ‘araC’, dna = None, met = None, up = None, dw = None) +
-		dna(name = ‘BS_267_283’, prot = None, free = ‘True’, up = WILD, dw = WILD) |
-		prot(name = ‘araC’, dna = 1, met = None, up = None, dw = None) %
-		dna(name = ‘BS_267_283’, prot = 1, free = ‘False’, up = WILD, dw = WILD),
-		Parameter(‘fwd_TranscriptionFactorMet_AssemblyRule_7’, 0),
-		Parameter(‘rvs_TranscriptionFactorMet_AssemblyRule_7’, 0))</p>
-<p>	# [araC, BS_56_72] interacts with [araC, BS_267_283, BS_araC_pro1]
-	Rule(‘TranscriptionFactorMet_AssemblyRule_8’,
-		prot(name = ‘araC’, dna = 1, met = None, up = None, dw = None) %
-		dna(name = ‘BS_56_72’, prot = 1, free = ‘False’, up = WILD, dw = WILD) +
-		prot(name = ‘araC’, dna = 2, met = None, up = None, dw = None) %
-		dna(name = ‘BS_267_283’, prot = 2, free = ‘False’, up = WILD, dw = WILD) %
-		dna(name = ‘araC’, type = ‘pro1’, prot = None, free = ‘False’, up = WILD, dw = WILD) |
-		prot(name = ‘araC’, dna = None, met = None, up = None, dw = 1) %
-		dna(name = ‘BS_56_72’, prot = 2, free = ‘False’, up = WILD, dw = WILD) %
-		prot(name = ‘araC’, dna = 2, met = None, up = 1, dw = None) %
-		dna(name = ‘BS_267_283’, prot = None, free = ‘False’, up = WILD, dw = WILD) %
-		dna(name = ‘araC’, type = ‘pro1’, prot = None, free = ‘False’, up = WILD, dw = WILD),
-		Parameter(‘fwd_TranscriptionFactorMet_AssemblyRule_8’, 0),
-		Parameter(‘rvs_TranscriptionFactorMet_AssemblyRule_8’, 0))</p>
-<p>	# [araC, SMALL_alpha_L_arabinopyranose] interacts with BS_35_51
-	Rule(‘TranscriptionFactorMet_AssemblyRule_9’,
-		prot(name = ‘araC’, dna = None, met = 1, up = None, dw = None) %
-		met(name = ‘alpha_L_arabinopyranose’, prot = 1) +
-		dna(name = ‘BS_35_51’, prot = None, free = ‘True’, up = WILD, dw = WILD) |
-		prot(name = ‘araC’, dna = 2, met = 1, up = None, dw = None) %
-		met(name = ‘alpha_L_arabinopyranose’, prot = 1) %
-		dna(name = ‘BS_35_51’, prot = 2, free = ‘False’, up = WILD, dw = WILD),
-		Parameter(‘fwd_TranscriptionFactorMet_AssemblyRule_9’, 0),
-		Parameter(‘rvs_TranscriptionFactorMet_AssemblyRule_9’, 0))</p>
-<p>	# [araC, BS_56_72] interacts with SMALL_alpha_L_arabinopyranose
-	Rule(‘TranscriptionFactorMet_AssemblyRule_10’,
-		prot(name = ‘araC’, dna = 1, met = None, up = None, dw = None) %
-		dna(name = ‘BS_56_72’, prot = 1, free = ‘False’, up = WILD, dw = WILD) +
-		met(name = ‘alpha_L_arabinopyranose’, prot = None) |
-		prot(name = ‘araC’, dna = 2, met = 1, up = None, dw = None) %
-		dna(name = ‘BS_56_72’, prot = 2, free = ‘False’, up = WILD, dw = WILD) %
-		met(name = ‘alpha_L_arabinopyranose’, prot = 1),
-		Parameter(‘fwd_TranscriptionFactorMet_AssemblyRule_10’, 0),
-		Parameter(‘rvs_TranscriptionFactorMet_AssemblyRule_10’, 0))</p>
-<p>	# [araC, BS_267_283] interacts with SMALL_alpha_L_arabinopyranose
-	Rule(‘TranscriptionFactorMet_AssemblyRule_11’,
-		prot(name = ‘araC’, dna = 1, met = None, up = None, dw = None) %
-		dna(name = ‘BS_267_283’, prot = 1, free = ‘False’, up = WILD, dw = WILD) +
-		met(name = ‘alpha_L_arabinopyranose’, prot = None) |
-		prot(name = ‘araC’, dna = 2, met = 1, up = None, dw = None) %
-		dna(name = ‘BS_267_283’, prot = 2, free = ‘False’, up = WILD, dw = WILD) %
-		met(name = ‘alpha_L_arabinopyranose’, prot = 1),
-		Parameter(‘fwd_TranscriptionFactorMet_AssemblyRule_11’, 0),
-		Parameter(‘rvs_TranscriptionFactorMet_AssemblyRule_11’, 0))</p>
-<p>	# [araC, SMALL_alpha_L_arabinopyranose, BS_56_72] interacts with [araC, SMALL_alpha_L_arabinopyranose, BS_35_51, BS_araB_pro1]
-	Rule(‘TranscriptionFactorMet_AssemblyRule_12’,
-		prot(name = ‘araC’, dna = 2, met = 1, up = None, dw = None) %
-		met(name = ‘alpha_L_arabinopyranose’, prot = 1) %
-		dna(name = ‘BS_56_72’, prot = 2, free = ‘False’, up = WILD, dw = WILD) +
-		prot(name = ‘araC’, dna = 4, met = 3, up = None, dw = None) %
-		met(name = ‘alpha_L_arabinopyranose’, prot = 3) %
-		dna(name = ‘BS_35_51’, prot = 4, free = ‘False’, up = WILD, dw = WILD) %
-		dna(name = ‘araB’, type = ‘pro1’, prot = None, free = ‘False’, up = WILD, dw = WILD) |
-		prot(name = ‘araC’, dna = None, met = 2, up = None, dw = 1) %
-		met(name = ‘alpha_L_arabinopyranose’, prot = 3) %
-		dna(name = ‘BS_56_72’, prot = 4, free = ‘False’, up = WILD, dw = WILD) %
-		prot(name = ‘araC’, dna = 4, met = 3, up = 1, dw = None) %
-		met(name = ‘alpha_L_arabinopyranose’, prot = 2) %
-		dna(name = ‘BS_35_51’, prot = None, free = ‘False’, up = WILD, dw = WILD) %
-		dna(name = ‘araB’, type = ‘pro1’, prot = None, free = ‘False’, up = WILD, dw = WILD),
-		Parameter(‘fwd_TranscriptionFactorMet_AssemblyRule_12’, 0),
-		Parameter(‘rvs_TranscriptionFactorMet_AssemblyRule_12’, 0))</p>
-<p>	# [araC, SMALL_alpha_L_arabinopyranose] interacts with BS_158_174
-	Rule(‘TranscriptionFactorMet_AssemblyRule_13’,
-		prot(name = ‘araC’, dna = None, met = 1, up = None, dw = None) %
-		met(name = ‘alpha_L_arabinopyranose’, prot = 1) +
-		dna(name = ‘BS_158_174’, prot = None, free = ‘True’, up = WILD, dw = WILD) |
-		prot(name = ‘araC’, dna = 2, met = 1, up = None, dw = None) %
-		met(name = ‘alpha_L_arabinopyranose’, prot = 1) %
-		dna(name = ‘BS_158_174’, prot = 2, free = ‘False’, up = WILD, dw = WILD),
-		Parameter(‘fwd_TranscriptionFactorMet_AssemblyRule_13’, 0),
-		Parameter(‘rvs_TranscriptionFactorMet_AssemblyRule_13’, 0))</p>
-<p>	# [araC, SMALL_alpha_L_arabinopyranose] interacts with BS_137_153
-	Rule(‘TranscriptionFactorMet_AssemblyRule_14’,
-		prot(name = ‘araC’, dna = None, met = 1, up = None, dw = None) %
-		met(name = ‘alpha_L_arabinopyranose’, prot = 1) +
-		dna(name = ‘BS_137_153’, prot = None, free = ‘True’, up = WILD, dw = WILD) |
-		prot(name = ‘araC’, dna = 2, met = 1, up = None, dw = None) %
-		met(name = ‘alpha_L_arabinopyranose’, prot = 1) %
-		dna(name = ‘BS_137_153’, prot = 2, free = ‘False’, up = WILD, dw = WILD),
-		Parameter(‘fwd_TranscriptionFactorMet_AssemblyRule_14’, 0),
-		Parameter(‘rvs_TranscriptionFactorMet_AssemblyRule_14’, 0))</p>
-<p>	# [araC, SMALL_alpha_L_arabinopyranose] interacts with BS_83_99
-	Rule(‘TranscriptionFactorMet_AssemblyRule_15’,
-		prot(name = ‘araC’, dna = None, met = 1, up = None, dw = None) %
-		met(name = ‘alpha_L_arabinopyranose’, prot = 1) +
-		dna(name = ‘BS_83_99’, prot = None, free = ‘True’, up = WILD, dw = WILD) |
-		prot(name = ‘araC’, dna = 2, met = 1, up = None, dw = None) %
-		met(name = ‘alpha_L_arabinopyranose’, prot = 1) %
-		dna(name = ‘BS_83_99’, prot = 2, free = ‘False’, up = WILD, dw = WILD),
-		Parameter(‘fwd_TranscriptionFactorMet_AssemblyRule_15’, 0),
-		Parameter(‘rvs_TranscriptionFactorMet_AssemblyRule_15’, 0))</p>
-<p>	# [araC, SMALL_alpha_L_arabinopyranose] interacts with BS_62_78
-	Rule(‘TranscriptionFactorMet_AssemblyRule_16’,
-		prot(name = ‘araC’, dna = None, met = 1, up = None, dw = None) %
-		met(name = ‘alpha_L_arabinopyranose’, prot = 1) +
-		dna(name = ‘BS_62_78’, prot = None, free = ‘True’, up = WILD, dw = WILD) |
-		prot(name = ‘araC’, dna = 2, met = 1, up = None, dw = None) %
-		met(name = ‘alpha_L_arabinopyranose’, prot = 1) %
-		dna(name = ‘BS_62_78’, prot = 2, free = ‘False’, up = WILD, dw = WILD),
-		Parameter(‘fwd_TranscriptionFactorMet_AssemblyRule_16’, 0),
-		Parameter(‘rvs_TranscriptionFactorMet_AssemblyRule_16’, 0))</p>
-<p>	# [araC, SMALL_alpha_L_arabinopyranose, BS_83_99] interacts with [araC, SMALL_alpha_L_arabinopyranose, BS_62_78, BS_araF_pro1]
-	Rule(‘TranscriptionFactorMet_AssemblyRule_17’,
-		prot(name = ‘araC’, dna = 2, met = 1, up = None, dw = None) %
-		met(name = ‘alpha_L_arabinopyranose’, prot = 1) %
-		dna(name = ‘BS_83_99’, prot = 2, free = ‘False’, up = WILD, dw = WILD) +
-		prot(name = ‘araC’, dna = 4, met = 3, up = None, dw = None) %
-		met(name = ‘alpha_L_arabinopyranose’, prot = 3) %
-		dna(name = ‘BS_62_78’, prot = 4, free = ‘False’, up = WILD, dw = WILD) %
-		dna(name = ‘araF’, type = ‘pro1’, prot = None, free = ‘False’, up = WILD, dw = WILD) |
-		prot(name = ‘araC’, dna = None, met = 2, up = None, dw = 1) %
-		met(name = ‘alpha_L_arabinopyranose’, prot = 3) %
-		dna(name = ‘BS_83_99’, prot = 4, free = ‘False’, up = WILD, dw = WILD) %
-		prot(name = ‘araC’, dna = 4, met = 3, up = 1, dw = None) %
-		met(name = ‘alpha_L_arabinopyranose’, prot = 2) %
-		dna(name = ‘BS_62_78’, prot = None, free = ‘False’, up = WILD, dw = WILD) %
-		dna(name = ‘araF’, type = ‘pro1’, prot = None, free = ‘False’, up = WILD, dw = WILD),
-		Parameter(‘fwd_TranscriptionFactorMet_AssemblyRule_17’, 0),
-		Parameter(‘rvs_TranscriptionFactorMet_AssemblyRule_17’, 0))</p>
-<p>	# [araC, SMALL_alpha_L_arabinopyranose] interacts with BS_57_73
-	Rule(‘TranscriptionFactorMet_AssemblyRule_18’,
-		prot(name = ‘araC’, dna = None, met = 1, up = None, dw = None) %
-		met(name = ‘alpha_L_arabinopyranose’, prot = 1) +
-		dna(name = ‘BS_57_73’, prot = None, free = ‘True’, up = WILD, dw = WILD) |
-		prot(name = ‘araC’, dna = 2, met = 1, up = None, dw = None) %
-		met(name = ‘alpha_L_arabinopyranose’, prot = 1) %
-		dna(name = ‘BS_57_73’, prot = 2, free = ‘False’, up = WILD, dw = WILD),
-		Parameter(‘fwd_TranscriptionFactorMet_AssemblyRule_18’, 0),
-		Parameter(‘rvs_TranscriptionFactorMet_AssemblyRule_18’, 0))</p>
-<p>	# [araC, SMALL_alpha_L_arabinopyranose] interacts with BS_36_52
-	Rule(‘TranscriptionFactorMet_AssemblyRule_19’,
-		prot(name = ‘araC’, dna = None, met = 1, up = None, dw = None) %
-		met(name = ‘alpha_L_arabinopyranose’, prot = 1) +
-		dna(name = ‘BS_36_52’, prot = None, free = ‘True’, up = WILD, dw = WILD) |
-		prot(name = ‘araC’, dna = 2, met = 1, up = None, dw = None) %
-		met(name = ‘alpha_L_arabinopyranose’, prot = 1) %
-		dna(name = ‘BS_36_52’, prot = 2, free = ‘False’, up = WILD, dw = WILD),
-		Parameter(‘fwd_TranscriptionFactorMet_AssemblyRule_19’, 0),
-		Parameter(‘rvs_TranscriptionFactorMet_AssemblyRule_19’, 0))</p>
-<p>	# [araC, SMALL_alpha_L_arabinopyranose, BS_57_73] interacts with [araC, SMALL_alpha_L_arabinopyranose, BS_36_52, BS_araE_pro1]
-	Rule(‘TranscriptionFactorMet_AssemblyRule_20’,
-		prot(name = ‘araC’, dna = 2, met = 1, up = None, dw = None) %
-		met(name = ‘alpha_L_arabinopyranose’, prot = 1) %
-		dna(name = ‘BS_57_73’, prot = 2, free = ‘False’, up = WILD, dw = WILD) +
-		prot(name = ‘araC’, dna = 4, met = 3, up = None, dw = None) %
-		met(name = ‘alpha_L_arabinopyranose’, prot = 3) %
-		dna(name = ‘BS_36_52’, prot = 4, free = ‘False’, up = WILD, dw = WILD) %
-		dna(name = ‘araE’, type = ‘pro1’, prot = None, free = ‘False’, up = WILD, dw = WILD) |
-		prot(name = ‘araC’, dna = None, met = 2, up = None, dw = 1) %
-		met(name = ‘alpha_L_arabinopyranose’, prot = 3) %
-		dna(name = ‘BS_57_73’, prot = 4, free = ‘False’, up = WILD, dw = WILD) %
-		prot(name = ‘araC’, dna = 4, met = 3, up = 1, dw = None) %
-		met(name = ‘alpha_L_arabinopyranose’, prot = 2) %
-		dna(name = ‘BS_36_52’, prot = None, free = ‘False’, up = WILD, dw = WILD) %
-		dna(name = ‘araE’, type = ‘pro1’, prot = None, free = ‘False’, up = WILD, dw = WILD),
-		Parameter(‘fwd_TranscriptionFactorMet_AssemblyRule_20’, 0),
-		Parameter(‘rvs_TranscriptionFactorMet_AssemblyRule_20’, 0))</p>
-<p>	<strong>Reversibility of reactions</strong>. Atlas writes dead <em>Rules</em> for each
-	reaction declared in the network file. The <code class="docutils literal notranslate"><span class="pre">Parameter('fwd_ReactionName',</span> <span class="pre">0))</span></code>
-	must be set to non-zero to activate the rule and <code class="docutils literal notranslate"><span class="pre">Parameter('rvs_ReactionName',</span> <span class="pre">0))</span></code>
-	must be set to non-zero to define a reversible reaction.</p>
-<p>	<strong>Simulation</strong>. The model can be simulated only with the instantiation of
-	<code class="docutils literal notranslate"><span class="pre">Monomers</span></code> and <code class="docutils literal notranslate"><span class="pre">Initials</span></code> (<a class="reference external" href="https://pysb.readthedocs.io/en/stable/tutorial.html#introduction">More here</a>).
-	Run <em>Monomer+Initials+Observables from metabolic network.ipynb</em> to obtain
-	automatically the necessary <code class="docutils literal notranslate"><span class="pre">Monomers</span></code> and <code class="docutils literal notranslate"><span class="pre">Initials</span></code> (including
-	proteins and enzymatic complexes).</p>
-<p>	<strong>Plotting</strong>. The model can be observed only with the instantation of
-	<code class="docutils literal notranslate"><span class="pre">Observables</span></code> (<a class="reference external" href="https://pysb.readthedocs.io/en/stable/tutorial.html#simulation-and-analysis">More here</a>).
-	Run <em>Monomer+Initials+Observables from metabolic network.ipynb</em> to obtain
-	automatically the all possible <code class="docutils literal notranslate"><span class="pre">Observables</span></code> for metabolites.</p>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>  1
+  2
+  3
+  4
+  5
+  6
+  7
+  8
+  9
+ 10
+ 11
+ 12
+ 13
+ 14
+ 15
+ 16
+ 17
+ 18
+ 19
+ 20
+ 21
+ 22
+ 23
+ 24
+ 25
+ 26
+ 27
+ 28
+ 29
+ 30
+ 31
+ 32
+ 33
+ 34
+ 35
+ 36
+ 37
+ 38
+ 39
+ 40
+ 41
+ 42
+ 43
+ 44
+ 45
+ 46
+ 47
+ 48
+ 49
+ 50
+ 51
+ 52
+ 53
+ 54
+ 55
+ 56
+ 57
+ 58
+ 59
+ 60
+ 61
+ 62
+ 63
+ 64
+ 65
+ 66
+ 67
+ 68
+ 69
+ 70
+ 71
+ 72
+ 73
+ 74
+ 75
+ 76
+ 77
+ 78
+ 79
+ 80
+ 81
+ 82
+ 83
+ 84
+ 85
+ 86
+ 87
+ 88
+ 89
+ 90
+ 91
+ 92
+ 93
+ 94
+ 95
+ 96
+ 97
+ 98
+ 99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201
+202
+203
+204
+205
+206
+207
+208
+209
+210
+211
+212
+213
+214
+215
+216
+217
+218
+219
+220
+221
+222
+223
+224
+225
+226
+227
+228
+229
+230
+231
+232
+233
+234
+235
+236
+237
+238
+239
+240
+241
+242
+243
+244
+245
+246
+247</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="c1"># [crp, SMALL_CAMP, crp, SMALL_CAMP] interacts with BS_83_104</span>
+<span class="n">Rule</span><span class="p">(</span><span class="s1">&#39;TranscriptionFactorMet_AssemblyRule_1&#39;</span><span class="p">,</span>
+	<span class="n">prot</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;crp&#39;</span><span class="p">,</span> <span class="n">dna</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">met</span> <span class="o">=</span> <span class="mi">2</span><span class="p">,</span> <span class="n">up</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">dw</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span> <span class="o">%</span>
+	<span class="n">met</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;CAMP&#39;</span><span class="p">,</span> <span class="n">prot</span> <span class="o">=</span> <span class="mi">3</span><span class="p">)</span> <span class="o">%</span>
+	<span class="n">prot</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;crp&#39;</span><span class="p">,</span> <span class="n">dna</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">met</span> <span class="o">=</span> <span class="mi">3</span><span class="p">,</span> <span class="n">up</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">dw</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">%</span>
+	<span class="n">met</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;CAMP&#39;</span><span class="p">,</span> <span class="n">prot</span> <span class="o">=</span> <span class="mi">2</span><span class="p">)</span> <span class="o">+</span>
+	<span class="n">dna</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;BS_83_104&#39;</span><span class="p">,</span> <span class="n">prot</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">free</span> <span class="o">=</span> <span class="s1">&#39;True&#39;</span><span class="p">,</span> <span class="n">up</span> <span class="o">=</span> <span class="n">WILD</span><span class="p">,</span> <span class="n">dw</span> <span class="o">=</span> <span class="n">WILD</span><span class="p">)</span> <span class="o">|</span>
+	<span class="n">prot</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;crp&#39;</span><span class="p">,</span> <span class="n">dna</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">met</span> <span class="o">=</span> <span class="mi">2</span><span class="p">,</span> <span class="n">up</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">dw</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span> <span class="o">%</span>
+	<span class="n">met</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;CAMP&#39;</span><span class="p">,</span> <span class="n">prot</span> <span class="o">=</span> <span class="mi">3</span><span class="p">)</span> <span class="o">%</span>
+	<span class="n">prot</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;crp&#39;</span><span class="p">,</span> <span class="n">dna</span> <span class="o">=</span> <span class="mi">4</span><span class="p">,</span> <span class="n">met</span> <span class="o">=</span> <span class="mi">3</span><span class="p">,</span> <span class="n">up</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">dw</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">%</span>
+	<span class="n">met</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;CAMP&#39;</span><span class="p">,</span> <span class="n">prot</span> <span class="o">=</span> <span class="mi">2</span><span class="p">)</span> <span class="o">%</span>
+	<span class="n">dna</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;BS_83_104&#39;</span><span class="p">,</span> <span class="n">prot</span> <span class="o">=</span> <span class="mi">4</span><span class="p">,</span> <span class="n">free</span> <span class="o">=</span> <span class="s1">&#39;False&#39;</span><span class="p">,</span> <span class="n">up</span> <span class="o">=</span> <span class="n">WILD</span><span class="p">,</span> <span class="n">dw</span> <span class="o">=</span> <span class="n">WILD</span><span class="p">),</span>
+	<span class="n">Parameter</span><span class="p">(</span><span class="s1">&#39;fwd_TranscriptionFactorMet_AssemblyRule_1&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span>
+	<span class="n">Parameter</span><span class="p">(</span><span class="s1">&#39;rvs_TranscriptionFactorMet_AssemblyRule_1&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+
+<span class="c1"># [crp, SMALL_CAMP, crp, SMALL_CAMP] interacts with [BS_83_104, BS_araB_pro1]</span>
+<span class="n">Rule</span><span class="p">(</span><span class="s1">&#39;TranscriptionFactorMet_AssemblyRule_2&#39;</span><span class="p">,</span>
+	<span class="n">prot</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;crp&#39;</span><span class="p">,</span> <span class="n">dna</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">met</span> <span class="o">=</span> <span class="mi">2</span><span class="p">,</span> <span class="n">up</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">dw</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span> <span class="o">%</span>
+	<span class="n">met</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;CAMP&#39;</span><span class="p">,</span> <span class="n">prot</span> <span class="o">=</span> <span class="mi">3</span><span class="p">)</span> <span class="o">%</span>
+	<span class="n">prot</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;crp&#39;</span><span class="p">,</span> <span class="n">dna</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">met</span> <span class="o">=</span> <span class="mi">3</span><span class="p">,</span> <span class="n">up</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">dw</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">%</span>
+	<span class="n">met</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;CAMP&#39;</span><span class="p">,</span> <span class="n">prot</span> <span class="o">=</span> <span class="mi">2</span><span class="p">)</span> <span class="o">+</span>
+	<span class="n">dna</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;BS_83_104&#39;</span><span class="p">,</span> <span class="n">prot</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">free</span> <span class="o">=</span> <span class="s1">&#39;True&#39;</span><span class="p">,</span> <span class="n">up</span> <span class="o">=</span> <span class="n">WILD</span><span class="p">,</span> <span class="n">dw</span> <span class="o">=</span> <span class="n">WILD</span><span class="p">)</span> <span class="o">%</span>
+	<span class="n">dna</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;araB&#39;</span><span class="p">,</span> <span class="nb">type</span> <span class="o">=</span> <span class="s1">&#39;pro1&#39;</span><span class="p">,</span> <span class="n">prot</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">free</span> <span class="o">=</span> <span class="s1">&#39;True&#39;</span><span class="p">,</span> <span class="n">up</span> <span class="o">=</span> <span class="n">WILD</span><span class="p">,</span> <span class="n">dw</span> <span class="o">=</span> <span class="n">WILD</span><span class="p">)</span> <span class="o">|</span>
+	<span class="n">prot</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;crp&#39;</span><span class="p">,</span> <span class="n">dna</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">met</span> <span class="o">=</span> <span class="mi">2</span><span class="p">,</span> <span class="n">up</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">dw</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span> <span class="o">%</span>
+	<span class="n">met</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;CAMP&#39;</span><span class="p">,</span> <span class="n">prot</span> <span class="o">=</span> <span class="mi">3</span><span class="p">)</span> <span class="o">%</span>
+	<span class="n">prot</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;crp&#39;</span><span class="p">,</span> <span class="n">dna</span> <span class="o">=</span> <span class="mi">4</span><span class="p">,</span> <span class="n">met</span> <span class="o">=</span> <span class="mi">3</span><span class="p">,</span> <span class="n">up</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">dw</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">%</span>
+	<span class="n">met</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;CAMP&#39;</span><span class="p">,</span> <span class="n">prot</span> <span class="o">=</span> <span class="mi">2</span><span class="p">)</span> <span class="o">%</span>
+	<span class="n">dna</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;BS_83_104&#39;</span><span class="p">,</span> <span class="n">prot</span> <span class="o">=</span> <span class="mi">4</span><span class="p">,</span> <span class="n">free</span> <span class="o">=</span> <span class="s1">&#39;False&#39;</span><span class="p">,</span> <span class="n">up</span> <span class="o">=</span> <span class="n">WILD</span><span class="p">,</span> <span class="n">dw</span> <span class="o">=</span> <span class="n">WILD</span><span class="p">)</span> <span class="o">%</span>
+	<span class="n">dna</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;araB&#39;</span><span class="p">,</span> <span class="nb">type</span> <span class="o">=</span> <span class="s1">&#39;pro1&#39;</span><span class="p">,</span> <span class="n">prot</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">free</span> <span class="o">=</span> <span class="s1">&#39;False&#39;</span><span class="p">,</span> <span class="n">up</span> <span class="o">=</span> <span class="n">WILD</span><span class="p">,</span> <span class="n">dw</span> <span class="o">=</span> <span class="n">WILD</span><span class="p">),</span>
+	<span class="n">Parameter</span><span class="p">(</span><span class="s1">&#39;fwd_TranscriptionFactorMet_AssemblyRule_2&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span>
+	<span class="n">Parameter</span><span class="p">(</span><span class="s1">&#39;rvs_TranscriptionFactorMet_AssemblyRule_2&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+
+<span class="c1"># araC interacts with BS_35_51</span>
+<span class="n">Rule</span><span class="p">(</span><span class="s1">&#39;TranscriptionFactorMet_AssemblyRule_3&#39;</span><span class="p">,</span>
+	<span class="n">prot</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;araC&#39;</span><span class="p">,</span> <span class="n">dna</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">met</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">up</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">dw</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">+</span>
+	<span class="n">dna</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;BS_35_51&#39;</span><span class="p">,</span> <span class="n">prot</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">free</span> <span class="o">=</span> <span class="s1">&#39;True&#39;</span><span class="p">,</span> <span class="n">up</span> <span class="o">=</span> <span class="n">WILD</span><span class="p">,</span> <span class="n">dw</span> <span class="o">=</span> <span class="n">WILD</span><span class="p">)</span> <span class="o">|</span>
+	<span class="n">prot</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;araC&#39;</span><span class="p">,</span> <span class="n">dna</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">met</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">up</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">dw</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">%</span>
+	<span class="n">dna</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;BS_35_51&#39;</span><span class="p">,</span> <span class="n">prot</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">free</span> <span class="o">=</span> <span class="s1">&#39;False&#39;</span><span class="p">,</span> <span class="n">up</span> <span class="o">=</span> <span class="n">WILD</span><span class="p">,</span> <span class="n">dw</span> <span class="o">=</span> <span class="n">WILD</span><span class="p">),</span>
+	<span class="n">Parameter</span><span class="p">(</span><span class="s1">&#39;fwd_TranscriptionFactorMet_AssemblyRule_3&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span>
+	<span class="n">Parameter</span><span class="p">(</span><span class="s1">&#39;rvs_TranscriptionFactorMet_AssemblyRule_3&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+
+<span class="c1"># araC interacts with BS_56_72</span>
+<span class="n">Rule</span><span class="p">(</span><span class="s1">&#39;TranscriptionFactorMet_AssemblyRule_4&#39;</span><span class="p">,</span>
+	<span class="n">prot</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;araC&#39;</span><span class="p">,</span> <span class="n">dna</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">met</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">up</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">dw</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">+</span>
+	<span class="n">dna</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;BS_56_72&#39;</span><span class="p">,</span> <span class="n">prot</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">free</span> <span class="o">=</span> <span class="s1">&#39;True&#39;</span><span class="p">,</span> <span class="n">up</span> <span class="o">=</span> <span class="n">WILD</span><span class="p">,</span> <span class="n">dw</span> <span class="o">=</span> <span class="n">WILD</span><span class="p">)</span> <span class="o">|</span>
+	<span class="n">prot</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;araC&#39;</span><span class="p">,</span> <span class="n">dna</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">met</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">up</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">dw</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">%</span>
+	<span class="n">dna</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;BS_56_72&#39;</span><span class="p">,</span> <span class="n">prot</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">free</span> <span class="o">=</span> <span class="s1">&#39;False&#39;</span><span class="p">,</span> <span class="n">up</span> <span class="o">=</span> <span class="n">WILD</span><span class="p">,</span> <span class="n">dw</span> <span class="o">=</span> <span class="n">WILD</span><span class="p">),</span>
+	<span class="n">Parameter</span><span class="p">(</span><span class="s1">&#39;fwd_TranscriptionFactorMet_AssemblyRule_4&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span>
+	<span class="n">Parameter</span><span class="p">(</span><span class="s1">&#39;rvs_TranscriptionFactorMet_AssemblyRule_4&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+
+<span class="c1"># araC interacts with BS_109_125</span>
+<span class="n">Rule</span><span class="p">(</span><span class="s1">&#39;TranscriptionFactorMet_AssemblyRule_5&#39;</span><span class="p">,</span>
+	<span class="n">prot</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;araC&#39;</span><span class="p">,</span> <span class="n">dna</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">met</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">up</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">dw</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">+</span>
+	<span class="n">dna</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;BS_109_125&#39;</span><span class="p">,</span> <span class="n">prot</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">free</span> <span class="o">=</span> <span class="s1">&#39;True&#39;</span><span class="p">,</span> <span class="n">up</span> <span class="o">=</span> <span class="n">WILD</span><span class="p">,</span> <span class="n">dw</span> <span class="o">=</span> <span class="n">WILD</span><span class="p">)</span> <span class="o">|</span>
+	<span class="n">prot</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;araC&#39;</span><span class="p">,</span> <span class="n">dna</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">met</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">up</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">dw</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">%</span>
+	<span class="n">dna</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;BS_109_125&#39;</span><span class="p">,</span> <span class="n">prot</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">free</span> <span class="o">=</span> <span class="s1">&#39;False&#39;</span><span class="p">,</span> <span class="n">up</span> <span class="o">=</span> <span class="n">WILD</span><span class="p">,</span> <span class="n">dw</span> <span class="o">=</span> <span class="n">WILD</span><span class="p">),</span>
+	<span class="n">Parameter</span><span class="p">(</span><span class="s1">&#39;fwd_TranscriptionFactorMet_AssemblyRule_5&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span>
+	<span class="n">Parameter</span><span class="p">(</span><span class="s1">&#39;rvs_TranscriptionFactorMet_AssemblyRule_5&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+
+<span class="c1"># araC interacts with BS_130_146</span>
+<span class="n">Rule</span><span class="p">(</span><span class="s1">&#39;TranscriptionFactorMet_AssemblyRule_6&#39;</span><span class="p">,</span>
+	<span class="n">prot</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;araC&#39;</span><span class="p">,</span> <span class="n">dna</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">met</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">up</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">dw</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">+</span>
+	<span class="n">dna</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;BS_130_146&#39;</span><span class="p">,</span> <span class="n">prot</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">free</span> <span class="o">=</span> <span class="s1">&#39;True&#39;</span><span class="p">,</span> <span class="n">up</span> <span class="o">=</span> <span class="n">WILD</span><span class="p">,</span> <span class="n">dw</span> <span class="o">=</span> <span class="n">WILD</span><span class="p">)</span> <span class="o">|</span>
+	<span class="n">prot</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;araC&#39;</span><span class="p">,</span> <span class="n">dna</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">met</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">up</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">dw</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">%</span>
+	<span class="n">dna</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;BS_130_146&#39;</span><span class="p">,</span> <span class="n">prot</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">free</span> <span class="o">=</span> <span class="s1">&#39;False&#39;</span><span class="p">,</span> <span class="n">up</span> <span class="o">=</span> <span class="n">WILD</span><span class="p">,</span> <span class="n">dw</span> <span class="o">=</span> <span class="n">WILD</span><span class="p">),</span>
+	<span class="n">Parameter</span><span class="p">(</span><span class="s1">&#39;fwd_TranscriptionFactorMet_AssemblyRule_6&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span>
+	<span class="n">Parameter</span><span class="p">(</span><span class="s1">&#39;rvs_TranscriptionFactorMet_AssemblyRule_6&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+
+<span class="c1"># araC interacts with BS_267_283</span>
+<span class="n">Rule</span><span class="p">(</span><span class="s1">&#39;TranscriptionFactorMet_AssemblyRule_7&#39;</span><span class="p">,</span>
+	<span class="n">prot</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;araC&#39;</span><span class="p">,</span> <span class="n">dna</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">met</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">up</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">dw</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">+</span>
+	<span class="n">dna</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;BS_267_283&#39;</span><span class="p">,</span> <span class="n">prot</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">free</span> <span class="o">=</span> <span class="s1">&#39;True&#39;</span><span class="p">,</span> <span class="n">up</span> <span class="o">=</span> <span class="n">WILD</span><span class="p">,</span> <span class="n">dw</span> <span class="o">=</span> <span class="n">WILD</span><span class="p">)</span> <span class="o">|</span>
+	<span class="n">prot</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;araC&#39;</span><span class="p">,</span> <span class="n">dna</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">met</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">up</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">dw</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">%</span>
+	<span class="n">dna</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;BS_267_283&#39;</span><span class="p">,</span> <span class="n">prot</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">free</span> <span class="o">=</span> <span class="s1">&#39;False&#39;</span><span class="p">,</span> <span class="n">up</span> <span class="o">=</span> <span class="n">WILD</span><span class="p">,</span> <span class="n">dw</span> <span class="o">=</span> <span class="n">WILD</span><span class="p">),</span>
+	<span class="n">Parameter</span><span class="p">(</span><span class="s1">&#39;fwd_TranscriptionFactorMet_AssemblyRule_7&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span>
+	<span class="n">Parameter</span><span class="p">(</span><span class="s1">&#39;rvs_TranscriptionFactorMet_AssemblyRule_7&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+
+<span class="c1"># [araC, BS_56_72] interacts with [araC, BS_267_283, BS_araC_pro1]</span>
+<span class="n">Rule</span><span class="p">(</span><span class="s1">&#39;TranscriptionFactorMet_AssemblyRule_8&#39;</span><span class="p">,</span>
+	<span class="n">prot</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;araC&#39;</span><span class="p">,</span> <span class="n">dna</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">met</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">up</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">dw</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">%</span>
+	<span class="n">dna</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;BS_56_72&#39;</span><span class="p">,</span> <span class="n">prot</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">free</span> <span class="o">=</span> <span class="s1">&#39;False&#39;</span><span class="p">,</span> <span class="n">up</span> <span class="o">=</span> <span class="n">WILD</span><span class="p">,</span> <span class="n">dw</span> <span class="o">=</span> <span class="n">WILD</span><span class="p">)</span> <span class="o">+</span>
+	<span class="n">prot</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;araC&#39;</span><span class="p">,</span> <span class="n">dna</span> <span class="o">=</span> <span class="mi">2</span><span class="p">,</span> <span class="n">met</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">up</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">dw</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">%</span>
+	<span class="n">dna</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;BS_267_283&#39;</span><span class="p">,</span> <span class="n">prot</span> <span class="o">=</span> <span class="mi">2</span><span class="p">,</span> <span class="n">free</span> <span class="o">=</span> <span class="s1">&#39;False&#39;</span><span class="p">,</span> <span class="n">up</span> <span class="o">=</span> <span class="n">WILD</span><span class="p">,</span> <span class="n">dw</span> <span class="o">=</span> <span class="n">WILD</span><span class="p">)</span> <span class="o">%</span>
+	<span class="n">dna</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;araC&#39;</span><span class="p">,</span> <span class="nb">type</span> <span class="o">=</span> <span class="s1">&#39;pro1&#39;</span><span class="p">,</span> <span class="n">prot</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">free</span> <span class="o">=</span> <span class="s1">&#39;False&#39;</span><span class="p">,</span> <span class="n">up</span> <span class="o">=</span> <span class="n">WILD</span><span class="p">,</span> <span class="n">dw</span> <span class="o">=</span> <span class="n">WILD</span><span class="p">)</span> <span class="o">|</span>
+	<span class="n">prot</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;araC&#39;</span><span class="p">,</span> <span class="n">dna</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">met</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">up</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">dw</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span> <span class="o">%</span>
+	<span class="n">dna</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;BS_56_72&#39;</span><span class="p">,</span> <span class="n">prot</span> <span class="o">=</span> <span class="mi">2</span><span class="p">,</span> <span class="n">free</span> <span class="o">=</span> <span class="s1">&#39;False&#39;</span><span class="p">,</span> <span class="n">up</span> <span class="o">=</span> <span class="n">WILD</span><span class="p">,</span> <span class="n">dw</span> <span class="o">=</span> <span class="n">WILD</span><span class="p">)</span> <span class="o">%</span>
+	<span class="n">prot</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;araC&#39;</span><span class="p">,</span> <span class="n">dna</span> <span class="o">=</span> <span class="mi">2</span><span class="p">,</span> <span class="n">met</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">up</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">dw</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">%</span>
+	<span class="n">dna</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;BS_267_283&#39;</span><span class="p">,</span> <span class="n">prot</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">free</span> <span class="o">=</span> <span class="s1">&#39;False&#39;</span><span class="p">,</span> <span class="n">up</span> <span class="o">=</span> <span class="n">WILD</span><span class="p">,</span> <span class="n">dw</span> <span class="o">=</span> <span class="n">WILD</span><span class="p">)</span> <span class="o">%</span>
+	<span class="n">dna</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;araC&#39;</span><span class="p">,</span> <span class="nb">type</span> <span class="o">=</span> <span class="s1">&#39;pro1&#39;</span><span class="p">,</span> <span class="n">prot</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">free</span> <span class="o">=</span> <span class="s1">&#39;False&#39;</span><span class="p">,</span> <span class="n">up</span> <span class="o">=</span> <span class="n">WILD</span><span class="p">,</span> <span class="n">dw</span> <span class="o">=</span> <span class="n">WILD</span><span class="p">),</span>
+	<span class="n">Parameter</span><span class="p">(</span><span class="s1">&#39;fwd_TranscriptionFactorMet_AssemblyRule_8&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span>
+	<span class="n">Parameter</span><span class="p">(</span><span class="s1">&#39;rvs_TranscriptionFactorMet_AssemblyRule_8&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+
+<span class="c1"># [araC, SMALL_alpha_L_arabinopyranose] interacts with BS_35_51</span>
+<span class="n">Rule</span><span class="p">(</span><span class="s1">&#39;TranscriptionFactorMet_AssemblyRule_9&#39;</span><span class="p">,</span>
+	<span class="n">prot</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;araC&#39;</span><span class="p">,</span> <span class="n">dna</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">met</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">up</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">dw</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">%</span>
+	<span class="n">met</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;alpha_L_arabinopyranose&#39;</span><span class="p">,</span> <span class="n">prot</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span> <span class="o">+</span>
+	<span class="n">dna</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;BS_35_51&#39;</span><span class="p">,</span> <span class="n">prot</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">free</span> <span class="o">=</span> <span class="s1">&#39;True&#39;</span><span class="p">,</span> <span class="n">up</span> <span class="o">=</span> <span class="n">WILD</span><span class="p">,</span> <span class="n">dw</span> <span class="o">=</span> <span class="n">WILD</span><span class="p">)</span> <span class="o">|</span>
+	<span class="n">prot</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;araC&#39;</span><span class="p">,</span> <span class="n">dna</span> <span class="o">=</span> <span class="mi">2</span><span class="p">,</span> <span class="n">met</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">up</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">dw</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">%</span>
+	<span class="n">met</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;alpha_L_arabinopyranose&#39;</span><span class="p">,</span> <span class="n">prot</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span> <span class="o">%</span>
+	<span class="n">dna</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;BS_35_51&#39;</span><span class="p">,</span> <span class="n">prot</span> <span class="o">=</span> <span class="mi">2</span><span class="p">,</span> <span class="n">free</span> <span class="o">=</span> <span class="s1">&#39;False&#39;</span><span class="p">,</span> <span class="n">up</span> <span class="o">=</span> <span class="n">WILD</span><span class="p">,</span> <span class="n">dw</span> <span class="o">=</span> <span class="n">WILD</span><span class="p">),</span>
+	<span class="n">Parameter</span><span class="p">(</span><span class="s1">&#39;fwd_TranscriptionFactorMet_AssemblyRule_9&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span>
+	<span class="n">Parameter</span><span class="p">(</span><span class="s1">&#39;rvs_TranscriptionFactorMet_AssemblyRule_9&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+
+<span class="c1"># [araC, BS_56_72] interacts with SMALL_alpha_L_arabinopyranose</span>
+<span class="n">Rule</span><span class="p">(</span><span class="s1">&#39;TranscriptionFactorMet_AssemblyRule_10&#39;</span><span class="p">,</span>
+	<span class="n">prot</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;araC&#39;</span><span class="p">,</span> <span class="n">dna</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">met</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">up</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">dw</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">%</span>
+	<span class="n">dna</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;BS_56_72&#39;</span><span class="p">,</span> <span class="n">prot</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">free</span> <span class="o">=</span> <span class="s1">&#39;False&#39;</span><span class="p">,</span> <span class="n">up</span> <span class="o">=</span> <span class="n">WILD</span><span class="p">,</span> <span class="n">dw</span> <span class="o">=</span> <span class="n">WILD</span><span class="p">)</span> <span class="o">+</span>
+	<span class="n">met</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;alpha_L_arabinopyranose&#39;</span><span class="p">,</span> <span class="n">prot</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">|</span>
+	<span class="n">prot</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;araC&#39;</span><span class="p">,</span> <span class="n">dna</span> <span class="o">=</span> <span class="mi">2</span><span class="p">,</span> <span class="n">met</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">up</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">dw</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">%</span>
+	<span class="n">dna</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;BS_56_72&#39;</span><span class="p">,</span> <span class="n">prot</span> <span class="o">=</span> <span class="mi">2</span><span class="p">,</span> <span class="n">free</span> <span class="o">=</span> <span class="s1">&#39;False&#39;</span><span class="p">,</span> <span class="n">up</span> <span class="o">=</span> <span class="n">WILD</span><span class="p">,</span> <span class="n">dw</span> <span class="o">=</span> <span class="n">WILD</span><span class="p">)</span> <span class="o">%</span>
+	<span class="n">met</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;alpha_L_arabinopyranose&#39;</span><span class="p">,</span> <span class="n">prot</span> <span class="o">=</span> <span class="mi">1</span><span class="p">),</span>
+	<span class="n">Parameter</span><span class="p">(</span><span class="s1">&#39;fwd_TranscriptionFactorMet_AssemblyRule_10&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span>
+	<span class="n">Parameter</span><span class="p">(</span><span class="s1">&#39;rvs_TranscriptionFactorMet_AssemblyRule_10&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+
+<span class="c1"># [araC, BS_267_283] interacts with SMALL_alpha_L_arabinopyranose</span>
+<span class="n">Rule</span><span class="p">(</span><span class="s1">&#39;TranscriptionFactorMet_AssemblyRule_11&#39;</span><span class="p">,</span>
+	<span class="n">prot</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;araC&#39;</span><span class="p">,</span> <span class="n">dna</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">met</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">up</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">dw</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">%</span>
+	<span class="n">dna</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;BS_267_283&#39;</span><span class="p">,</span> <span class="n">prot</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">free</span> <span class="o">=</span> <span class="s1">&#39;False&#39;</span><span class="p">,</span> <span class="n">up</span> <span class="o">=</span> <span class="n">WILD</span><span class="p">,</span> <span class="n">dw</span> <span class="o">=</span> <span class="n">WILD</span><span class="p">)</span> <span class="o">+</span>
+	<span class="n">met</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;alpha_L_arabinopyranose&#39;</span><span class="p">,</span> <span class="n">prot</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">|</span>
+	<span class="n">prot</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;araC&#39;</span><span class="p">,</span> <span class="n">dna</span> <span class="o">=</span> <span class="mi">2</span><span class="p">,</span> <span class="n">met</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">up</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">dw</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">%</span>
+	<span class="n">dna</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;BS_267_283&#39;</span><span class="p">,</span> <span class="n">prot</span> <span class="o">=</span> <span class="mi">2</span><span class="p">,</span> <span class="n">free</span> <span class="o">=</span> <span class="s1">&#39;False&#39;</span><span class="p">,</span> <span class="n">up</span> <span class="o">=</span> <span class="n">WILD</span><span class="p">,</span> <span class="n">dw</span> <span class="o">=</span> <span class="n">WILD</span><span class="p">)</span> <span class="o">%</span>
+	<span class="n">met</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;alpha_L_arabinopyranose&#39;</span><span class="p">,</span> <span class="n">prot</span> <span class="o">=</span> <span class="mi">1</span><span class="p">),</span>
+	<span class="n">Parameter</span><span class="p">(</span><span class="s1">&#39;fwd_TranscriptionFactorMet_AssemblyRule_11&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span>
+	<span class="n">Parameter</span><span class="p">(</span><span class="s1">&#39;rvs_TranscriptionFactorMet_AssemblyRule_11&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+
+<span class="c1"># [araC, SMALL_alpha_L_arabinopyranose, BS_56_72] interacts with [araC, SMALL_alpha_L_arabinopyranose, BS_35_51, BS_araB_pro1]</span>
+<span class="n">Rule</span><span class="p">(</span><span class="s1">&#39;TranscriptionFactorMet_AssemblyRule_12&#39;</span><span class="p">,</span>
+	<span class="n">prot</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;araC&#39;</span><span class="p">,</span> <span class="n">dna</span> <span class="o">=</span> <span class="mi">2</span><span class="p">,</span> <span class="n">met</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">up</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">dw</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">%</span>
+	<span class="n">met</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;alpha_L_arabinopyranose&#39;</span><span class="p">,</span> <span class="n">prot</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span> <span class="o">%</span>
+	<span class="n">dna</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;BS_56_72&#39;</span><span class="p">,</span> <span class="n">prot</span> <span class="o">=</span> <span class="mi">2</span><span class="p">,</span> <span class="n">free</span> <span class="o">=</span> <span class="s1">&#39;False&#39;</span><span class="p">,</span> <span class="n">up</span> <span class="o">=</span> <span class="n">WILD</span><span class="p">,</span> <span class="n">dw</span> <span class="o">=</span> <span class="n">WILD</span><span class="p">)</span> <span class="o">+</span>
+	<span class="n">prot</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;araC&#39;</span><span class="p">,</span> <span class="n">dna</span> <span class="o">=</span> <span class="mi">4</span><span class="p">,</span> <span class="n">met</span> <span class="o">=</span> <span class="mi">3</span><span class="p">,</span> <span class="n">up</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">dw</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">%</span>
+	<span class="n">met</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;alpha_L_arabinopyranose&#39;</span><span class="p">,</span> <span class="n">prot</span> <span class="o">=</span> <span class="mi">3</span><span class="p">)</span> <span class="o">%</span>
+	<span class="n">dna</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;BS_35_51&#39;</span><span class="p">,</span> <span class="n">prot</span> <span class="o">=</span> <span class="mi">4</span><span class="p">,</span> <span class="n">free</span> <span class="o">=</span> <span class="s1">&#39;False&#39;</span><span class="p">,</span> <span class="n">up</span> <span class="o">=</span> <span class="n">WILD</span><span class="p">,</span> <span class="n">dw</span> <span class="o">=</span> <span class="n">WILD</span><span class="p">)</span> <span class="o">%</span>
+	<span class="n">dna</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;araB&#39;</span><span class="p">,</span> <span class="nb">type</span> <span class="o">=</span> <span class="s1">&#39;pro1&#39;</span><span class="p">,</span> <span class="n">prot</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">free</span> <span class="o">=</span> <span class="s1">&#39;False&#39;</span><span class="p">,</span> <span class="n">up</span> <span class="o">=</span> <span class="n">WILD</span><span class="p">,</span> <span class="n">dw</span> <span class="o">=</span> <span class="n">WILD</span><span class="p">)</span> <span class="o">|</span>
+	<span class="n">prot</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;araC&#39;</span><span class="p">,</span> <span class="n">dna</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">met</span> <span class="o">=</span> <span class="mi">2</span><span class="p">,</span> <span class="n">up</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">dw</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span> <span class="o">%</span>
+	<span class="n">met</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;alpha_L_arabinopyranose&#39;</span><span class="p">,</span> <span class="n">prot</span> <span class="o">=</span> <span class="mi">3</span><span class="p">)</span> <span class="o">%</span>
+	<span class="n">dna</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;BS_56_72&#39;</span><span class="p">,</span> <span class="n">prot</span> <span class="o">=</span> <span class="mi">4</span><span class="p">,</span> <span class="n">free</span> <span class="o">=</span> <span class="s1">&#39;False&#39;</span><span class="p">,</span> <span class="n">up</span> <span class="o">=</span> <span class="n">WILD</span><span class="p">,</span> <span class="n">dw</span> <span class="o">=</span> <span class="n">WILD</span><span class="p">)</span> <span class="o">%</span>
+	<span class="n">prot</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;araC&#39;</span><span class="p">,</span> <span class="n">dna</span> <span class="o">=</span> <span class="mi">4</span><span class="p">,</span> <span class="n">met</span> <span class="o">=</span> <span class="mi">3</span><span class="p">,</span> <span class="n">up</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">dw</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">%</span>
+	<span class="n">met</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;alpha_L_arabinopyranose&#39;</span><span class="p">,</span> <span class="n">prot</span> <span class="o">=</span> <span class="mi">2</span><span class="p">)</span> <span class="o">%</span>
+	<span class="n">dna</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;BS_35_51&#39;</span><span class="p">,</span> <span class="n">prot</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">free</span> <span class="o">=</span> <span class="s1">&#39;False&#39;</span><span class="p">,</span> <span class="n">up</span> <span class="o">=</span> <span class="n">WILD</span><span class="p">,</span> <span class="n">dw</span> <span class="o">=</span> <span class="n">WILD</span><span class="p">)</span> <span class="o">%</span>
+	<span class="n">dna</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;araB&#39;</span><span class="p">,</span> <span class="nb">type</span> <span class="o">=</span> <span class="s1">&#39;pro1&#39;</span><span class="p">,</span> <span class="n">prot</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">free</span> <span class="o">=</span> <span class="s1">&#39;False&#39;</span><span class="p">,</span> <span class="n">up</span> <span class="o">=</span> <span class="n">WILD</span><span class="p">,</span> <span class="n">dw</span> <span class="o">=</span> <span class="n">WILD</span><span class="p">),</span>
+	<span class="n">Parameter</span><span class="p">(</span><span class="s1">&#39;fwd_TranscriptionFactorMet_AssemblyRule_12&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span>
+	<span class="n">Parameter</span><span class="p">(</span><span class="s1">&#39;rvs_TranscriptionFactorMet_AssemblyRule_12&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+
+<span class="c1"># [araC, SMALL_alpha_L_arabinopyranose] interacts with BS_158_174</span>
+<span class="n">Rule</span><span class="p">(</span><span class="s1">&#39;TranscriptionFactorMet_AssemblyRule_13&#39;</span><span class="p">,</span>
+	<span class="n">prot</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;araC&#39;</span><span class="p">,</span> <span class="n">dna</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">met</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">up</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">dw</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">%</span>
+	<span class="n">met</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;alpha_L_arabinopyranose&#39;</span><span class="p">,</span> <span class="n">prot</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span> <span class="o">+</span>
+	<span class="n">dna</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;BS_158_174&#39;</span><span class="p">,</span> <span class="n">prot</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">free</span> <span class="o">=</span> <span class="s1">&#39;True&#39;</span><span class="p">,</span> <span class="n">up</span> <span class="o">=</span> <span class="n">WILD</span><span class="p">,</span> <span class="n">dw</span> <span class="o">=</span> <span class="n">WILD</span><span class="p">)</span> <span class="o">|</span>
+	<span class="n">prot</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;araC&#39;</span><span class="p">,</span> <span class="n">dna</span> <span class="o">=</span> <span class="mi">2</span><span class="p">,</span> <span class="n">met</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">up</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">dw</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">%</span>
+	<span class="n">met</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;alpha_L_arabinopyranose&#39;</span><span class="p">,</span> <span class="n">prot</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span> <span class="o">%</span>
+	<span class="n">dna</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;BS_158_174&#39;</span><span class="p">,</span> <span class="n">prot</span> <span class="o">=</span> <span class="mi">2</span><span class="p">,</span> <span class="n">free</span> <span class="o">=</span> <span class="s1">&#39;False&#39;</span><span class="p">,</span> <span class="n">up</span> <span class="o">=</span> <span class="n">WILD</span><span class="p">,</span> <span class="n">dw</span> <span class="o">=</span> <span class="n">WILD</span><span class="p">),</span>
+	<span class="n">Parameter</span><span class="p">(</span><span class="s1">&#39;fwd_TranscriptionFactorMet_AssemblyRule_13&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span>
+	<span class="n">Parameter</span><span class="p">(</span><span class="s1">&#39;rvs_TranscriptionFactorMet_AssemblyRule_13&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+
+<span class="c1"># [araC, SMALL_alpha_L_arabinopyranose] interacts with BS_137_153</span>
+<span class="n">Rule</span><span class="p">(</span><span class="s1">&#39;TranscriptionFactorMet_AssemblyRule_14&#39;</span><span class="p">,</span>
+	<span class="n">prot</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;araC&#39;</span><span class="p">,</span> <span class="n">dna</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">met</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">up</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">dw</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">%</span>
+	<span class="n">met</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;alpha_L_arabinopyranose&#39;</span><span class="p">,</span> <span class="n">prot</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span> <span class="o">+</span>
+	<span class="n">dna</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;BS_137_153&#39;</span><span class="p">,</span> <span class="n">prot</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">free</span> <span class="o">=</span> <span class="s1">&#39;True&#39;</span><span class="p">,</span> <span class="n">up</span> <span class="o">=</span> <span class="n">WILD</span><span class="p">,</span> <span class="n">dw</span> <span class="o">=</span> <span class="n">WILD</span><span class="p">)</span> <span class="o">|</span>
+	<span class="n">prot</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;araC&#39;</span><span class="p">,</span> <span class="n">dna</span> <span class="o">=</span> <span class="mi">2</span><span class="p">,</span> <span class="n">met</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">up</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">dw</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">%</span>
+	<span class="n">met</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;alpha_L_arabinopyranose&#39;</span><span class="p">,</span> <span class="n">prot</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span> <span class="o">%</span>
+	<span class="n">dna</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;BS_137_153&#39;</span><span class="p">,</span> <span class="n">prot</span> <span class="o">=</span> <span class="mi">2</span><span class="p">,</span> <span class="n">free</span> <span class="o">=</span> <span class="s1">&#39;False&#39;</span><span class="p">,</span> <span class="n">up</span> <span class="o">=</span> <span class="n">WILD</span><span class="p">,</span> <span class="n">dw</span> <span class="o">=</span> <span class="n">WILD</span><span class="p">),</span>
+	<span class="n">Parameter</span><span class="p">(</span><span class="s1">&#39;fwd_TranscriptionFactorMet_AssemblyRule_14&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span>
+	<span class="n">Parameter</span><span class="p">(</span><span class="s1">&#39;rvs_TranscriptionFactorMet_AssemblyRule_14&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+
+<span class="c1"># [araC, SMALL_alpha_L_arabinopyranose] interacts with BS_83_99</span>
+<span class="n">Rule</span><span class="p">(</span><span class="s1">&#39;TranscriptionFactorMet_AssemblyRule_15&#39;</span><span class="p">,</span>
+	<span class="n">prot</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;araC&#39;</span><span class="p">,</span> <span class="n">dna</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">met</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">up</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">dw</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">%</span>
+	<span class="n">met</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;alpha_L_arabinopyranose&#39;</span><span class="p">,</span> <span class="n">prot</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span> <span class="o">+</span>
+	<span class="n">dna</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;BS_83_99&#39;</span><span class="p">,</span> <span class="n">prot</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">free</span> <span class="o">=</span> <span class="s1">&#39;True&#39;</span><span class="p">,</span> <span class="n">up</span> <span class="o">=</span> <span class="n">WILD</span><span class="p">,</span> <span class="n">dw</span> <span class="o">=</span> <span class="n">WILD</span><span class="p">)</span> <span class="o">|</span>
+	<span class="n">prot</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;araC&#39;</span><span class="p">,</span> <span class="n">dna</span> <span class="o">=</span> <span class="mi">2</span><span class="p">,</span> <span class="n">met</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">up</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">dw</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">%</span>
+	<span class="n">met</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;alpha_L_arabinopyranose&#39;</span><span class="p">,</span> <span class="n">prot</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span> <span class="o">%</span>
+	<span class="n">dna</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;BS_83_99&#39;</span><span class="p">,</span> <span class="n">prot</span> <span class="o">=</span> <span class="mi">2</span><span class="p">,</span> <span class="n">free</span> <span class="o">=</span> <span class="s1">&#39;False&#39;</span><span class="p">,</span> <span class="n">up</span> <span class="o">=</span> <span class="n">WILD</span><span class="p">,</span> <span class="n">dw</span> <span class="o">=</span> <span class="n">WILD</span><span class="p">),</span>
+	<span class="n">Parameter</span><span class="p">(</span><span class="s1">&#39;fwd_TranscriptionFactorMet_AssemblyRule_15&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span>
+	<span class="n">Parameter</span><span class="p">(</span><span class="s1">&#39;rvs_TranscriptionFactorMet_AssemblyRule_15&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+
+<span class="c1"># [araC, SMALL_alpha_L_arabinopyranose] interacts with BS_62_78</span>
+<span class="n">Rule</span><span class="p">(</span><span class="s1">&#39;TranscriptionFactorMet_AssemblyRule_16&#39;</span><span class="p">,</span>
+	<span class="n">prot</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;araC&#39;</span><span class="p">,</span> <span class="n">dna</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">met</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">up</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">dw</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">%</span>
+	<span class="n">met</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;alpha_L_arabinopyranose&#39;</span><span class="p">,</span> <span class="n">prot</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span> <span class="o">+</span>
+	<span class="n">dna</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;BS_62_78&#39;</span><span class="p">,</span> <span class="n">prot</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">free</span> <span class="o">=</span> <span class="s1">&#39;True&#39;</span><span class="p">,</span> <span class="n">up</span> <span class="o">=</span> <span class="n">WILD</span><span class="p">,</span> <span class="n">dw</span> <span class="o">=</span> <span class="n">WILD</span><span class="p">)</span> <span class="o">|</span>
+	<span class="n">prot</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;araC&#39;</span><span class="p">,</span> <span class="n">dna</span> <span class="o">=</span> <span class="mi">2</span><span class="p">,</span> <span class="n">met</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">up</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">dw</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">%</span>
+	<span class="n">met</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;alpha_L_arabinopyranose&#39;</span><span class="p">,</span> <span class="n">prot</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span> <span class="o">%</span>
+	<span class="n">dna</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;BS_62_78&#39;</span><span class="p">,</span> <span class="n">prot</span> <span class="o">=</span> <span class="mi">2</span><span class="p">,</span> <span class="n">free</span> <span class="o">=</span> <span class="s1">&#39;False&#39;</span><span class="p">,</span> <span class="n">up</span> <span class="o">=</span> <span class="n">WILD</span><span class="p">,</span> <span class="n">dw</span> <span class="o">=</span> <span class="n">WILD</span><span class="p">),</span>
+	<span class="n">Parameter</span><span class="p">(</span><span class="s1">&#39;fwd_TranscriptionFactorMet_AssemblyRule_16&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span>
+	<span class="n">Parameter</span><span class="p">(</span><span class="s1">&#39;rvs_TranscriptionFactorMet_AssemblyRule_16&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+
+<span class="c1"># [araC, SMALL_alpha_L_arabinopyranose, BS_83_99] interacts with [araC, SMALL_alpha_L_arabinopyranose, BS_62_78, BS_araF_pro1]</span>
+<span class="n">Rule</span><span class="p">(</span><span class="s1">&#39;TranscriptionFactorMet_AssemblyRule_17&#39;</span><span class="p">,</span>
+	<span class="n">prot</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;araC&#39;</span><span class="p">,</span> <span class="n">dna</span> <span class="o">=</span> <span class="mi">2</span><span class="p">,</span> <span class="n">met</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">up</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">dw</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">%</span>
+	<span class="n">met</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;alpha_L_arabinopyranose&#39;</span><span class="p">,</span> <span class="n">prot</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span> <span class="o">%</span>
+	<span class="n">dna</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;BS_83_99&#39;</span><span class="p">,</span> <span class="n">prot</span> <span class="o">=</span> <span class="mi">2</span><span class="p">,</span> <span class="n">free</span> <span class="o">=</span> <span class="s1">&#39;False&#39;</span><span class="p">,</span> <span class="n">up</span> <span class="o">=</span> <span class="n">WILD</span><span class="p">,</span> <span class="n">dw</span> <span class="o">=</span> <span class="n">WILD</span><span class="p">)</span> <span class="o">+</span>
+	<span class="n">prot</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;araC&#39;</span><span class="p">,</span> <span class="n">dna</span> <span class="o">=</span> <span class="mi">4</span><span class="p">,</span> <span class="n">met</span> <span class="o">=</span> <span class="mi">3</span><span class="p">,</span> <span class="n">up</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">dw</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">%</span>
+	<span class="n">met</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;alpha_L_arabinopyranose&#39;</span><span class="p">,</span> <span class="n">prot</span> <span class="o">=</span> <span class="mi">3</span><span class="p">)</span> <span class="o">%</span>
+	<span class="n">dna</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;BS_62_78&#39;</span><span class="p">,</span> <span class="n">prot</span> <span class="o">=</span> <span class="mi">4</span><span class="p">,</span> <span class="n">free</span> <span class="o">=</span> <span class="s1">&#39;False&#39;</span><span class="p">,</span> <span class="n">up</span> <span class="o">=</span> <span class="n">WILD</span><span class="p">,</span> <span class="n">dw</span> <span class="o">=</span> <span class="n">WILD</span><span class="p">)</span> <span class="o">%</span>
+	<span class="n">dna</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;araF&#39;</span><span class="p">,</span> <span class="nb">type</span> <span class="o">=</span> <span class="s1">&#39;pro1&#39;</span><span class="p">,</span> <span class="n">prot</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">free</span> <span class="o">=</span> <span class="s1">&#39;False&#39;</span><span class="p">,</span> <span class="n">up</span> <span class="o">=</span> <span class="n">WILD</span><span class="p">,</span> <span class="n">dw</span> <span class="o">=</span> <span class="n">WILD</span><span class="p">)</span> <span class="o">|</span>
+	<span class="n">prot</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;araC&#39;</span><span class="p">,</span> <span class="n">dna</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">met</span> <span class="o">=</span> <span class="mi">2</span><span class="p">,</span> <span class="n">up</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">dw</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span> <span class="o">%</span>
+	<span class="n">met</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;alpha_L_arabinopyranose&#39;</span><span class="p">,</span> <span class="n">prot</span> <span class="o">=</span> <span class="mi">3</span><span class="p">)</span> <span class="o">%</span>
+	<span class="n">dna</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;BS_83_99&#39;</span><span class="p">,</span> <span class="n">prot</span> <span class="o">=</span> <span class="mi">4</span><span class="p">,</span> <span class="n">free</span> <span class="o">=</span> <span class="s1">&#39;False&#39;</span><span class="p">,</span> <span class="n">up</span> <span class="o">=</span> <span class="n">WILD</span><span class="p">,</span> <span class="n">dw</span> <span class="o">=</span> <span class="n">WILD</span><span class="p">)</span> <span class="o">%</span>
+	<span class="n">prot</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;araC&#39;</span><span class="p">,</span> <span class="n">dna</span> <span class="o">=</span> <span class="mi">4</span><span class="p">,</span> <span class="n">met</span> <span class="o">=</span> <span class="mi">3</span><span class="p">,</span> <span class="n">up</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">dw</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">%</span>
+	<span class="n">met</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;alpha_L_arabinopyranose&#39;</span><span class="p">,</span> <span class="n">prot</span> <span class="o">=</span> <span class="mi">2</span><span class="p">)</span> <span class="o">%</span>
+	<span class="n">dna</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;BS_62_78&#39;</span><span class="p">,</span> <span class="n">prot</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">free</span> <span class="o">=</span> <span class="s1">&#39;False&#39;</span><span class="p">,</span> <span class="n">up</span> <span class="o">=</span> <span class="n">WILD</span><span class="p">,</span> <span class="n">dw</span> <span class="o">=</span> <span class="n">WILD</span><span class="p">)</span> <span class="o">%</span>
+	<span class="n">dna</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;araF&#39;</span><span class="p">,</span> <span class="nb">type</span> <span class="o">=</span> <span class="s1">&#39;pro1&#39;</span><span class="p">,</span> <span class="n">prot</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">free</span> <span class="o">=</span> <span class="s1">&#39;False&#39;</span><span class="p">,</span> <span class="n">up</span> <span class="o">=</span> <span class="n">WILD</span><span class="p">,</span> <span class="n">dw</span> <span class="o">=</span> <span class="n">WILD</span><span class="p">),</span>
+	<span class="n">Parameter</span><span class="p">(</span><span class="s1">&#39;fwd_TranscriptionFactorMet_AssemblyRule_17&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span>
+	<span class="n">Parameter</span><span class="p">(</span><span class="s1">&#39;rvs_TranscriptionFactorMet_AssemblyRule_17&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+
+<span class="c1"># [araC, SMALL_alpha_L_arabinopyranose] interacts with BS_57_73</span>
+<span class="n">Rule</span><span class="p">(</span><span class="s1">&#39;TranscriptionFactorMet_AssemblyRule_18&#39;</span><span class="p">,</span>
+	<span class="n">prot</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;araC&#39;</span><span class="p">,</span> <span class="n">dna</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">met</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">up</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">dw</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">%</span>
+	<span class="n">met</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;alpha_L_arabinopyranose&#39;</span><span class="p">,</span> <span class="n">prot</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span> <span class="o">+</span>
+	<span class="n">dna</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;BS_57_73&#39;</span><span class="p">,</span> <span class="n">prot</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">free</span> <span class="o">=</span> <span class="s1">&#39;True&#39;</span><span class="p">,</span> <span class="n">up</span> <span class="o">=</span> <span class="n">WILD</span><span class="p">,</span> <span class="n">dw</span> <span class="o">=</span> <span class="n">WILD</span><span class="p">)</span> <span class="o">|</span>
+	<span class="n">prot</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;araC&#39;</span><span class="p">,</span> <span class="n">dna</span> <span class="o">=</span> <span class="mi">2</span><span class="p">,</span> <span class="n">met</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">up</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">dw</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">%</span>
+	<span class="n">met</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;alpha_L_arabinopyranose&#39;</span><span class="p">,</span> <span class="n">prot</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span> <span class="o">%</span>
+	<span class="n">dna</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;BS_57_73&#39;</span><span class="p">,</span> <span class="n">prot</span> <span class="o">=</span> <span class="mi">2</span><span class="p">,</span> <span class="n">free</span> <span class="o">=</span> <span class="s1">&#39;False&#39;</span><span class="p">,</span> <span class="n">up</span> <span class="o">=</span> <span class="n">WILD</span><span class="p">,</span> <span class="n">dw</span> <span class="o">=</span> <span class="n">WILD</span><span class="p">),</span>
+	<span class="n">Parameter</span><span class="p">(</span><span class="s1">&#39;fwd_TranscriptionFactorMet_AssemblyRule_18&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span>
+	<span class="n">Parameter</span><span class="p">(</span><span class="s1">&#39;rvs_TranscriptionFactorMet_AssemblyRule_18&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+
+<span class="c1"># [araC, SMALL_alpha_L_arabinopyranose] interacts with BS_36_52</span>
+<span class="n">Rule</span><span class="p">(</span><span class="s1">&#39;TranscriptionFactorMet_AssemblyRule_19&#39;</span><span class="p">,</span>
+	<span class="n">prot</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;araC&#39;</span><span class="p">,</span> <span class="n">dna</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">met</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">up</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">dw</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">%</span>
+	<span class="n">met</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;alpha_L_arabinopyranose&#39;</span><span class="p">,</span> <span class="n">prot</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span> <span class="o">+</span>
+	<span class="n">dna</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;BS_36_52&#39;</span><span class="p">,</span> <span class="n">prot</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">free</span> <span class="o">=</span> <span class="s1">&#39;True&#39;</span><span class="p">,</span> <span class="n">up</span> <span class="o">=</span> <span class="n">WILD</span><span class="p">,</span> <span class="n">dw</span> <span class="o">=</span> <span class="n">WILD</span><span class="p">)</span> <span class="o">|</span>
+	<span class="n">prot</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;araC&#39;</span><span class="p">,</span> <span class="n">dna</span> <span class="o">=</span> <span class="mi">2</span><span class="p">,</span> <span class="n">met</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">up</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">dw</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">%</span>
+	<span class="n">met</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;alpha_L_arabinopyranose&#39;</span><span class="p">,</span> <span class="n">prot</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span> <span class="o">%</span>
+	<span class="n">dna</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;BS_36_52&#39;</span><span class="p">,</span> <span class="n">prot</span> <span class="o">=</span> <span class="mi">2</span><span class="p">,</span> <span class="n">free</span> <span class="o">=</span> <span class="s1">&#39;False&#39;</span><span class="p">,</span> <span class="n">up</span> <span class="o">=</span> <span class="n">WILD</span><span class="p">,</span> <span class="n">dw</span> <span class="o">=</span> <span class="n">WILD</span><span class="p">),</span>
+	<span class="n">Parameter</span><span class="p">(</span><span class="s1">&#39;fwd_TranscriptionFactorMet_AssemblyRule_19&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span>
+	<span class="n">Parameter</span><span class="p">(</span><span class="s1">&#39;rvs_TranscriptionFactorMet_AssemblyRule_19&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+
+<span class="c1"># [araC, SMALL_alpha_L_arabinopyranose, BS_57_73] interacts with [araC, SMALL_alpha_L_arabinopyranose, BS_36_52, BS_araE_pro1]</span>
+<span class="n">Rule</span><span class="p">(</span><span class="s1">&#39;TranscriptionFactorMet_AssemblyRule_20&#39;</span><span class="p">,</span>
+	<span class="n">prot</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;araC&#39;</span><span class="p">,</span> <span class="n">dna</span> <span class="o">=</span> <span class="mi">2</span><span class="p">,</span> <span class="n">met</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">up</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">dw</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">%</span>
+	<span class="n">met</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;alpha_L_arabinopyranose&#39;</span><span class="p">,</span> <span class="n">prot</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span> <span class="o">%</span>
+	<span class="n">dna</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;BS_57_73&#39;</span><span class="p">,</span> <span class="n">prot</span> <span class="o">=</span> <span class="mi">2</span><span class="p">,</span> <span class="n">free</span> <span class="o">=</span> <span class="s1">&#39;False&#39;</span><span class="p">,</span> <span class="n">up</span> <span class="o">=</span> <span class="n">WILD</span><span class="p">,</span> <span class="n">dw</span> <span class="o">=</span> <span class="n">WILD</span><span class="p">)</span> <span class="o">+</span>
+	<span class="n">prot</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;araC&#39;</span><span class="p">,</span> <span class="n">dna</span> <span class="o">=</span> <span class="mi">4</span><span class="p">,</span> <span class="n">met</span> <span class="o">=</span> <span class="mi">3</span><span class="p">,</span> <span class="n">up</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">dw</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">%</span>
+	<span class="n">met</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;alpha_L_arabinopyranose&#39;</span><span class="p">,</span> <span class="n">prot</span> <span class="o">=</span> <span class="mi">3</span><span class="p">)</span> <span class="o">%</span>
+	<span class="n">dna</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;BS_36_52&#39;</span><span class="p">,</span> <span class="n">prot</span> <span class="o">=</span> <span class="mi">4</span><span class="p">,</span> <span class="n">free</span> <span class="o">=</span> <span class="s1">&#39;False&#39;</span><span class="p">,</span> <span class="n">up</span> <span class="o">=</span> <span class="n">WILD</span><span class="p">,</span> <span class="n">dw</span> <span class="o">=</span> <span class="n">WILD</span><span class="p">)</span> <span class="o">%</span>
+	<span class="n">dna</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;araE&#39;</span><span class="p">,</span> <span class="nb">type</span> <span class="o">=</span> <span class="s1">&#39;pro1&#39;</span><span class="p">,</span> <span class="n">prot</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">free</span> <span class="o">=</span> <span class="s1">&#39;False&#39;</span><span class="p">,</span> <span class="n">up</span> <span class="o">=</span> <span class="n">WILD</span><span class="p">,</span> <span class="n">dw</span> <span class="o">=</span> <span class="n">WILD</span><span class="p">)</span> <span class="o">|</span>
+	<span class="n">prot</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;araC&#39;</span><span class="p">,</span> <span class="n">dna</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">met</span> <span class="o">=</span> <span class="mi">2</span><span class="p">,</span> <span class="n">up</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">dw</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span> <span class="o">%</span>
+	<span class="n">met</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;alpha_L_arabinopyranose&#39;</span><span class="p">,</span> <span class="n">prot</span> <span class="o">=</span> <span class="mi">3</span><span class="p">)</span> <span class="o">%</span>
+	<span class="n">dna</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;BS_57_73&#39;</span><span class="p">,</span> <span class="n">prot</span> <span class="o">=</span> <span class="mi">4</span><span class="p">,</span> <span class="n">free</span> <span class="o">=</span> <span class="s1">&#39;False&#39;</span><span class="p">,</span> <span class="n">up</span> <span class="o">=</span> <span class="n">WILD</span><span class="p">,</span> <span class="n">dw</span> <span class="o">=</span> <span class="n">WILD</span><span class="p">)</span> <span class="o">%</span>
+	<span class="n">prot</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;araC&#39;</span><span class="p">,</span> <span class="n">dna</span> <span class="o">=</span> <span class="mi">4</span><span class="p">,</span> <span class="n">met</span> <span class="o">=</span> <span class="mi">3</span><span class="p">,</span> <span class="n">up</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">dw</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">%</span>
+	<span class="n">met</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;alpha_L_arabinopyranose&#39;</span><span class="p">,</span> <span class="n">prot</span> <span class="o">=</span> <span class="mi">2</span><span class="p">)</span> <span class="o">%</span>
+	<span class="n">dna</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;BS_36_52&#39;</span><span class="p">,</span> <span class="n">prot</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">free</span> <span class="o">=</span> <span class="s1">&#39;False&#39;</span><span class="p">,</span> <span class="n">up</span> <span class="o">=</span> <span class="n">WILD</span><span class="p">,</span> <span class="n">dw</span> <span class="o">=</span> <span class="n">WILD</span><span class="p">)</span> <span class="o">%</span>
+	<span class="n">dna</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;araE&#39;</span><span class="p">,</span> <span class="nb">type</span> <span class="o">=</span> <span class="s1">&#39;pro1&#39;</span><span class="p">,</span> <span class="n">prot</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">free</span> <span class="o">=</span> <span class="s1">&#39;False&#39;</span><span class="p">,</span> <span class="n">up</span> <span class="o">=</span> <span class="n">WILD</span><span class="p">,</span> <span class="n">dw</span> <span class="o">=</span> <span class="n">WILD</span><span class="p">),</span>
+	<span class="n">Parameter</span><span class="p">(</span><span class="s1">&#39;fwd_TranscriptionFactorMet_AssemblyRule_20&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span>
+	<span class="n">Parameter</span><span class="p">(</span><span class="s1">&#39;rvs_TranscriptionFactorMet_AssemblyRule_20&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+</pre></div>
+</td></tr></table></div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><strong>Reversibility of reactions</strong>. Atlas writes dead <em>Rules</em> for each
+reaction declared in the network file. The <code class="docutils literal notranslate"><span class="pre">Parameter('fwd_ReactionName',</span> <span class="pre">0))</span></code>
+must be set to non-zero to activate the rule and <code class="docutils literal notranslate"><span class="pre">Parameter('rvs_ReactionName',</span> <span class="pre">0))</span></code>
+must be set to non-zero to define a reversible reaction.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><strong>Simulation</strong>. The model can be simulated only with the instantiation of
+<code class="docutils literal notranslate"><span class="pre">Monomers</span></code> and <code class="docutils literal notranslate"><span class="pre">Initials</span></code> (<a class="reference external" href="https://pysb.readthedocs.io/en/stable/tutorial.html#introduction">More here</a>).
+Run <em>Monomer+Initials+Observables from metabolic network.ipynb</em> to obtain
+automatically the necessary <code class="docutils literal notranslate"><span class="pre">Monomers</span></code> and <code class="docutils literal notranslate"><span class="pre">Initials</span></code> (including
+proteins and enzymatic complexes).</p>
+<p><strong>Plotting</strong>. The model can be observed only with the instantation of
+<code class="docutils literal notranslate"><span class="pre">Observables</span></code> (<a class="reference external" href="https://pysb.readthedocs.io/en/stable/tutorial.html#simulation-and-analysis">More here</a>).
+Run <em>Monomer+Initials+Observables from metabolic network.ipynb</em> to obtain
+automatically the all possible <code class="docutils literal notranslate"><span class="pre">Observables</span></code> for metabolites.</p>
+</div>
 </div>
 
 

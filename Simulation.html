@@ -157,39 +157,79 @@ documentation</a>)
 . Here is the relevant code that able the simulation of any PySB model, albeit
 PySB exports the model, calls the simulator, and imports the results under the
 hood. See <a class="reference internal" href="Plotting.html#plotting-page"><span class="std std-ref">Plotting</span></a> for a simple example on how to plot simulation results.</p>
-<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">numpy</span> <span class="kn">import</span> <span class="n">linspace</span>
+<span class="kn">from</span> <span class="nn">pysb.bng</span> <span class="kn">import</span> <span class="n">generate_network</span><span class="p">,</span> <span class="n">generate_equations</span>
+<span class="kn">from</span> <span class="nn">pysb.simulator</span> <span class="kn">import</span> <span class="n">ScipyOdeSimulator</span><span class="p">,</span> <span class="n">BngSimulator</span><span class="p">,</span> <span class="n">KappaSimulator</span>
+
+<span class="c1"># modify accordingly</span>
+<span class="kn">from</span> <span class="nn">pysb.pathfinder</span> <span class="kn">import</span> <span class="n">set_path</span>
+<span class="hll"><span class="n">set_path</span><span class="p">(</span><span class="s1">&#39;bng&#39;</span><span class="p">,</span> <span class="s1">&#39;/opt/git-repositories/bionetgen.RuleWorld/bng2/&#39;</span><span class="p">)</span>
+</span><span class="hll"><span class="n">set_path</span><span class="p">(</span><span class="s1">&#39;kasim&#39;</span><span class="p">,</span> <span class="s1">&#39;/opt/git-repositories/KaSim4.Kappa-Dev/&#39;</span><span class="p">)</span>
+</span>
+<span class="c1">## for network-based simulations:</span>
+<span class="c1">## ScipyOdeSimulator and BngSimulator ode and ssa methods</span>
+<span class="c1"># generate_network(model)</span>
+<span class="c1"># generate_equations(model)</span>
+
+<span class="c1">## set the number of stochastic simulations</span>
+<span class="n">runs</span> <span class="o">=</span> <span class="mi">100</span>
+<span class="c1"># data1 = ScipyOdeSimulator(model, linspace(0, 100, 200)).run().dataframe</span>
+<span class="c1"># data1 = BngSimulator(model, linspace(0, 200, 201)).run(method = &#39;ode&#39;).dataframe</span>
+<span class="c1"># data2 = BngSimulator(model, linspace(0, 200, 201)).run(method = &#39;ssa&#39;, n_runs = runs).dataframe</span>
+<span class="c1"># data2 = BngSimulator(model, linspace(0, 200, 201)).run(method = &#39;nf&#39;, n_runs = runs).dataframe</span>
+<span class="n">data2</span> <span class="o">=</span> <span class="n">KappaSimulator</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">101</span><span class="p">))</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">n_runs</span> <span class="o">=</span> <span class="n">runs</span><span class="p">)</span><span class="o">.</span><span class="n">dataframe</span>
+
+<span class="c1">## process simulations</span>
+<span class="n">data</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">runs</span><span class="p">):</span>
+	<span class="n">data</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">data2</span><span class="o">.</span><span class="n">xs</span><span class="p">(</span><span class="n">i</span><span class="p">))</span>
+
+<span class="n">avrg</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">runs</span><span class="p">):</span>
+	<span class="n">avrg</span> <span class="o">+=</span> <span class="n">data</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+<span class="n">avrg</span> <span class="o">=</span> <span class="n">avrg</span> <span class="o">/</span> <span class="n">runs</span>
+
+<span class="n">stdv</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">runs</span><span class="p">):</span>
+	<span class="n">stdv</span> <span class="o">+=</span> <span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">-</span> <span class="n">avrg</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span>
+<span class="n">stdv</span> <span class="o">=</span> <span class="p">(</span><span class="n">stdv</span> <span class="o">/</span> <span class="p">(</span><span class="n">runs</span><span class="o">-</span><span class="mi">1</span><span class="p">))</span><span class="o">**</span><span class="mf">0.5</span>
 </pre></div>
-</div>
-<p>	from numpy import linspace
-	from pysb.bng import generate_network, generate_equations
-	from pysb.simulator import ScipyOdeSimulator, BngSimulator, KappaSimulator</p>
-<p>	# modify accordingly
-	from pysb.pathfinder import set_path
-	set_path(‘bng’, ‘/opt/git-repositories/bionetgen.RuleWorld/bng2/’)
-	set_path(‘kasim’, ‘/opt/git-repositories/KaSim4.Kappa-Dev/’)</p>
-<p>	## for network-based simulations:
-	## ScipyOdeSimulator and BngSimulator ode and ssa methods
-	# generate_network(model)
-	# generate_equations(model)</p>
-<p>	## set the number of stochastic simulations
-	runs = 100
-	# data1 = ScipyOdeSimulator(model, linspace(0, 100, 200)).run().dataframe
-	# data1 = BngSimulator(model, linspace(0, 200, 201)).run(method = ‘ode’).dataframe
-	# data2 = BngSimulator(model, linspace(0, 200, 201)).run(method = ‘ssa’, n_runs = runs).dataframe
-	# data2 = BngSimulator(model, linspace(0, 200, 201)).run(method = ‘nf’, n_runs = runs).dataframe
-	data2 = KappaSimulator(model, linspace(0, 100, 101)).run(n_runs = runs).dataframe</p>
-<p>	## process simulations
-	data = []
-	for i in range(0, runs):
-		data.append(data2.xs(i))</p>
-<p>	avrg = 0
-	for i in range(0, runs):
-		avrg += data[i]
-	avrg = avrg / runs</p>
-<p>	stdv = 0
-	for i in range(0, runs):
-		stdv += (data[i] - avrg)**2
-	stdv = (stdv / (runs-1))**0.5</p>
+</td></tr></table></div>
 </div>
 
 

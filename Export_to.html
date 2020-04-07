@@ -155,17 +155,23 @@
 (See more <a class="reference external" href="https://pysb.readthedocs.io/en/stable/modules/export/">here</a>).
 Use the following code to export to BioNetGen and <em>kappa</em> languages, putting
 the code at the end of the model.</p>
-<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pysb.export</span> <span class="kn">import</span> <span class="n">export</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;model.kappa&#39;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">outfile</span><span class="p">:</span>
+	<span class="n">outfile</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">export</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="s1">&#39;kappa&#39;</span><span class="p">))</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;model.bngl&#39;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">outfile</span><span class="p">:</span>
+	<span class="n">outfile</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">export</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="s1">&#39;bngl&#39;</span><span class="p">))</span>
 </pre></div>
+</td></tr></table></div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>In the case of matlab, mathematica, and stochkit, PySB requires to expand
+the rules to determine all mass-balances to write ODE-based models, a proccess
+call network generation and could take excessive time to finish.</p>
 </div>
-<p>	from pysb.export import export
-	with open(‘model.kappa’, ‘w’) as outfile:
-		outfile.write(export(model, ‘kappa’))
-	with open(‘model.bngl’, ‘w’) as outfile:
-		outfile.write(export(model, ‘bngl’))</p>
-<p>	In the case of matlab, mathematica, and stochkit, PySB requires to expand
-	the rules to determine all mass-balances to write ODE-based models, a proccess
-	call network generation and could take excessive time to finish.</p>
 </div>
 
 

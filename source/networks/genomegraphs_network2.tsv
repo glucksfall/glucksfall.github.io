@@ -1,0 +1,38 @@
+SOURCE	TARGET
+rpoA-pro1	rpoA-rbs
+rpoA-rbs	rpoA-cds
+rpoA-cds	rpoA-ter1
+
+rpoB-pro1	rpoB-rbs
+rpoB-rbs	rpoB-cds
+rpoB-cds	rpoC-rbs
+rpoC-rbs	rpoC-cds
+rpoC-cds	rpoC-ter1
+
+rpoD-pro1	rpoD-rbs
+rpoD-rbs	rpoD-cds
+rpoD-cds	rpoD-ter1
+
+rpoE-pro1	rpoE-rbs
+rpoE-rbs	rpoE-cds
+rpoE-cds	rpoE-ter1
+
+rpoH-pro1	rpoH-rbs
+rpoH-rbs	rpoH-cds
+rpoH-cds	rpoH-ter1
+
+rpoN-pro1	rpoN-rbs
+rpoN-rbs	rpoN-cds
+rpoN-cds	rpoN-ter1
+
+rpoS-pro1	rpoS-rbs
+rpoS-rbs	rpoS-cds
+rpoS-cds	rpoS-ter1
+
+fliA-pro1	fliA-rbs
+fliA-rbs	fliA-cds
+fliA-cds	fliA-ter1
+
+fecI-pro1	fecI-rbs
+fecI-rbs	fecI-cds
+fecI-cds	fecI-ter1

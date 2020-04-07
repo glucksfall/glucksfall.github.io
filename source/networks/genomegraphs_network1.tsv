@@ -1,0 +1,25 @@
+SOURCE	TARGET
+araB-pro1	araB-rbs
+araB-rbs	araB-cds
+araB-cds	araA-rbs
+araA-rbs	araA-cds
+araA-cds	araD-rbs
+araD-rbs	araD-cds
+araD-cds	araD-ter1
+
+araC-pro1	araC-BS-56-72
+araC-BS-56-72	araC-rbs
+araC-rbs	araC-cds
+araC-cds	araC-ter1
+
+araE-pro1	araE-rbs
+araE-rbs	araE-cds
+araE-cds	araE-ter1
+
+araF-pro1	araF-rbs
+araF-rbs	araF-cds
+araF-cds	araG-rbs
+araG-rbs	araG-cds
+araG-cds	araH-rbs
+araH-rbs	araH-cds
+araH-cds	araH-ter1

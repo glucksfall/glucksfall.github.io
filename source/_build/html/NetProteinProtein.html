@@ -167,78 +167,135 @@ order and for any number of components, each column lists using comma the
 interacting proteins or protein complexes. The user should employ brackets to
 enclose a list of proteins that are part of a complex.</p>
 <p>Examples:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>
+<div class="highlight-default notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">SOURCE</span>	<span class="n">TARGET</span>
+<span class="n">BETAGALACTOSID</span><span class="o">-</span><span class="n">MONOMER</span>	<span class="n">BETAGALACTOSID</span><span class="o">-</span><span class="n">MONOMER</span>
+<span class="n">GALACTOACETYLTRAN</span><span class="o">-</span><span class="n">MONOMER</span>	<span class="n">GALACTOACETYLTRAN</span><span class="o">-</span><span class="n">MONOMER</span>
 </pre></div>
-</div>
-<p>	SOURCE	TARGET
-	BETAGALACTOSID-MONOMER	BETAGALACTOSID-MONOMER
-	GALACTOACETYLTRAN-MONOMER	GALACTOACETYLTRAN-MONOMER</p>
+</td></tr></table></div>
 <p><em>OR</em></p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>
+<div class="highlight-default notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">SOURCE</span>	<span class="n">TARGET</span>
+<span class="n">BETAGALACTOSID</span><span class="o">-</span><span class="n">MONOMER</span>	<span class="n">BETAGALACTOSID</span><span class="o">-</span><span class="n">MONOMER</span>
+<span class="p">[</span><span class="n">BETAGALACTOSID</span><span class="o">-</span><span class="n">MONOMER</span><span class="p">,</span> <span class="n">BETAGALACTOSID</span><span class="o">-</span><span class="n">MONOMER</span><span class="p">]</span>	<span class="p">[</span><span class="n">BETAGALACTOSID</span><span class="o">-</span><span class="n">MONOMER</span><span class="p">,</span> <span class="n">BETAGALACTOSID</span><span class="o">-</span><span class="n">MONOMER</span><span class="p">]</span>
+<span class="n">GALACTOACETYLTRAN</span><span class="o">-</span><span class="n">MONOMER</span>	<span class="n">GALACTOACETYLTRAN</span><span class="o">-</span><span class="n">MONOMER</span>
+<span class="n">GALACTOACETYLTRAN</span><span class="o">-</span><span class="n">MONOMER</span>	<span class="p">[</span><span class="n">GALACTOACETYLTRAN</span><span class="o">-</span><span class="n">MONOMER</span><span class="p">,</span> <span class="n">GALACTOACETYLTRAN</span><span class="o">-</span><span class="n">MONOMER</span><span class="p">]</span>
 </pre></div>
+</td></tr></table></div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><strong>Visualization in Cytoscape.</strong> Cytoscape cannot import hyper-graphs. To do so,
+Create simple network and right-click to embed a subnetwork in the corresponding node.</p>
+<img alt="_images/Fig_Lactose_PPINetwork.png" src="_images/Fig_Lactose_PPINetwork.png" />
 </div>
-<p>	SOURCE	TARGET
-	BETAGALACTOSID-MONOMER	BETAGALACTOSID-MONOMER
-	[BETAGALACTOSID-MONOMER, BETAGALACTOSID-MONOMER]	[BETAGALACTOSID-MONOMER, BETAGALACTOSID-MONOMER]
-	GALACTOACETYLTRAN-MONOMER	GALACTOACETYLTRAN-MONOMER
-	GALACTOACETYLTRAN-MONOMER	[GALACTOACETYLTRAN-MONOMER, GALACTOACETYLTRAN-MONOMER]</p>
-<p>	<strong>Visualization in Cytoscape.</strong> Cytoscape cannot import hyper-graphs. To do so,
-	Create simple network and right-click to embed a subnetwork in the corresponding node.</p>
-<p>	.. image:: Fig_Lactose_PPINetwork.png</p>
 <p>Finally, execute the “<em>Rules from protein-protein.ipynb</em>” to obtain the
 <em>Rules</em> to model the defined interaction network. The complete rule-based
 model can be found in the lactose folder from the Network Biology Lab
 GitHub repository <a class="reference external" href="https://github.com/networkbiolab/atlas/blob/master/lactose/Models/Model4%20PPI%20from%20automatic%20Rules.ipynb">here</a>.</p>
-<p>	Rule(‘complex_assembly_rule_0’,
-		prot(name = ‘BETAGALACTOSID_MONOMER’, up = None, dw = None) +
-		prot(name = ‘BETAGALACTOSID_MONOMER’, up = None, dw = None) |
-		prot(name = ‘BETAGALACTOSID_MONOMER’, up = 1, dw = None) %
-		prot(name = ‘BETAGALACTOSID_MONOMER’, up = None, dw = 1),
-		Parameter(‘fwd_complex_assembly_rule_0’, 1),
-		Parameter(‘rvs_complex_assembly_rule_0’, 0))</p>
-<p>	Rule(‘complex_assembly_rule_1’,
-		prot(name = ‘BETAGALACTOSID_MONOMER’, up = 1, dw = None) %
-		prot(name = ‘BETAGALACTOSID_MONOMER’, up = None, dw = 1) +
-		prot(name = ‘BETAGALACTOSID_MONOMER’, up = 1, dw = None) %
-		prot(name = ‘BETAGALACTOSID_MONOMER’, up = None, dw = 1) |
-		prot(name = ‘BETAGALACTOSID_MONOMER’, up = 1, dw = None) %
-		prot(name = ‘BETAGALACTOSID_MONOMER’, up = 2, dw = 1) %
-		prot(name = ‘BETAGALACTOSID_MONOMER’, up = 3, dw = 2) %
-		prot(name = ‘BETAGALACTOSID_MONOMER’, up = None, dw = 3),
-		Parameter(‘fwd_complex_assembly_rule_1’, 1),
-		Parameter(‘rvs_complex_assembly_rule_1’, 0))</p>
-<p>	Rule(‘complex_assembly_rule_2’,
-		prot(name = ‘GALACTOACETYLTRAN_MONOMER’, up = None, dw = None) +
-		prot(name = ‘GALACTOACETYLTRAN_MONOMER’, up = None, dw = None) |
-		prot(name = ‘GALACTOACETYLTRAN_MONOMER’, up = 1, dw = None) %
-		prot(name = ‘GALACTOACETYLTRAN_MONOMER’, up = None, dw = 1),
-		Parameter(‘fwd_complex_assembly_rule_2’, 1),
-		Parameter(‘rvs_complex_assembly_rule_2’, 0))</p>
-<p>	Rule(‘complex_assembly_rule_3’,
-		prot(name = ‘GALACTOACETYLTRAN_MONOMER’, up = None, dw = None) +
-		prot(name = ‘GALACTOACETYLTRAN_MONOMER’, up = 1, dw = None) %
-		prot(name = ‘GALACTOACETYLTRAN_MONOMER’, up = None, dw = 1) |
-		prot(name = ‘GALACTOACETYLTRAN_MONOMER’, up = 1, dw = None) %
-		prot(name = ‘GALACTOACETYLTRAN_MONOMER’, up = 2, dw = 1) %
-		prot(name = ‘GALACTOACETYLTRAN_MONOMER’, up = None, dw = 2),
-		Parameter(‘fwd_complex_assembly_rule_3’, 1),
-		Parameter(‘rvs_complex_assembly_rule_3’, 0))</p>
-<p>	<strong>Reversibility of Rules</strong>. Atlas writes irreversible <em>Rules</em> for each
-	reaction declared in the network file. The <code class="docutils literal notranslate"><span class="pre">Parameter('rvs_RuleName',</span> <span class="pre">0))</span></code>
-	must be set to non-zero to define an reversible reaction.</p>
-<p>	<strong>Uniqueness of Rule names</strong>. Atlas will write <em>Rules</em> with numbered
-	names. Use only one file to model the many interactions the system has.</p>
-<p>	<strong>Simulation</strong>. The model can be simulated only with the instantiation of
-	<code class="docutils literal notranslate"><span class="pre">Monomers</span></code> and <code class="docutils literal notranslate"><span class="pre">Initials</span></code> (<a class="reference external" href="https://pysb.readthedocs.io/en/stable/tutorial.html#introduction">More here</a>).
-	Run <em>Monomer+Initials+Observables from metabolic network.ipynb</em> to obtain
-	automatically the necessary <code class="docutils literal notranslate"><span class="pre">Monomers</span></code> and <code class="docutils literal notranslate"><span class="pre">Initials</span></code> (including
-	proteins and enzymatic complexes). Manually add the necessary <code class="docutils literal notranslate"><span class="pre">Monomers</span></code>
-	and <code class="docutils literal notranslate"><span class="pre">Initials</span></code> for non-enzymatic proteins.</p>
-<p>	<strong>Plotting</strong>. The model can be observed only with the instantation of
-	<code class="docutils literal notranslate"><span class="pre">Observables</span></code> (<a class="reference external" href="https://pysb.readthedocs.io/en/stable/tutorial.html#simulation-and-analysis">More here</a>).
-	Run <em>Monomer+Initials+Observables from metabolic network.ipynb</em> to obtain
-	automatically the all possible <code class="docutils literal notranslate"><span class="pre">Observables</span></code> for enzymatic proteins. Other
-	observables for proteins should be added manually.</p>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">Rule</span><span class="p">(</span><span class="s1">&#39;complex_assembly_rule_0&#39;</span><span class="p">,</span>
+	<span class="n">prot</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;BETAGALACTOSID_MONOMER&#39;</span><span class="p">,</span> <span class="n">up</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">dw</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">+</span>
+	<span class="n">prot</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;BETAGALACTOSID_MONOMER&#39;</span><span class="p">,</span> <span class="n">up</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">dw</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">|</span>
+	<span class="n">prot</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;BETAGALACTOSID_MONOMER&#39;</span><span class="p">,</span> <span class="n">up</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">dw</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">%</span>
+	<span class="n">prot</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;BETAGALACTOSID_MONOMER&#39;</span><span class="p">,</span> <span class="n">up</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">dw</span> <span class="o">=</span> <span class="mi">1</span><span class="p">),</span>
+	<span class="n">Parameter</span><span class="p">(</span><span class="s1">&#39;fwd_complex_assembly_rule_0&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span>
+	<span class="n">Parameter</span><span class="p">(</span><span class="s1">&#39;rvs_complex_assembly_rule_0&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+
+<span class="n">Rule</span><span class="p">(</span><span class="s1">&#39;complex_assembly_rule_1&#39;</span><span class="p">,</span>
+	<span class="n">prot</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;BETAGALACTOSID_MONOMER&#39;</span><span class="p">,</span> <span class="n">up</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">dw</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">%</span>
+	<span class="n">prot</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;BETAGALACTOSID_MONOMER&#39;</span><span class="p">,</span> <span class="n">up</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">dw</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span> <span class="o">+</span>
+	<span class="n">prot</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;BETAGALACTOSID_MONOMER&#39;</span><span class="p">,</span> <span class="n">up</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">dw</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">%</span>
+	<span class="n">prot</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;BETAGALACTOSID_MONOMER&#39;</span><span class="p">,</span> <span class="n">up</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">dw</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span> <span class="o">|</span>
+	<span class="n">prot</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;BETAGALACTOSID_MONOMER&#39;</span><span class="p">,</span> <span class="n">up</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">dw</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">%</span>
+	<span class="n">prot</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;BETAGALACTOSID_MONOMER&#39;</span><span class="p">,</span> <span class="n">up</span> <span class="o">=</span> <span class="mi">2</span><span class="p">,</span> <span class="n">dw</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span> <span class="o">%</span>
+	<span class="n">prot</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;BETAGALACTOSID_MONOMER&#39;</span><span class="p">,</span> <span class="n">up</span> <span class="o">=</span> <span class="mi">3</span><span class="p">,</span> <span class="n">dw</span> <span class="o">=</span> <span class="mi">2</span><span class="p">)</span> <span class="o">%</span>
+	<span class="n">prot</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;BETAGALACTOSID_MONOMER&#39;</span><span class="p">,</span> <span class="n">up</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">dw</span> <span class="o">=</span> <span class="mi">3</span><span class="p">),</span>
+	<span class="n">Parameter</span><span class="p">(</span><span class="s1">&#39;fwd_complex_assembly_rule_1&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span>
+	<span class="n">Parameter</span><span class="p">(</span><span class="s1">&#39;rvs_complex_assembly_rule_1&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+
+<span class="n">Rule</span><span class="p">(</span><span class="s1">&#39;complex_assembly_rule_2&#39;</span><span class="p">,</span>
+	<span class="n">prot</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;GALACTOACETYLTRAN_MONOMER&#39;</span><span class="p">,</span> <span class="n">up</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">dw</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">+</span>
+	<span class="n">prot</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;GALACTOACETYLTRAN_MONOMER&#39;</span><span class="p">,</span> <span class="n">up</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">dw</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">|</span>
+	<span class="n">prot</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;GALACTOACETYLTRAN_MONOMER&#39;</span><span class="p">,</span> <span class="n">up</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">dw</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">%</span>
+	<span class="n">prot</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;GALACTOACETYLTRAN_MONOMER&#39;</span><span class="p">,</span> <span class="n">up</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">dw</span> <span class="o">=</span> <span class="mi">1</span><span class="p">),</span>
+	<span class="n">Parameter</span><span class="p">(</span><span class="s1">&#39;fwd_complex_assembly_rule_2&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span>
+	<span class="n">Parameter</span><span class="p">(</span><span class="s1">&#39;rvs_complex_assembly_rule_2&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+
+<span class="n">Rule</span><span class="p">(</span><span class="s1">&#39;complex_assembly_rule_3&#39;</span><span class="p">,</span>
+	<span class="n">prot</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;GALACTOACETYLTRAN_MONOMER&#39;</span><span class="p">,</span> <span class="n">up</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">dw</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">+</span>
+	<span class="n">prot</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;GALACTOACETYLTRAN_MONOMER&#39;</span><span class="p">,</span> <span class="n">up</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">dw</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">%</span>
+	<span class="n">prot</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;GALACTOACETYLTRAN_MONOMER&#39;</span><span class="p">,</span> <span class="n">up</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">dw</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span> <span class="o">|</span>
+	<span class="n">prot</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;GALACTOACETYLTRAN_MONOMER&#39;</span><span class="p">,</span> <span class="n">up</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">dw</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">%</span>
+	<span class="n">prot</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;GALACTOACETYLTRAN_MONOMER&#39;</span><span class="p">,</span> <span class="n">up</span> <span class="o">=</span> <span class="mi">2</span><span class="p">,</span> <span class="n">dw</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span> <span class="o">%</span>
+	<span class="n">prot</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;GALACTOACETYLTRAN_MONOMER&#39;</span><span class="p">,</span> <span class="n">up</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">dw</span> <span class="o">=</span> <span class="mi">2</span><span class="p">),</span>
+	<span class="n">Parameter</span><span class="p">(</span><span class="s1">&#39;fwd_complex_assembly_rule_3&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span>
+	<span class="n">Parameter</span><span class="p">(</span><span class="s1">&#39;rvs_complex_assembly_rule_3&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+</pre></div>
+</td></tr></table></div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><strong>Reversibility of Rules</strong>. Atlas writes irreversible <em>Rules</em> for each
+reaction declared in the network file. The <code class="docutils literal notranslate"><span class="pre">Parameter('rvs_RuleName',</span> <span class="pre">0))</span></code>
+must be set to non-zero to define an reversible reaction.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><strong>Uniqueness of Rule names</strong>. Atlas will write <em>Rules</em> with numbered
+names. Use only one file to model the many interactions the system has.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><strong>Simulation</strong>. The model can be simulated only with the instantiation of
+<code class="docutils literal notranslate"><span class="pre">Monomers</span></code> and <code class="docutils literal notranslate"><span class="pre">Initials</span></code> (<a class="reference external" href="https://pysb.readthedocs.io/en/stable/tutorial.html#introduction">More here</a>).
+Run <em>Monomer+Initials+Observables from metabolic network.ipynb</em> to obtain
+automatically the necessary <code class="docutils literal notranslate"><span class="pre">Monomers</span></code> and <code class="docutils literal notranslate"><span class="pre">Initials</span></code> (including
+proteins and enzymatic complexes). Manually add the necessary <code class="docutils literal notranslate"><span class="pre">Monomers</span></code>
+and <code class="docutils literal notranslate"><span class="pre">Initials</span></code> for non-enzymatic proteins.</p>
+<p><strong>Plotting</strong>. The model can be observed only with the instantation of
+<code class="docutils literal notranslate"><span class="pre">Observables</span></code> (<a class="reference external" href="https://pysb.readthedocs.io/en/stable/tutorial.html#simulation-and-analysis">More here</a>).
+Run <em>Monomer+Initials+Observables from metabolic network.ipynb</em> to obtain
+automatically the all possible <code class="docutils literal notranslate"><span class="pre">Observables</span></code> for enzymatic proteins. Other
+observables for proteins should be added manually.</p>
+</div>
 </div>
 
 

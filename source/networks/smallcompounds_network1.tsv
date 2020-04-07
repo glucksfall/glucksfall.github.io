@@ -1,0 +1,13 @@
+SOURCE	TARGET
+PER-araF	SMALL-PER-alpha-L-arabinofuranose
+PER-araF	SMALL-PER-beta-L-arabinofuranose
+PER-araF	SMALL-PER-alpha-L-arabinopyranose
+PER-araF	SMALL-PER-beta-L-arabinopyranose
+[crp, crp]	SMALL-CAMP
+[crp, SMALL-CAMP, crp]	SMALL-CAMP
+[lacI, lacI]	SMALL-ALLOLACTOSE
+[lacI, SMALL-ALLOLACTOSE, lacI]	SMALL-ALLOLACTOSE
+[araG, araG]	SMALL-ATP
+araC	SMALL-alpha-L-arabinopyranose
+[araC, araC]	SMALL-alpha-L-arabinopyranose
+[araC, SMALL-alpha-L-arabinopyranose, araC]	SMALL-alpha-L-arabinopyranose

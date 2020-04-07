@@ -169,129 +169,222 @@ list using comma unique names for products. To declare metabolites located at
 the periplasm or extracellular compartments, the user should employ the prefix
 “PER-” and “EX-”, respectively. Use <em>spontaneous</em> for non-enzymatic reactions.</p>
 <p>Examples:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>
+<div class="highlight-default notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">SOURCE</span>	<span class="n">TARGET</span>
+<span class="n">araB</span><span class="o">-</span><span class="n">pro1</span>	<span class="n">araB</span><span class="o">-</span><span class="n">rbs</span>
+<span class="n">araB</span><span class="o">-</span><span class="n">rbs</span>	<span class="n">araB</span><span class="o">-</span><span class="n">cds</span>
+<span class="n">araB</span><span class="o">-</span><span class="n">cds</span>	<span class="n">araA</span><span class="o">-</span><span class="n">rbs</span>
+<span class="n">araA</span><span class="o">-</span><span class="n">rbs</span>	<span class="n">araA</span><span class="o">-</span><span class="n">cds</span>
+<span class="n">araA</span><span class="o">-</span><span class="n">cds</span>	<span class="n">araD</span><span class="o">-</span><span class="n">rbs</span>
+<span class="n">araD</span><span class="o">-</span><span class="n">rbs</span>	<span class="n">araD</span><span class="o">-</span><span class="n">cds</span>
+<span class="n">araD</span><span class="o">-</span><span class="n">cds</span>	<span class="n">araD</span><span class="o">-</span><span class="n">ter1</span>
+
+<span class="n">araC</span><span class="o">-</span><span class="n">pro1</span>	<span class="n">araC</span><span class="o">-</span><span class="n">BS</span><span class="o">-</span><span class="mi">56</span><span class="o">-</span><span class="mi">72</span>
+<span class="n">araC</span><span class="o">-</span><span class="n">BS</span><span class="o">-</span><span class="mi">56</span><span class="o">-</span><span class="mi">72</span>	<span class="n">araC</span><span class="o">-</span><span class="n">rbs</span>
+<span class="n">araC</span><span class="o">-</span><span class="n">rbs</span>	<span class="n">araC</span><span class="o">-</span><span class="n">cds</span>
+<span class="n">araC</span><span class="o">-</span><span class="n">cds</span>	<span class="n">araC</span><span class="o">-</span><span class="n">ter1</span>
+
+<span class="n">araE</span><span class="o">-</span><span class="n">pro1</span>	<span class="n">araE</span><span class="o">-</span><span class="n">rbs</span>
+<span class="n">araE</span><span class="o">-</span><span class="n">rbs</span>	<span class="n">araE</span><span class="o">-</span><span class="n">cds</span>
+<span class="n">araE</span><span class="o">-</span><span class="n">cds</span>	<span class="n">araE</span><span class="o">-</span><span class="n">ter1</span>
+
+<span class="n">araF</span><span class="o">-</span><span class="n">pro1</span>	<span class="n">araF</span><span class="o">-</span><span class="n">rbs</span>
+<span class="n">araF</span><span class="o">-</span><span class="n">rbs</span>	<span class="n">araF</span><span class="o">-</span><span class="n">cds</span>
+<span class="n">araF</span><span class="o">-</span><span class="n">cds</span>	<span class="n">araG</span><span class="o">-</span><span class="n">rbs</span>
+<span class="n">araG</span><span class="o">-</span><span class="n">rbs</span>	<span class="n">araG</span><span class="o">-</span><span class="n">cds</span>
+<span class="n">araG</span><span class="o">-</span><span class="n">cds</span>	<span class="n">araH</span><span class="o">-</span><span class="n">rbs</span>
+<span class="n">araH</span><span class="o">-</span><span class="n">rbs</span>	<span class="n">araH</span><span class="o">-</span><span class="n">cds</span>
+<span class="n">araH</span><span class="o">-</span><span class="n">cds</span>	<span class="n">araH</span><span class="o">-</span><span class="n">ter1</span>
 </pre></div>
-</div>
-<p>	SOURCE	TARGET
-	araB-pro1	araB-rbs
-	araB-rbs	araB-cds
-	araB-cds	araA-rbs
-	araA-rbs	araA-cds
-	araA-cds	araD-rbs
-	araD-rbs	araD-cds
-	araD-cds	araD-ter1</p>
-<p>	araC-pro1	araC-BS-56-72
-	araC-BS-56-72	araC-rbs
-	araC-rbs	araC-cds
-	araC-cds	araC-ter1</p>
-<p>	araE-pro1	araE-rbs
-	araE-rbs	araE-cds
-	araE-cds	araE-ter1</p>
-<p>	araF-pro1	araF-rbs
-	araF-rbs	araF-cds
-	araF-cds	araG-rbs
-	araG-rbs	araG-cds
-	araG-cds	araH-rbs
-	araH-rbs	araH-cds
-	araH-cds	araH-ter1</p>
+</td></tr></table></div>
 <p><em>OR</em></p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>
+<div class="highlight-default notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">SOURCE</span>	<span class="n">TARGET</span>
+<span class="n">rpoA</span><span class="o">-</span><span class="n">pro1</span>	<span class="n">rpoA</span><span class="o">-</span><span class="n">rbs</span>
+<span class="n">rpoA</span><span class="o">-</span><span class="n">rbs</span>	<span class="n">rpoA</span><span class="o">-</span><span class="n">cds</span>
+<span class="n">rpoA</span><span class="o">-</span><span class="n">cds</span>	<span class="n">rpoA</span><span class="o">-</span><span class="n">ter1</span>
+
+<span class="n">rpoB</span><span class="o">-</span><span class="n">pro1</span>	<span class="n">rpoB</span><span class="o">-</span><span class="n">rbs</span>
+<span class="n">rpoB</span><span class="o">-</span><span class="n">rbs</span>	<span class="n">rpoB</span><span class="o">-</span><span class="n">cds</span>
+<span class="n">rpoB</span><span class="o">-</span><span class="n">cds</span>	<span class="n">rpoC</span><span class="o">-</span><span class="n">rbs</span>
+<span class="n">rpoC</span><span class="o">-</span><span class="n">rbs</span>	<span class="n">rpoC</span><span class="o">-</span><span class="n">cds</span>
+<span class="n">rpoC</span><span class="o">-</span><span class="n">cds</span>	<span class="n">rpoC</span><span class="o">-</span><span class="n">ter1</span>
+
+<span class="n">rpoD</span><span class="o">-</span><span class="n">pro1</span>	<span class="n">rpoD</span><span class="o">-</span><span class="n">rbs</span>
+<span class="n">rpoD</span><span class="o">-</span><span class="n">rbs</span>	<span class="n">rpoD</span><span class="o">-</span><span class="n">cds</span>
+<span class="n">rpoD</span><span class="o">-</span><span class="n">cds</span>	<span class="n">rpoD</span><span class="o">-</span><span class="n">ter1</span>
+
+<span class="n">rpoE</span><span class="o">-</span><span class="n">pro1</span>	<span class="n">rpoE</span><span class="o">-</span><span class="n">rbs</span>
+<span class="n">rpoE</span><span class="o">-</span><span class="n">rbs</span>	<span class="n">rpoE</span><span class="o">-</span><span class="n">cds</span>
+<span class="n">rpoE</span><span class="o">-</span><span class="n">cds</span>	<span class="n">rpoE</span><span class="o">-</span><span class="n">ter1</span>
+
+<span class="n">rpoH</span><span class="o">-</span><span class="n">pro1</span>	<span class="n">rpoH</span><span class="o">-</span><span class="n">rbs</span>
+<span class="n">rpoH</span><span class="o">-</span><span class="n">rbs</span>	<span class="n">rpoH</span><span class="o">-</span><span class="n">cds</span>
+<span class="n">rpoH</span><span class="o">-</span><span class="n">cds</span>	<span class="n">rpoH</span><span class="o">-</span><span class="n">ter1</span>
+
+<span class="n">rpoN</span><span class="o">-</span><span class="n">pro1</span>	<span class="n">rpoN</span><span class="o">-</span><span class="n">rbs</span>
+<span class="n">rpoN</span><span class="o">-</span><span class="n">rbs</span>	<span class="n">rpoN</span><span class="o">-</span><span class="n">cds</span>
+<span class="n">rpoN</span><span class="o">-</span><span class="n">cds</span>	<span class="n">rpoN</span><span class="o">-</span><span class="n">ter1</span>
+
+<span class="n">rpoS</span><span class="o">-</span><span class="n">pro1</span>	<span class="n">rpoS</span><span class="o">-</span><span class="n">rbs</span>
+<span class="n">rpoS</span><span class="o">-</span><span class="n">rbs</span>	<span class="n">rpoS</span><span class="o">-</span><span class="n">cds</span>
+<span class="n">rpoS</span><span class="o">-</span><span class="n">cds</span>	<span class="n">rpoS</span><span class="o">-</span><span class="n">ter1</span>
+
+<span class="n">fliA</span><span class="o">-</span><span class="n">pro1</span>	<span class="n">fliA</span><span class="o">-</span><span class="n">rbs</span>
+<span class="n">fliA</span><span class="o">-</span><span class="n">rbs</span>	<span class="n">fliA</span><span class="o">-</span><span class="n">cds</span>
+<span class="n">fliA</span><span class="o">-</span><span class="n">cds</span>	<span class="n">fliA</span><span class="o">-</span><span class="n">ter1</span>
+
+<span class="n">fecI</span><span class="o">-</span><span class="n">pro1</span>	<span class="n">fecI</span><span class="o">-</span><span class="n">rbs</span>
+<span class="n">fecI</span><span class="o">-</span><span class="n">rbs</span>	<span class="n">fecI</span><span class="o">-</span><span class="n">cds</span>
+<span class="n">fecI</span><span class="o">-</span><span class="n">cds</span>	<span class="n">fecI</span><span class="o">-</span><span class="n">ter1</span>
 </pre></div>
+</td></tr></table></div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><strong>Visualization in Cytoscape.</strong> Colors and arrows remains to the user for
+customization. The network could be complemented with a description of
+sigma factor specifity for promoter, as the following network</p>
+<img alt="_images/Fig_GenomeGraphs.png" src="_images/Fig_GenomeGraphs.png" />
 </div>
-<p>	SOURCE	TARGET
-	rpoA-pro1	rpoA-rbs
-	rpoA-rbs	rpoA-cds
-	rpoA-cds	rpoA-ter1</p>
-<p>	rpoB-pro1	rpoB-rbs
-	rpoB-rbs	rpoB-cds
-	rpoB-cds	rpoC-rbs
-	rpoC-rbs	rpoC-cds
-	rpoC-cds	rpoC-ter1</p>
-<p>	rpoD-pro1	rpoD-rbs
-	rpoD-rbs	rpoD-cds
-	rpoD-cds	rpoD-ter1</p>
-<p>	rpoE-pro1	rpoE-rbs
-	rpoE-rbs	rpoE-cds
-	rpoE-cds	rpoE-ter1</p>
-<p>	rpoH-pro1	rpoH-rbs
-	rpoH-rbs	rpoH-cds
-	rpoH-cds	rpoH-ter1</p>
-<p>	rpoN-pro1	rpoN-rbs
-	rpoN-rbs	rpoN-cds
-	rpoN-cds	rpoN-ter1</p>
-<p>	rpoS-pro1	rpoS-rbs
-	rpoS-rbs	rpoS-cds
-	rpoS-cds	rpoS-ter1</p>
-<p>	fliA-pro1	fliA-rbs
-	fliA-rbs	fliA-cds
-	fliA-cds	fliA-ter1</p>
-<p>	fecI-pro1	fecI-rbs
-	fecI-rbs	fecI-cds
-	fecI-cds	fecI-ter1</p>
-<p>	<strong>Visualization in Cytoscape.</strong> Colors and arrows remains to the user for
-	customization. The network could be complemented with a description of
-	sigma factor specifity for promoter, as the following network</p>
-<p>	.. image:: Fig_GenomeGraphs.png</p>
 <p>Finally, execute the “<em>Rules from metabolic network.ipynb</em>” to obtain the
 <em>Rules</em> to model the defined network. If using a Sigma Factor-Promoter
 Interaction Network, the user could use “<em>Rules from SigmaFactors x Architecture</em>”
 to obtain the <em>Rules</em> to model both network at once. The complete rule-based
 model can be found in the arabinose folder (1st example) and in the sigma
 folder (2nd example) from the Network Biology Lab GitHub repository <a class="reference external" href="https://github.com/networkbiolab/atlas/">here</a>.</p>
-<p>	<strong>Kappa BioBrick Framework.</strong> Rules for transcription and translation
-	come from the work of Stewart and Wilson-Kanamori (See more
-	<a class="reference external" href="https://www.sciencedirect.com/science/article/pii/S1571066111001289">here</a>).
-	A “pure” genome graph use the original defined rules, while a genome
-	graph + sigma factor specifity use a modify form to model the release
-	of the sigma factor from the RNA Polymerase at the transcription
-	initiation. Note the explicit modeling of the RNA Polymerase in the
-	second example.</p>
-<p>	.. code:: python3</p>
-<p>		Rule(‘docking_araB_pro1’,
-			cplx(name = ‘RNAP’, dna = None) + dna(name = ‘araB’, type = ‘pro1’, prot = None, free = ‘True’) |
-			cplx(name = ‘RNAP’, dna = 1) % dna(name = ‘araB’, type = ‘pro1’, prot = 1, free = ‘False’),
-			Parameter(‘fwd_docking_araB_pro1’, 1), Parameter(‘rvs_docking_araB_pro1’, 1))</p>
-<p>	<em>OR</em></p>
-<p>	.. code:: python</p>
-<p>		# [rpoA, rpoA, rpoB, rpoC, rpoD] interacts with BS_rpoA_pro1
-		Rule(‘docking_1_rpoA_pro1’,
-			prot(name = ‘rpoA’, dna = None, met = None, up = None, dw = 1) %
-			prot(name = ‘rpoA’, dna = None, met = None, up = 1, dw = 2) %
-			prot(name = ‘rpoB’, dna = None, met = None, up = 2, dw = 3) %
-			prot(name = ‘rpoC’, dna = None, met = None, up = 3, dw = 4) %
-			prot(name = ‘rpoD’, dna = None, met = None, up = 4, dw = None) +
-			dna(name = ‘rpoA’, type = ‘pro1’, prot = None, free = ‘True’, up = WILD, dw = WILD) |
-			prot(name = ‘rpoA’, dna = None, met = None, up = None, dw = 1) %
-			prot(name = ‘rpoA’, dna = None, met = None, up = 1, dw = 2) %
-			prot(name = ‘rpoB’, dna = None, met = None, up = 2, dw = 3) %
-			prot(name = ‘rpoC’, dna = None, met = None, up = 3, dw = 4) %
-			prot(name = ‘rpoD’, dna = 5, met = None, up = 4, dw = None) %
-			dna(name = ‘rpoA’, type = ‘pro1’, prot = 5, free = ‘False’, up = WILD, dw = WILD),
-			Parameter(‘fwd_docking_1_rpoA_rbs’, 1),
-			Parameter(‘rvs_docking_1_rpoA_pro1’, 0))</p>
-<p>	<strong>Reversibility of reactions</strong>. Atlas writes irreversible <em>Rules</em> for each
-	interaction between the RNA Polymerase and a promoter. The <code class="docutils literal notranslate"><span class="pre">Parameter('rvs_ReactionName',</span> <span class="pre">0))</span></code>
-	must be set to non-zero to define a reversible reaction. The remaining <em>Rules</em>
-	are irreversible without a way to define reversible reactions.</p>
-<p>	<strong>Simulation</strong>. The model can be simulated only with the instantiation of
-	<code class="docutils literal notranslate"><span class="pre">Monomers</span></code> and <code class="docutils literal notranslate"><span class="pre">Initials</span></code> (<a class="reference external" href="https://pysb.readthedocs.io/en/stable/tutorial.html#introduction">More here</a>).
-	Run <em>Monomer+Initials+Observables from metabolic network.ipynb</em> to obtain
-	automatically the necessary <code class="docutils literal notranslate"><span class="pre">Monomers</span></code> and <code class="docutils literal notranslate"><span class="pre">Initials</span></code> (including
-	proteins and enzymatic complexes). For initial genes, please refer to the
-	following example:</p>
-<p>	.. code:: python</p>
-<p>		Initial(
-			dna(name = ‘rpoB’, type = ‘pro1’, free = ‘True’, prot = None, rna = None, up = None, dw = 1) %
-			dna(name = ‘rpoB’, type = ‘rbs’, free = ‘True’, prot = None, rna = None, up = 1, dw = 2) %
-			dna(name = ‘rpoB’, type = ‘cds’, free = ‘True’, prot = None, rna = None, up = 2, dw = 3) %
-			dna(name = ‘rpoC’, type = ‘rbs’, free = ‘True’, prot = None, rna = None, up = 3, dw = 4) %
-			dna(name = ‘rpoC’, type = ‘cds’, free = ‘True’, prot = None, rna = None, up = 4, dw = 5) %
-			dna(name = ‘rpoC’, type = ‘ter1’, free = ‘True’, prot = None, rna = None, up = 5, dw = None),
-			Parameter(‘t0_rpoBC_operon’, 1))</p>
-<p>	<strong>Plotting</strong>. The model can be observed only with the instantation of
-	<code class="docutils literal notranslate"><span class="pre">Observables</span></code> (<a class="reference external" href="https://pysb.readthedocs.io/en/stable/tutorial.html#simulation-and-analysis">More here</a>).
-	Run <em>Monomer+Initials+Observables from metabolic network.ipynb</em> to obtain
-	automatically the all possible <code class="docutils literal notranslate"><span class="pre">Observables</span></code> for metabolites.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><strong>Kappa BioBrick Framework.</strong> The <em>Rules</em> for transcription and translation
+come from the work of Stewart and Wilson-Kanamori (See more
+<a class="reference external" href="https://www.sciencedirect.com/science/article/pii/S1571066111001289">here</a>).
+A “pure” genome graph uses the originally defined rules, while a genome
+graph + sigma factor specifity uses a modified <em>rules</em> to model the release
+of the sigma factor from the RNA Polymerase at the transcription
+initiation. Please note the explicit modeling of the RNA Polymerase complex in the
+second example.</p>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">Rule</span><span class="p">(</span><span class="s1">&#39;docking_araB_pro1&#39;</span><span class="p">,</span>
+	<span class="n">cplx</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;RNAP&#39;</span><span class="p">,</span> <span class="n">dna</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">+</span> <span class="n">dna</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;araB&#39;</span><span class="p">,</span> <span class="nb">type</span> <span class="o">=</span> <span class="s1">&#39;pro1&#39;</span><span class="p">,</span> <span class="n">prot</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">free</span> <span class="o">=</span> <span class="s1">&#39;True&#39;</span><span class="p">)</span> <span class="o">|</span>
+	<span class="n">cplx</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;RNAP&#39;</span><span class="p">,</span> <span class="n">dna</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span> <span class="o">%</span> <span class="n">dna</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;araB&#39;</span><span class="p">,</span> <span class="nb">type</span> <span class="o">=</span> <span class="s1">&#39;pro1&#39;</span><span class="p">,</span> <span class="n">prot</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">free</span> <span class="o">=</span> <span class="s1">&#39;False&#39;</span><span class="p">),</span>
+	<span class="n">Parameter</span><span class="p">(</span><span class="s1">&#39;fwd_docking_araB_pro1&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="n">Parameter</span><span class="p">(</span><span class="s1">&#39;rvs_docking_araB_pro1&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
+</pre></div>
+</td></tr></table></div>
+<p><em>OR</em></p>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="c1"># [rpoA, rpoA, rpoB, rpoC, rpoD] interacts with BS_rpoA_pro1</span>
+<span class="n">Rule</span><span class="p">(</span><span class="s1">&#39;docking_1_rpoA_pro1&#39;</span><span class="p">,</span>
+	<span class="n">prot</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;rpoA&#39;</span><span class="p">,</span> <span class="n">dna</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">met</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">up</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">dw</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span> <span class="o">%</span>
+	<span class="n">prot</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;rpoA&#39;</span><span class="p">,</span> <span class="n">dna</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">met</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">up</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">dw</span> <span class="o">=</span> <span class="mi">2</span><span class="p">)</span> <span class="o">%</span>
+	<span class="n">prot</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;rpoB&#39;</span><span class="p">,</span> <span class="n">dna</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">met</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">up</span> <span class="o">=</span> <span class="mi">2</span><span class="p">,</span> <span class="n">dw</span> <span class="o">=</span> <span class="mi">3</span><span class="p">)</span> <span class="o">%</span>
+	<span class="n">prot</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;rpoC&#39;</span><span class="p">,</span> <span class="n">dna</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">met</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">up</span> <span class="o">=</span> <span class="mi">3</span><span class="p">,</span> <span class="n">dw</span> <span class="o">=</span> <span class="mi">4</span><span class="p">)</span> <span class="o">%</span>
+	<span class="n">prot</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;rpoD&#39;</span><span class="p">,</span> <span class="n">dna</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">met</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">up</span> <span class="o">=</span> <span class="mi">4</span><span class="p">,</span> <span class="n">dw</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">+</span>
+	<span class="n">dna</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;rpoA&#39;</span><span class="p">,</span> <span class="nb">type</span> <span class="o">=</span> <span class="s1">&#39;pro1&#39;</span><span class="p">,</span> <span class="n">prot</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">free</span> <span class="o">=</span> <span class="s1">&#39;True&#39;</span><span class="p">,</span> <span class="n">up</span> <span class="o">=</span> <span class="n">WILD</span><span class="p">,</span> <span class="n">dw</span> <span class="o">=</span> <span class="n">WILD</span><span class="p">)</span> <span class="o">|</span>
+	<span class="n">prot</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;rpoA&#39;</span><span class="p">,</span> <span class="n">dna</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">met</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">up</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">dw</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span> <span class="o">%</span>
+	<span class="n">prot</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;rpoA&#39;</span><span class="p">,</span> <span class="n">dna</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">met</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">up</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">dw</span> <span class="o">=</span> <span class="mi">2</span><span class="p">)</span> <span class="o">%</span>
+	<span class="n">prot</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;rpoB&#39;</span><span class="p">,</span> <span class="n">dna</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">met</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">up</span> <span class="o">=</span> <span class="mi">2</span><span class="p">,</span> <span class="n">dw</span> <span class="o">=</span> <span class="mi">3</span><span class="p">)</span> <span class="o">%</span>
+	<span class="n">prot</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;rpoC&#39;</span><span class="p">,</span> <span class="n">dna</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">met</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">up</span> <span class="o">=</span> <span class="mi">3</span><span class="p">,</span> <span class="n">dw</span> <span class="o">=</span> <span class="mi">4</span><span class="p">)</span> <span class="o">%</span>
+	<span class="n">prot</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;rpoD&#39;</span><span class="p">,</span> <span class="n">dna</span> <span class="o">=</span> <span class="mi">5</span><span class="p">,</span> <span class="n">met</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">up</span> <span class="o">=</span> <span class="mi">4</span><span class="p">,</span> <span class="n">dw</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">%</span>
+	<span class="n">dna</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;rpoA&#39;</span><span class="p">,</span> <span class="nb">type</span> <span class="o">=</span> <span class="s1">&#39;pro1&#39;</span><span class="p">,</span> <span class="n">prot</span> <span class="o">=</span> <span class="mi">5</span><span class="p">,</span> <span class="n">free</span> <span class="o">=</span> <span class="s1">&#39;False&#39;</span><span class="p">,</span> <span class="n">up</span> <span class="o">=</span> <span class="n">WILD</span><span class="p">,</span> <span class="n">dw</span> <span class="o">=</span> <span class="n">WILD</span><span class="p">),</span>
+	<span class="n">Parameter</span><span class="p">(</span><span class="s1">&#39;fwd_docking_1_rpoA_rbs&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span>
+	<span class="n">Parameter</span><span class="p">(</span><span class="s1">&#39;rvs_docking_1_rpoA_pro1&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><strong>Reversibility of reactions</strong>. Atlas writes irreversible <em>Rules</em> for each
+interaction between the RNA Polymerase and a promoter. The <code class="docutils literal notranslate"><span class="pre">Parameter('rvs_ReactionName',</span> <span class="pre">0))</span></code>
+must be set to non-zero to define a reversible reaction. The remaining <em>Rules</em>
+are irreversible without a way to define reversible reactions.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><strong>Simulation</strong>. The model can be simulated only with the instantiation of
+<code class="docutils literal notranslate"><span class="pre">Monomers</span></code> and <code class="docutils literal notranslate"><span class="pre">Initials</span></code> (<a class="reference external" href="https://pysb.readthedocs.io/en/stable/tutorial.html#introduction">More here</a>).
+Run <em>Monomer+Initials+Observables from metabolic network.ipynb</em> to obtain
+automatically the necessary <code class="docutils literal notranslate"><span class="pre">Monomers</span></code> and <code class="docutils literal notranslate"><span class="pre">Initials</span></code> (including
+proteins and enzymatic complexes). For initial genes, please refer to the
+following example:</p>
+<p><strong>Plotting</strong>. The model can be observed only with the instantation of
+<code class="docutils literal notranslate"><span class="pre">Observables</span></code> (<a class="reference external" href="https://pysb.readthedocs.io/en/stable/tutorial.html#simulation-and-analysis">More here</a>).
+Run <em>Monomer+Initials+Observables from metabolic network.ipynb</em> to obtain
+automatically the all possible <code class="docutils literal notranslate"><span class="pre">Observables</span></code> for metabolites.</p>
+</div>
 </div>
 
 

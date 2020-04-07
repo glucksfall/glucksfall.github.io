@@ -166,139 +166,277 @@
 network, but the user should add the prefix “SMALL-” to encode a small compound
 that interacts with the protein or protein complex.</p>
 <p>Examples:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>
+<div class="highlight-default notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">SOURCE</span>	<span class="n">TARGET</span>
+<span class="n">PER</span><span class="o">-</span><span class="n">araF</span>	<span class="n">SMALL</span><span class="o">-</span><span class="n">PER</span><span class="o">-</span><span class="n">alpha</span><span class="o">-</span><span class="n">L</span><span class="o">-</span><span class="n">arabinofuranose</span>
+<span class="n">PER</span><span class="o">-</span><span class="n">araF</span>	<span class="n">SMALL</span><span class="o">-</span><span class="n">PER</span><span class="o">-</span><span class="n">beta</span><span class="o">-</span><span class="n">L</span><span class="o">-</span><span class="n">arabinofuranose</span>
+<span class="n">PER</span><span class="o">-</span><span class="n">araF</span>	<span class="n">SMALL</span><span class="o">-</span><span class="n">PER</span><span class="o">-</span><span class="n">alpha</span><span class="o">-</span><span class="n">L</span><span class="o">-</span><span class="n">arabinopyranose</span>
+<span class="n">PER</span><span class="o">-</span><span class="n">araF</span>	<span class="n">SMALL</span><span class="o">-</span><span class="n">PER</span><span class="o">-</span><span class="n">beta</span><span class="o">-</span><span class="n">L</span><span class="o">-</span><span class="n">arabinopyranose</span>
+<span class="p">[</span><span class="n">crp</span><span class="p">,</span> <span class="n">crp</span><span class="p">]</span>	<span class="n">SMALL</span><span class="o">-</span><span class="n">CAMP</span>
+<span class="p">[</span><span class="n">crp</span><span class="p">,</span> <span class="n">SMALL</span><span class="o">-</span><span class="n">CAMP</span><span class="p">,</span> <span class="n">crp</span><span class="p">]</span>	<span class="n">SMALL</span><span class="o">-</span><span class="n">CAMP</span>
+<span class="p">[</span><span class="n">lacI</span><span class="p">,</span> <span class="n">lacI</span><span class="p">]</span>	<span class="n">SMALL</span><span class="o">-</span><span class="n">ALLOLACTOSE</span>
+<span class="p">[</span><span class="n">lacI</span><span class="p">,</span> <span class="n">SMALL</span><span class="o">-</span><span class="n">ALLOLACTOSE</span><span class="p">,</span> <span class="n">lacI</span><span class="p">]</span>	<span class="n">SMALL</span><span class="o">-</span><span class="n">ALLOLACTOSE</span>
+<span class="p">[</span><span class="n">araG</span><span class="p">,</span> <span class="n">araG</span><span class="p">]</span>	<span class="n">SMALL</span><span class="o">-</span><span class="n">ATP</span>
+<span class="n">araC</span>	<span class="n">SMALL</span><span class="o">-</span><span class="n">alpha</span><span class="o">-</span><span class="n">L</span><span class="o">-</span><span class="n">arabinopyranose</span>
+<span class="p">[</span><span class="n">araC</span><span class="p">,</span> <span class="n">araC</span><span class="p">]</span>	<span class="n">SMALL</span><span class="o">-</span><span class="n">alpha</span><span class="o">-</span><span class="n">L</span><span class="o">-</span><span class="n">arabinopyranose</span>
+<span class="p">[</span><span class="n">araC</span><span class="p">,</span> <span class="n">SMALL</span><span class="o">-</span><span class="n">alpha</span><span class="o">-</span><span class="n">L</span><span class="o">-</span><span class="n">arabinopyranose</span><span class="p">,</span> <span class="n">araC</span><span class="p">]</span>	<span class="n">SMALL</span><span class="o">-</span><span class="n">alpha</span><span class="o">-</span><span class="n">L</span><span class="o">-</span><span class="n">arabinopyranose</span>
 </pre></div>
-</div>
-<p>	SOURCE	TARGET
-	PER-araF	SMALL-PER-alpha-L-arabinofuranose
-	PER-araF	SMALL-PER-beta-L-arabinofuranose
-	PER-araF	SMALL-PER-alpha-L-arabinopyranose
-	PER-araF	SMALL-PER-beta-L-arabinopyranose
-	[crp, crp]	SMALL-CAMP
-	[crp, SMALL-CAMP, crp]	SMALL-CAMP
-	[lacI, lacI]	SMALL-ALLOLACTOSE
-	[lacI, SMALL-ALLOLACTOSE, lacI]	SMALL-ALLOLACTOSE
-	[araG, araG]	SMALL-ATP
-	araC	SMALL-alpha-L-arabinopyranose
-	[araC, araC]	SMALL-alpha-L-arabinopyranose
-	[araC, SMALL-alpha-L-arabinopyranose, araC]	SMALL-alpha-L-arabinopyranose</p>
+</td></tr></table></div>
 <p>Finally, execute the “<em>Rules from protein-small compounds.ipynb</em>” to obtain the
 <em>Rules</em> to model the defined interaction network. The complete rule-based
 model can be found in the arabinose folder from the Network Biology Lab
 GitHub repository <a class="reference external" href="https://github.com/networkbiolab/atlas/blob/master/arabinose/Model%20arabinose%20operon%20Met%20%2B%20PPI%20%2B%20TXTL%20%2B%20GRN.ipynb">here</a>.</p>
-<p>	Rule(‘ProtMet_RuleAssembly_1’,
-		prot(name = ‘araF’, loc = ‘per’, met = None, up = None, dw = None) +
-		met(name = ‘alpha_L_arabinofuranose’, loc = ‘per’, prot = None) |
-		prot(name = ‘araF’, loc = ‘per’, met = 1, up = None, dw = None) %
-		met(name = ‘alpha_L_arabinofuranose’, loc = ‘per’, prot = 1),
-		Parameter(‘fwd_ProtMet_RuleAssembly_1’, 1),
-		Parameter(‘rvs_ProtMet_RuleAssembly_1’, 1))</p>
-<p>	Rule(‘ProtMet_RuleAssembly_2’,
-		prot(name = ‘araF’, loc = ‘per’, met = None, up = None, dw = None) +
-		met(name = ‘beta_L_arabinofuranose’, loc = ‘per’, prot = None) |
-		prot(name = ‘araF’, loc = ‘per’, met = 1, up = None, dw = None) %
-		met(name = ‘beta_L_arabinofuranose’, loc = ‘per’, prot = 1),
-		Parameter(‘fwd_ProtMet_RuleAssembly_2’, 1),
-		Parameter(‘rvs_ProtMet_RuleAssembly_2’, 1))</p>
-<p>	Rule(‘ProtMet_RuleAssembly_3’,
-		prot(name = ‘araF’, loc = ‘per’, met = None, up = None, dw = None) +
-		met(name = ‘alpha_L_arabinopyranose’, loc = ‘per’, prot = None) |
-		prot(name = ‘araF’, loc = ‘per’, met = 1, up = None, dw = None) %
-		met(name = ‘alpha_L_arabinopyranose’, loc = ‘per’, prot = 1),
-		Parameter(‘fwd_ProtMet_RuleAssembly_3’, 1),
-		Parameter(‘rvs_ProtMet_RuleAssembly_3’, 1))</p>
-<p>	Rule(‘ProtMet_RuleAssembly_4’,
-		prot(name = ‘araF’, loc = ‘per’, met = None, up = None, dw = None) +
-		met(name = ‘beta_L_arabinopyranose’, loc = ‘per’, prot = None) |
-		prot(name = ‘araF’, loc = ‘per’, met = 1, up = None, dw = None) %
-		met(name = ‘beta_L_arabinopyranose’, loc = ‘per’, prot = 1),
-		Parameter(‘fwd_ProtMet_RuleAssembly_4’, 1),
-		Parameter(‘rvs_ProtMet_RuleAssembly_4’, 1))</p>
-<p>	Rule(‘ProtMet_RuleAssembly_5’,
-		prot(name = ‘crp’, loc = ‘cyt’, met = None, up = None, dw = 1) %
-		prot(name = ‘crp’, loc = ‘cyt’, met = None, up = 1, dw = None) +
-		met(name = ‘CAMP’, loc = ‘cyt’, prot = None) |
-		prot(name = ‘crp’, loc = ‘cyt’, met = None, up = None, dw = 1) %
-		prot(name = ‘crp’, loc = ‘cyt’, met = 2, up = 1, dw = None) %
-		met(name = ‘CAMP’, loc = ‘cyt’, prot = 2),
-		Parameter(‘fwd_ProtMet_RuleAssembly_5’, 1),
-		Parameter(‘rvs_ProtMet_RuleAssembly_5’, 1))</p>
-<p>	Rule(‘ProtMet_RuleAssembly_6’,
-		prot(name = ‘crp’, loc = ‘cyt’, met = 2, up = None, dw = 1) %
-		met(name = ‘CAMP’, loc = ‘cyt’, prot = 2) %
-		prot(name = ‘crp’, loc = ‘cyt’, met = None, up = 1, dw = None) +
-		met(name = ‘CAMP’, loc = ‘cyt’, prot = None) |
-		prot(name = ‘crp’, loc = ‘cyt’, met = 2, up = None, dw = 1) %
-		met(name = ‘CAMP’, loc = ‘cyt’, prot = 2) %
-		prot(name = ‘crp’, loc = ‘cyt’, met = 3, up = 1, dw = None) %
-		met(name = ‘CAMP’, loc = ‘cyt’, prot = 3),
-		Parameter(‘fwd_ProtMet_RuleAssembly_6’, 1),
-		Parameter(‘rvs_ProtMet_RuleAssembly_6’, 1))</p>
-<p>	Rule(‘ProtMet_RuleAssembly_7’,
-		prot(name = ‘lacI’, loc = ‘cyt’, met = None, up = None, dw = 1) %
-		prot(name = ‘lacI’, loc = ‘cyt’, met = None, up = 1, dw = None) +
-		met(name = ‘ALLOLACTOSE’, loc = ‘cyt’, prot = None) |
-		prot(name = ‘lacI’, loc = ‘cyt’, met = None, up = None, dw = 1) %
-		prot(name = ‘lacI’, loc = ‘cyt’, met = 2, up = 1, dw = None) %
-		met(name = ‘ALLOLACTOSE’, loc = ‘cyt’, prot = 2),
-		Parameter(‘fwd_ProtMet_RuleAssembly_7’, 1),
-		Parameter(‘rvs_ProtMet_RuleAssembly_7’, 1))</p>
-<p>	Rule(‘ProtMet_RuleAssembly_8’,
-		prot(name = ‘lacI’, loc = ‘cyt’, met = 2, up = None, dw = 1) %
-		met(name = ‘ALLOLACTOSE’, loc = ‘cyt’, prot = 2) %
-		prot(name = ‘lacI’, loc = ‘cyt’, met = None, up = 1, dw = None) +
-		met(name = ‘ALLOLACTOSE’, loc = ‘cyt’, prot = None) |
-		prot(name = ‘lacI’, loc = ‘cyt’, met = 2, up = None, dw = 1) %
-		met(name = ‘ALLOLACTOSE’, loc = ‘cyt’, prot = 2) %
-		prot(name = ‘lacI’, loc = ‘cyt’, met = 3, up = 1, dw = None) %
-		met(name = ‘ALLOLACTOSE’, loc = ‘cyt’, prot = 3),
-		Parameter(‘fwd_ProtMet_RuleAssembly_8’, 1),
-		Parameter(‘rvs_ProtMet_RuleAssembly_8’, 1))</p>
-<p>	Rule(‘ProtMet_RuleAssembly_9’,
-		prot(name = ‘araG’, loc = ‘cyt’, met = None, up = None, dw = 1) %
-		prot(name = ‘araG’, loc = ‘cyt’, met = None, up = 1, dw = None) +
-		met(name = ‘ATP’, loc = ‘cyt’, prot = None) |
-		prot(name = ‘araG’, loc = ‘cyt’, met = None, up = None, dw = 1) %
-		prot(name = ‘araG’, loc = ‘cyt’, met = 2, up = 1, dw = None) %
-		met(name = ‘ATP’, loc = ‘cyt’, prot = 2),
-		Parameter(‘fwd_ProtMet_RuleAssembly_9’, 1),
-		Parameter(‘rvs_ProtMet_RuleAssembly_9’, 1))</p>
-<p>	Rule(‘ProtMet_RuleAssembly_10’,
-		prot(name = ‘araC’, loc = ‘cyt’, met = None, up = None, dw = 1) %
-		prot(name = ‘araC’, loc = ‘cyt’, met = None, up = 1, dw = None) +
-		met(name = ‘alpha_L_arabinopyranose’, loc = ‘cyt’, prot = None) |
-		prot(name = ‘araC’, loc = ‘cyt’, met = None, up = None, dw = 1) %
-		prot(name = ‘araC’, loc = ‘cyt’, met = 2, up = 1, dw = None) %
-		met(name = ‘alpha_L_arabinopyranose’, loc = ‘cyt’, prot = 2),
-		Parameter(‘fwd_ProtMet_RuleAssembly_10’, 1),
-		Parameter(‘rvs_ProtMet_RuleAssembly_10’, 1))</p>
-<p>	Rule(‘ProtMet_RuleAssembly_11’,
-		prot(name = ‘araC’, loc = ‘cyt’, met = 2, up = None, dw = 1) %
-		met(name = ‘alpha_L_arabinopyranose’, loc = ‘cyt’, prot = 2) %
-		prot(name = ‘araC’, loc = ‘cyt’, met = None, up = 1, dw = None) +
-		met(name = ‘alpha_L_arabinopyranose’, loc = ‘cyt’, prot = None) |
-		prot(name = ‘araC’, loc = ‘cyt’, met = 2, up = None, dw = 1) %
-		met(name = ‘alpha_L_arabinopyranose’, loc = ‘cyt’, prot = 2) %
-		prot(name = ‘araC’, loc = ‘cyt’, met = 3, up = 1, dw = None) %
-		met(name = ‘alpha_L_arabinopyranose’, loc = ‘cyt’, prot = 3),
-		Parameter(‘fwd_ProtMet_RuleAssembly_11’, 1),
-		Parameter(‘rvs_ProtMet_RuleAssembly_11’, 1))</p>
-<p>	<strong>Reversibility of Rules</strong>. Atlas writes reversible <em>Rules</em> for each
-	reaction declared in the network file. The <code class="docutils literal notranslate"><span class="pre">Parameter('rvs_RuleName',</span> <span class="pre">1))</span></code>
-	must be set to zero to define an irreversible reaction.</p>
-<p>	<strong>Uniqueness of Rule names</strong>. Atlas will write <em>Rules</em> with numbered
-	names. Use only one file to model the many interactions the system has.</p>
-<p>	<strong>Simulation</strong>. The model can be simulated only with the instantiation of
-	<code class="docutils literal notranslate"><span class="pre">Monomers</span></code> and <code class="docutils literal notranslate"><span class="pre">Initials</span></code> (<a class="reference external" href="https://pysb.readthedocs.io/en/stable/tutorial.html#introduction">More here</a>).
-	Run <em>Monomer+Initials+Observables from metabolic network.ipynb</em> to obtain
-	automatically the necessary <code class="docutils literal notranslate"><span class="pre">Monomers</span></code> and <code class="docutils literal notranslate"><span class="pre">Initials</span></code> (including
-	proteins and enzymatic complexes). Manually add the necessary <code class="docutils literal notranslate"><span class="pre">Monomers</span></code>
-	and <code class="docutils literal notranslate"><span class="pre">Initials</span></code> for non-enzymatic proteins.</p>
-<p>	<strong>Plotting</strong>. The model can be observed only with the instantation of
-	<code class="docutils literal notranslate"><span class="pre">Observables</span></code> (<a class="reference external" href="https://pysb.readthedocs.io/en/stable/tutorial.html#simulation-and-analysis">More here</a>).
-	Run <em>Monomer+Initials+Observables from metabolic network.ipynb</em> to obtain
-	automatically the all possible <code class="docutils literal notranslate"><span class="pre">Observables</span></code> for enzymatic proteins. Other
-	observables for proteins should be added manually.</p>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>  1
+  2
+  3
+  4
+  5
+  6
+  7
+  8
+  9
+ 10
+ 11
+ 12
+ 13
+ 14
+ 15
+ 16
+ 17
+ 18
+ 19
+ 20
+ 21
+ 22
+ 23
+ 24
+ 25
+ 26
+ 27
+ 28
+ 29
+ 30
+ 31
+ 32
+ 33
+ 34
+ 35
+ 36
+ 37
+ 38
+ 39
+ 40
+ 41
+ 42
+ 43
+ 44
+ 45
+ 46
+ 47
+ 48
+ 49
+ 50
+ 51
+ 52
+ 53
+ 54
+ 55
+ 56
+ 57
+ 58
+ 59
+ 60
+ 61
+ 62
+ 63
+ 64
+ 65
+ 66
+ 67
+ 68
+ 69
+ 70
+ 71
+ 72
+ 73
+ 74
+ 75
+ 76
+ 77
+ 78
+ 79
+ 80
+ 81
+ 82
+ 83
+ 84
+ 85
+ 86
+ 87
+ 88
+ 89
+ 90
+ 91
+ 92
+ 93
+ 94
+ 95
+ 96
+ 97
+ 98
+ 99
+100
+101
+102
+103
+104
+105
+106
+107</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">Rule</span><span class="p">(</span><span class="s1">&#39;ProtMet_RuleAssembly_1&#39;</span><span class="p">,</span>
+	<span class="n">prot</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;araF&#39;</span><span class="p">,</span> <span class="n">loc</span> <span class="o">=</span> <span class="s1">&#39;per&#39;</span><span class="p">,</span> <span class="n">met</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">up</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">dw</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">+</span>
+	<span class="n">met</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;alpha_L_arabinofuranose&#39;</span><span class="p">,</span> <span class="n">loc</span> <span class="o">=</span> <span class="s1">&#39;per&#39;</span><span class="p">,</span> <span class="n">prot</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">|</span>
+	<span class="n">prot</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;araF&#39;</span><span class="p">,</span> <span class="n">loc</span> <span class="o">=</span> <span class="s1">&#39;per&#39;</span><span class="p">,</span> <span class="n">met</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">up</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">dw</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">%</span>
+	<span class="n">met</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;alpha_L_arabinofuranose&#39;</span><span class="p">,</span> <span class="n">loc</span> <span class="o">=</span> <span class="s1">&#39;per&#39;</span><span class="p">,</span> <span class="n">prot</span> <span class="o">=</span> <span class="mi">1</span><span class="p">),</span>
+	<span class="n">Parameter</span><span class="p">(</span><span class="s1">&#39;fwd_ProtMet_RuleAssembly_1&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span>
+	<span class="n">Parameter</span><span class="p">(</span><span class="s1">&#39;rvs_ProtMet_RuleAssembly_1&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
+
+<span class="n">Rule</span><span class="p">(</span><span class="s1">&#39;ProtMet_RuleAssembly_2&#39;</span><span class="p">,</span>
+	<span class="n">prot</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;araF&#39;</span><span class="p">,</span> <span class="n">loc</span> <span class="o">=</span> <span class="s1">&#39;per&#39;</span><span class="p">,</span> <span class="n">met</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">up</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">dw</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">+</span>
+	<span class="n">met</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;beta_L_arabinofuranose&#39;</span><span class="p">,</span> <span class="n">loc</span> <span class="o">=</span> <span class="s1">&#39;per&#39;</span><span class="p">,</span> <span class="n">prot</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">|</span>
+	<span class="n">prot</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;araF&#39;</span><span class="p">,</span> <span class="n">loc</span> <span class="o">=</span> <span class="s1">&#39;per&#39;</span><span class="p">,</span> <span class="n">met</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">up</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">dw</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">%</span>
+	<span class="n">met</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;beta_L_arabinofuranose&#39;</span><span class="p">,</span> <span class="n">loc</span> <span class="o">=</span> <span class="s1">&#39;per&#39;</span><span class="p">,</span> <span class="n">prot</span> <span class="o">=</span> <span class="mi">1</span><span class="p">),</span>
+	<span class="n">Parameter</span><span class="p">(</span><span class="s1">&#39;fwd_ProtMet_RuleAssembly_2&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span>
+	<span class="n">Parameter</span><span class="p">(</span><span class="s1">&#39;rvs_ProtMet_RuleAssembly_2&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
+
+<span class="n">Rule</span><span class="p">(</span><span class="s1">&#39;ProtMet_RuleAssembly_3&#39;</span><span class="p">,</span>
+	<span class="n">prot</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;araF&#39;</span><span class="p">,</span> <span class="n">loc</span> <span class="o">=</span> <span class="s1">&#39;per&#39;</span><span class="p">,</span> <span class="n">met</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">up</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">dw</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">+</span>
+	<span class="n">met</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;alpha_L_arabinopyranose&#39;</span><span class="p">,</span> <span class="n">loc</span> <span class="o">=</span> <span class="s1">&#39;per&#39;</span><span class="p">,</span> <span class="n">prot</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">|</span>
+	<span class="n">prot</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;araF&#39;</span><span class="p">,</span> <span class="n">loc</span> <span class="o">=</span> <span class="s1">&#39;per&#39;</span><span class="p">,</span> <span class="n">met</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">up</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">dw</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">%</span>
+	<span class="n">met</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;alpha_L_arabinopyranose&#39;</span><span class="p">,</span> <span class="n">loc</span> <span class="o">=</span> <span class="s1">&#39;per&#39;</span><span class="p">,</span> <span class="n">prot</span> <span class="o">=</span> <span class="mi">1</span><span class="p">),</span>
+	<span class="n">Parameter</span><span class="p">(</span><span class="s1">&#39;fwd_ProtMet_RuleAssembly_3&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span>
+	<span class="n">Parameter</span><span class="p">(</span><span class="s1">&#39;rvs_ProtMet_RuleAssembly_3&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
+
+<span class="n">Rule</span><span class="p">(</span><span class="s1">&#39;ProtMet_RuleAssembly_4&#39;</span><span class="p">,</span>
+	<span class="n">prot</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;araF&#39;</span><span class="p">,</span> <span class="n">loc</span> <span class="o">=</span> <span class="s1">&#39;per&#39;</span><span class="p">,</span> <span class="n">met</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">up</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">dw</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">+</span>
+	<span class="n">met</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;beta_L_arabinopyranose&#39;</span><span class="p">,</span> <span class="n">loc</span> <span class="o">=</span> <span class="s1">&#39;per&#39;</span><span class="p">,</span> <span class="n">prot</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">|</span>
+	<span class="n">prot</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;araF&#39;</span><span class="p">,</span> <span class="n">loc</span> <span class="o">=</span> <span class="s1">&#39;per&#39;</span><span class="p">,</span> <span class="n">met</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">up</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">dw</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">%</span>
+	<span class="n">met</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;beta_L_arabinopyranose&#39;</span><span class="p">,</span> <span class="n">loc</span> <span class="o">=</span> <span class="s1">&#39;per&#39;</span><span class="p">,</span> <span class="n">prot</span> <span class="o">=</span> <span class="mi">1</span><span class="p">),</span>
+	<span class="n">Parameter</span><span class="p">(</span><span class="s1">&#39;fwd_ProtMet_RuleAssembly_4&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span>
+	<span class="n">Parameter</span><span class="p">(</span><span class="s1">&#39;rvs_ProtMet_RuleAssembly_4&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
+
+<span class="n">Rule</span><span class="p">(</span><span class="s1">&#39;ProtMet_RuleAssembly_5&#39;</span><span class="p">,</span>
+	<span class="n">prot</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;crp&#39;</span><span class="p">,</span> <span class="n">loc</span> <span class="o">=</span> <span class="s1">&#39;cyt&#39;</span><span class="p">,</span> <span class="n">met</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">up</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">dw</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span> <span class="o">%</span>
+	<span class="n">prot</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;crp&#39;</span><span class="p">,</span> <span class="n">loc</span> <span class="o">=</span> <span class="s1">&#39;cyt&#39;</span><span class="p">,</span> <span class="n">met</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">up</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">dw</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">+</span>
+	<span class="n">met</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;CAMP&#39;</span><span class="p">,</span> <span class="n">loc</span> <span class="o">=</span> <span class="s1">&#39;cyt&#39;</span><span class="p">,</span> <span class="n">prot</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">|</span>
+	<span class="n">prot</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;crp&#39;</span><span class="p">,</span> <span class="n">loc</span> <span class="o">=</span> <span class="s1">&#39;cyt&#39;</span><span class="p">,</span> <span class="n">met</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">up</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">dw</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span> <span class="o">%</span>
+	<span class="n">prot</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;crp&#39;</span><span class="p">,</span> <span class="n">loc</span> <span class="o">=</span> <span class="s1">&#39;cyt&#39;</span><span class="p">,</span> <span class="n">met</span> <span class="o">=</span> <span class="mi">2</span><span class="p">,</span> <span class="n">up</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">dw</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">%</span>
+	<span class="n">met</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;CAMP&#39;</span><span class="p">,</span> <span class="n">loc</span> <span class="o">=</span> <span class="s1">&#39;cyt&#39;</span><span class="p">,</span> <span class="n">prot</span> <span class="o">=</span> <span class="mi">2</span><span class="p">),</span>
+	<span class="n">Parameter</span><span class="p">(</span><span class="s1">&#39;fwd_ProtMet_RuleAssembly_5&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span>
+	<span class="n">Parameter</span><span class="p">(</span><span class="s1">&#39;rvs_ProtMet_RuleAssembly_5&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
+
+<span class="n">Rule</span><span class="p">(</span><span class="s1">&#39;ProtMet_RuleAssembly_6&#39;</span><span class="p">,</span>
+	<span class="n">prot</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;crp&#39;</span><span class="p">,</span> <span class="n">loc</span> <span class="o">=</span> <span class="s1">&#39;cyt&#39;</span><span class="p">,</span> <span class="n">met</span> <span class="o">=</span> <span class="mi">2</span><span class="p">,</span> <span class="n">up</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">dw</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span> <span class="o">%</span>
+	<span class="n">met</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;CAMP&#39;</span><span class="p">,</span> <span class="n">loc</span> <span class="o">=</span> <span class="s1">&#39;cyt&#39;</span><span class="p">,</span> <span class="n">prot</span> <span class="o">=</span> <span class="mi">2</span><span class="p">)</span> <span class="o">%</span>
+	<span class="n">prot</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;crp&#39;</span><span class="p">,</span> <span class="n">loc</span> <span class="o">=</span> <span class="s1">&#39;cyt&#39;</span><span class="p">,</span> <span class="n">met</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">up</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">dw</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">+</span>
+	<span class="n">met</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;CAMP&#39;</span><span class="p">,</span> <span class="n">loc</span> <span class="o">=</span> <span class="s1">&#39;cyt&#39;</span><span class="p">,</span> <span class="n">prot</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">|</span>
+	<span class="n">prot</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;crp&#39;</span><span class="p">,</span> <span class="n">loc</span> <span class="o">=</span> <span class="s1">&#39;cyt&#39;</span><span class="p">,</span> <span class="n">met</span> <span class="o">=</span> <span class="mi">2</span><span class="p">,</span> <span class="n">up</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">dw</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span> <span class="o">%</span>
+	<span class="n">met</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;CAMP&#39;</span><span class="p">,</span> <span class="n">loc</span> <span class="o">=</span> <span class="s1">&#39;cyt&#39;</span><span class="p">,</span> <span class="n">prot</span> <span class="o">=</span> <span class="mi">2</span><span class="p">)</span> <span class="o">%</span>
+	<span class="n">prot</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;crp&#39;</span><span class="p">,</span> <span class="n">loc</span> <span class="o">=</span> <span class="s1">&#39;cyt&#39;</span><span class="p">,</span> <span class="n">met</span> <span class="o">=</span> <span class="mi">3</span><span class="p">,</span> <span class="n">up</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">dw</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">%</span>
+	<span class="n">met</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;CAMP&#39;</span><span class="p">,</span> <span class="n">loc</span> <span class="o">=</span> <span class="s1">&#39;cyt&#39;</span><span class="p">,</span> <span class="n">prot</span> <span class="o">=</span> <span class="mi">3</span><span class="p">),</span>
+	<span class="n">Parameter</span><span class="p">(</span><span class="s1">&#39;fwd_ProtMet_RuleAssembly_6&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span>
+	<span class="n">Parameter</span><span class="p">(</span><span class="s1">&#39;rvs_ProtMet_RuleAssembly_6&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
+
+<span class="n">Rule</span><span class="p">(</span><span class="s1">&#39;ProtMet_RuleAssembly_7&#39;</span><span class="p">,</span>
+	<span class="n">prot</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;lacI&#39;</span><span class="p">,</span> <span class="n">loc</span> <span class="o">=</span> <span class="s1">&#39;cyt&#39;</span><span class="p">,</span> <span class="n">met</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">up</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">dw</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span> <span class="o">%</span>
+	<span class="n">prot</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;lacI&#39;</span><span class="p">,</span> <span class="n">loc</span> <span class="o">=</span> <span class="s1">&#39;cyt&#39;</span><span class="p">,</span> <span class="n">met</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">up</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">dw</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">+</span>
+	<span class="n">met</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;ALLOLACTOSE&#39;</span><span class="p">,</span> <span class="n">loc</span> <span class="o">=</span> <span class="s1">&#39;cyt&#39;</span><span class="p">,</span> <span class="n">prot</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">|</span>
+	<span class="n">prot</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;lacI&#39;</span><span class="p">,</span> <span class="n">loc</span> <span class="o">=</span> <span class="s1">&#39;cyt&#39;</span><span class="p">,</span> <span class="n">met</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">up</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">dw</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span> <span class="o">%</span>
+	<span class="n">prot</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;lacI&#39;</span><span class="p">,</span> <span class="n">loc</span> <span class="o">=</span> <span class="s1">&#39;cyt&#39;</span><span class="p">,</span> <span class="n">met</span> <span class="o">=</span> <span class="mi">2</span><span class="p">,</span> <span class="n">up</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">dw</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">%</span>
+	<span class="n">met</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;ALLOLACTOSE&#39;</span><span class="p">,</span> <span class="n">loc</span> <span class="o">=</span> <span class="s1">&#39;cyt&#39;</span><span class="p">,</span> <span class="n">prot</span> <span class="o">=</span> <span class="mi">2</span><span class="p">),</span>
+	<span class="n">Parameter</span><span class="p">(</span><span class="s1">&#39;fwd_ProtMet_RuleAssembly_7&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span>
+	<span class="n">Parameter</span><span class="p">(</span><span class="s1">&#39;rvs_ProtMet_RuleAssembly_7&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
+
+<span class="n">Rule</span><span class="p">(</span><span class="s1">&#39;ProtMet_RuleAssembly_8&#39;</span><span class="p">,</span>
+	<span class="n">prot</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;lacI&#39;</span><span class="p">,</span> <span class="n">loc</span> <span class="o">=</span> <span class="s1">&#39;cyt&#39;</span><span class="p">,</span> <span class="n">met</span> <span class="o">=</span> <span class="mi">2</span><span class="p">,</span> <span class="n">up</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">dw</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span> <span class="o">%</span>
+	<span class="n">met</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;ALLOLACTOSE&#39;</span><span class="p">,</span> <span class="n">loc</span> <span class="o">=</span> <span class="s1">&#39;cyt&#39;</span><span class="p">,</span> <span class="n">prot</span> <span class="o">=</span> <span class="mi">2</span><span class="p">)</span> <span class="o">%</span>
+	<span class="n">prot</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;lacI&#39;</span><span class="p">,</span> <span class="n">loc</span> <span class="o">=</span> <span class="s1">&#39;cyt&#39;</span><span class="p">,</span> <span class="n">met</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">up</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">dw</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">+</span>
+	<span class="n">met</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;ALLOLACTOSE&#39;</span><span class="p">,</span> <span class="n">loc</span> <span class="o">=</span> <span class="s1">&#39;cyt&#39;</span><span class="p">,</span> <span class="n">prot</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">|</span>
+	<span class="n">prot</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;lacI&#39;</span><span class="p">,</span> <span class="n">loc</span> <span class="o">=</span> <span class="s1">&#39;cyt&#39;</span><span class="p">,</span> <span class="n">met</span> <span class="o">=</span> <span class="mi">2</span><span class="p">,</span> <span class="n">up</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">dw</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span> <span class="o">%</span>
+	<span class="n">met</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;ALLOLACTOSE&#39;</span><span class="p">,</span> <span class="n">loc</span> <span class="o">=</span> <span class="s1">&#39;cyt&#39;</span><span class="p">,</span> <span class="n">prot</span> <span class="o">=</span> <span class="mi">2</span><span class="p">)</span> <span class="o">%</span>
+	<span class="n">prot</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;lacI&#39;</span><span class="p">,</span> <span class="n">loc</span> <span class="o">=</span> <span class="s1">&#39;cyt&#39;</span><span class="p">,</span> <span class="n">met</span> <span class="o">=</span> <span class="mi">3</span><span class="p">,</span> <span class="n">up</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">dw</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">%</span>
+	<span class="n">met</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;ALLOLACTOSE&#39;</span><span class="p">,</span> <span class="n">loc</span> <span class="o">=</span> <span class="s1">&#39;cyt&#39;</span><span class="p">,</span> <span class="n">prot</span> <span class="o">=</span> <span class="mi">3</span><span class="p">),</span>
+	<span class="n">Parameter</span><span class="p">(</span><span class="s1">&#39;fwd_ProtMet_RuleAssembly_8&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span>
+	<span class="n">Parameter</span><span class="p">(</span><span class="s1">&#39;rvs_ProtMet_RuleAssembly_8&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
+
+<span class="n">Rule</span><span class="p">(</span><span class="s1">&#39;ProtMet_RuleAssembly_9&#39;</span><span class="p">,</span>
+	<span class="n">prot</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;araG&#39;</span><span class="p">,</span> <span class="n">loc</span> <span class="o">=</span> <span class="s1">&#39;cyt&#39;</span><span class="p">,</span> <span class="n">met</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">up</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">dw</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span> <span class="o">%</span>
+	<span class="n">prot</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;araG&#39;</span><span class="p">,</span> <span class="n">loc</span> <span class="o">=</span> <span class="s1">&#39;cyt&#39;</span><span class="p">,</span> <span class="n">met</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">up</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">dw</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">+</span>
+	<span class="n">met</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;ATP&#39;</span><span class="p">,</span> <span class="n">loc</span> <span class="o">=</span> <span class="s1">&#39;cyt&#39;</span><span class="p">,</span> <span class="n">prot</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">|</span>
+	<span class="n">prot</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;araG&#39;</span><span class="p">,</span> <span class="n">loc</span> <span class="o">=</span> <span class="s1">&#39;cyt&#39;</span><span class="p">,</span> <span class="n">met</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">up</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">dw</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span> <span class="o">%</span>
+	<span class="n">prot</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;araG&#39;</span><span class="p">,</span> <span class="n">loc</span> <span class="o">=</span> <span class="s1">&#39;cyt&#39;</span><span class="p">,</span> <span class="n">met</span> <span class="o">=</span> <span class="mi">2</span><span class="p">,</span> <span class="n">up</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">dw</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">%</span>
+	<span class="n">met</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;ATP&#39;</span><span class="p">,</span> <span class="n">loc</span> <span class="o">=</span> <span class="s1">&#39;cyt&#39;</span><span class="p">,</span> <span class="n">prot</span> <span class="o">=</span> <span class="mi">2</span><span class="p">),</span>
+	<span class="n">Parameter</span><span class="p">(</span><span class="s1">&#39;fwd_ProtMet_RuleAssembly_9&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span>
+	<span class="n">Parameter</span><span class="p">(</span><span class="s1">&#39;rvs_ProtMet_RuleAssembly_9&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
+
+<span class="n">Rule</span><span class="p">(</span><span class="s1">&#39;ProtMet_RuleAssembly_10&#39;</span><span class="p">,</span>
+	<span class="n">prot</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;araC&#39;</span><span class="p">,</span> <span class="n">loc</span> <span class="o">=</span> <span class="s1">&#39;cyt&#39;</span><span class="p">,</span> <span class="n">met</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">up</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">dw</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span> <span class="o">%</span>
+	<span class="n">prot</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;araC&#39;</span><span class="p">,</span> <span class="n">loc</span> <span class="o">=</span> <span class="s1">&#39;cyt&#39;</span><span class="p">,</span> <span class="n">met</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">up</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">dw</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">+</span>
+	<span class="n">met</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;alpha_L_arabinopyranose&#39;</span><span class="p">,</span> <span class="n">loc</span> <span class="o">=</span> <span class="s1">&#39;cyt&#39;</span><span class="p">,</span> <span class="n">prot</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">|</span>
+	<span class="n">prot</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;araC&#39;</span><span class="p">,</span> <span class="n">loc</span> <span class="o">=</span> <span class="s1">&#39;cyt&#39;</span><span class="p">,</span> <span class="n">met</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">up</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">dw</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span> <span class="o">%</span>
+	<span class="n">prot</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;araC&#39;</span><span class="p">,</span> <span class="n">loc</span> <span class="o">=</span> <span class="s1">&#39;cyt&#39;</span><span class="p">,</span> <span class="n">met</span> <span class="o">=</span> <span class="mi">2</span><span class="p">,</span> <span class="n">up</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">dw</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">%</span>
+	<span class="n">met</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;alpha_L_arabinopyranose&#39;</span><span class="p">,</span> <span class="n">loc</span> <span class="o">=</span> <span class="s1">&#39;cyt&#39;</span><span class="p">,</span> <span class="n">prot</span> <span class="o">=</span> <span class="mi">2</span><span class="p">),</span>
+	<span class="n">Parameter</span><span class="p">(</span><span class="s1">&#39;fwd_ProtMet_RuleAssembly_10&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span>
+	<span class="n">Parameter</span><span class="p">(</span><span class="s1">&#39;rvs_ProtMet_RuleAssembly_10&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
+
+<span class="n">Rule</span><span class="p">(</span><span class="s1">&#39;ProtMet_RuleAssembly_11&#39;</span><span class="p">,</span>
+	<span class="n">prot</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;araC&#39;</span><span class="p">,</span> <span class="n">loc</span> <span class="o">=</span> <span class="s1">&#39;cyt&#39;</span><span class="p">,</span> <span class="n">met</span> <span class="o">=</span> <span class="mi">2</span><span class="p">,</span> <span class="n">up</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">dw</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span> <span class="o">%</span>
+	<span class="n">met</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;alpha_L_arabinopyranose&#39;</span><span class="p">,</span> <span class="n">loc</span> <span class="o">=</span> <span class="s1">&#39;cyt&#39;</span><span class="p">,</span> <span class="n">prot</span> <span class="o">=</span> <span class="mi">2</span><span class="p">)</span> <span class="o">%</span>
+	<span class="n">prot</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;araC&#39;</span><span class="p">,</span> <span class="n">loc</span> <span class="o">=</span> <span class="s1">&#39;cyt&#39;</span><span class="p">,</span> <span class="n">met</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">up</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">dw</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">+</span>
+	<span class="n">met</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;alpha_L_arabinopyranose&#39;</span><span class="p">,</span> <span class="n">loc</span> <span class="o">=</span> <span class="s1">&#39;cyt&#39;</span><span class="p">,</span> <span class="n">prot</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">|</span>
+	<span class="n">prot</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;araC&#39;</span><span class="p">,</span> <span class="n">loc</span> <span class="o">=</span> <span class="s1">&#39;cyt&#39;</span><span class="p">,</span> <span class="n">met</span> <span class="o">=</span> <span class="mi">2</span><span class="p">,</span> <span class="n">up</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">dw</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span> <span class="o">%</span>
+	<span class="n">met</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;alpha_L_arabinopyranose&#39;</span><span class="p">,</span> <span class="n">loc</span> <span class="o">=</span> <span class="s1">&#39;cyt&#39;</span><span class="p">,</span> <span class="n">prot</span> <span class="o">=</span> <span class="mi">2</span><span class="p">)</span> <span class="o">%</span>
+	<span class="n">prot</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;araC&#39;</span><span class="p">,</span> <span class="n">loc</span> <span class="o">=</span> <span class="s1">&#39;cyt&#39;</span><span class="p">,</span> <span class="n">met</span> <span class="o">=</span> <span class="mi">3</span><span class="p">,</span> <span class="n">up</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">dw</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">%</span>
+	<span class="n">met</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;alpha_L_arabinopyranose&#39;</span><span class="p">,</span> <span class="n">loc</span> <span class="o">=</span> <span class="s1">&#39;cyt&#39;</span><span class="p">,</span> <span class="n">prot</span> <span class="o">=</span> <span class="mi">3</span><span class="p">),</span>
+	<span class="n">Parameter</span><span class="p">(</span><span class="s1">&#39;fwd_ProtMet_RuleAssembly_11&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span>
+	<span class="n">Parameter</span><span class="p">(</span><span class="s1">&#39;rvs_ProtMet_RuleAssembly_11&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
+</pre></div>
+</td></tr></table></div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><strong>Reversibility of Rules</strong>. Atlas writes reversible <em>Rules</em> for each
+reaction declared in the network file. The <code class="docutils literal notranslate"><span class="pre">Parameter('rvs_RuleName',</span> <span class="pre">1))</span></code>
+must be set to zero to define an irreversible reaction.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><strong>Uniqueness of Rule names</strong>. Atlas will write <em>Rules</em> with numbered
+names. Use only one file to model the many interactions the system has.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><strong>Simulation</strong>. The model can be simulated only with the instantiation of
+<code class="docutils literal notranslate"><span class="pre">Monomers</span></code> and <code class="docutils literal notranslate"><span class="pre">Initials</span></code> (<a class="reference external" href="https://pysb.readthedocs.io/en/stable/tutorial.html#introduction">More here</a>).
+Run <em>Monomer+Initials+Observables from metabolic network.ipynb</em> to obtain
+automatically the necessary <code class="docutils literal notranslate"><span class="pre">Monomers</span></code> and <code class="docutils literal notranslate"><span class="pre">Initials</span></code> (including
+proteins and enzymatic complexes). Manually add the necessary <code class="docutils literal notranslate"><span class="pre">Monomers</span></code>
+and <code class="docutils literal notranslate"><span class="pre">Initials</span></code> for non-enzymatic proteins.</p>
+<p><strong>Plotting</strong>. The model can be observed only with the instantation of
+<code class="docutils literal notranslate"><span class="pre">Observables</span></code> (<a class="reference external" href="https://pysb.readthedocs.io/en/stable/tutorial.html#simulation-and-analysis">More here</a>).
+Run <em>Monomer+Initials+Observables from metabolic network.ipynb</em> to obtain
+automatically the all possible <code class="docutils literal notranslate"><span class="pre">Observables</span></code> for enzymatic proteins. Other
+observables for proteins should be added manually.</p>
+</div>
 </div>
 
 
