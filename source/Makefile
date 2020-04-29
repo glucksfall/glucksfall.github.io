@@ -21,4 +21,6 @@ help:
 
 github:
 	@make html
+	@make latexpdf
 	@cp -a _build/html/. ..
+	@cp _build/latex/atlas.tex ../../atlas.glucksfall/

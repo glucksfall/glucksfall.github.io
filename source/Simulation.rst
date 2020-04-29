@@ -17,7 +17,9 @@ hood. See :ref:`Plotting-page` for a simple example on how to plot simulation re
    :emphasize-lines: 7,8
 
 .. note::
-    Please follow the instructions at `BioNetGen documentation <https://github.com/RuleWorld/bionetgen>`_
-    and at `KaSim <https://github.com/Kappa-Dev/KaSim>`_ to install the stochactic simulators.
-    For network-based simulations (Ordinary Differential Equations and Gillespie`s algorithm),
-    BioNetGen is required to perform the network generation.
+    Please follow the instructions at `BioNetGen <https://github.com/RuleWorld/bionetgen>`_
+    and at `KaSim <https://github.com/Kappa-Dev/KaSim>`_ documentations to install
+    the stochactic simulators. For network-based simulations (Ordinary Differential
+    Equations and Gillespie`s algorithm), BioNetGen is required to perform the network
+    generation. Change the corresponding paths (lines 7-8) to match the parent folder for
+    the BNG2.pl or KaSim executable.
