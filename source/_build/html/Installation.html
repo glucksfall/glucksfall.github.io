@@ -165,9 +165,12 @@
 be cloned and the respective folder added to the python path. Further details
 are below.</p></li>
 </ol>
-<p>	<strong>Need Help?</strong>
-	If you run into any problems with installation, please visit our chat room:
-	<a class="reference external" href="https://gitter.im/glucksfall/pleiades">https://gitter.im/glucksfall/pleiades</a></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><strong>Need Help?</strong>
+If you run into any problems with installation, please visit our chat room:
+<a class="reference external" href="https://gitter.im/glucksfall/pleiades">https://gitter.im/glucksfall/pleiades</a></p>
+</div>
 <div class="section" id="option-1-install-atlas-natively-on-your-computer">
 <h2>Option 1: Install Atlas natively on your computer<a class="headerlink" href="#option-1-install-atlas-natively-on-your-computer" title="Permalink to this headline">¶</a></h2>
 <p>The recommended approach is to use system tools, or install them if
@@ -177,48 +180,43 @@ the package from the <a class="reference external" href="https://pypi.org/projec
 <li><p><strong>Install with system tools</strong></p>
 <p>With pip, you need to execute and Atlas will be installed on
 <code class="docutils literal notranslate"><span class="pre">$HOME/.local/lib/python3.6/site-packages</span></code> folder or similar.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip3 install atlas_rbm --user
+</pre></div>
+</div>
+<p>If you have system rights, you could install Atlas for all users with</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo -H pip3 install atlas_rbm
 </pre></div>
 </div>
 </li>
-</ol>
-<p>	pip3 install atlas_rbm –user</p>
-<blockquote>
-<div><p>If you have system rights, you could install Atlas for all users with</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>
-</pre></div>
-</div>
-</div></blockquote>
-<p>	sudo -H pip3 install atlas_rbm</p>
-<ol class="arabic" start="2">
 <li><p><strong>Download from the python package index</strong></p>
 <p>Alternatively, you could download the package (useful when pip fails to download
 the package because of lack of SSL libraries) and then install with pip. For instance:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>wget https://files.pythonhosted.org/packages/ec/ed/8b94e0a29f69a24ddb18ba4a4e6463d3ecede308576774e86baf6a84b998/atlas_rbm-1.0.2-py3-none-any.whl
+pip3 install atlas_rbm-1.0.2-py3-none-any.whl --user
 </pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><strong>Why Python3?</strong>:
+Atlas is intended to be used with &gt;=python3.4 because python2.7 won’t receive
+further development past 2020, including security updates.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><strong>pip, Python, and Anaconda</strong>:
+Be aware which pip you invoque. You could install pip3 with
+<code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">apt-get</span> <span class="pre">install</span> <span class="pre">python3-pip</span></code> if you have system rights, or
+install python3 from source, and adding <code class="docutils literal notranslate"><span class="pre">&lt;python3</span> <span class="pre">path&gt;/bin/pip3</span></code> to the
+path, or linking it in a directory like <code class="docutils literal notranslate"><span class="pre">$HOME/bin</span></code> which is commonly
+added to the path at login. Also be aware that, if you installed
+Anaconda, pip could be linked to the Anaconda specific version of pip, which
+will install Atlas into Anaconda’s installation folder.
+Type <code class="docutils literal notranslate"><span class="pre">which</span> <span class="pre">pip</span></code> or <code class="docutils literal notranslate"><span class="pre">which</span> <span class="pre">pip3</span></code> to find out the source of pip, and type
+<code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">-m</span> <span class="pre">site</span></code> or <code class="docutils literal notranslate"><span class="pre">python3</span> <span class="pre">-m</span> <span class="pre">site</span></code> to find out where is more likely
+Atlas will be installed.</p>
 </div>
 </li>
 </ol>
-<p>	wget <a class="reference external" href="https://files.pythonhosted.org/packages/ec/ed/8b94e0a29f69a24ddb18ba4a4e6463d3ecede308576774e86baf6a84b998/atlas_rbm-1.0.2-py3-none-any.whl">https://files.pythonhosted.org/packages/ec/ed/8b94e0a29f69a24ddb18ba4a4e6463d3ecede308576774e86baf6a84b998/atlas_rbm-1.0.2-py3-none-any.whl</a>
-	pip3 install atlas_rbm-1.0.2-py3-none-any.whl –user</p>
-<blockquote>
-<div></div></blockquote>
-<p>	<strong>Why Python3?</strong>:
-	Atlas is intended to be used with &gt;=python3.4 because python2.7 won’t receive
-	further development past 2020, including security updates.</p>
-<blockquote>
-<div></div></blockquote>
-<p>	<strong>pip, Python, and Anaconda</strong>:
-	Be aware which pip you invoque. You could install pip3 with
-	<code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">apt-get</span> <span class="pre">install</span> <span class="pre">python3-pip</span></code> if you have system rights, or
-	install python3 from source, and adding <code class="docutils literal notranslate"><span class="pre">&lt;python3</span> <span class="pre">path&gt;/bin/pip3</span></code> to the
-	path, or linking it in a directory like <code class="docutils literal notranslate"><span class="pre">$HOME/bin</span></code> which is commonly
-	added to the path at login. Also be aware that, if you installed
-	Anaconda, pip could be linked to the Anaconda specific version of pip, which
-	will install Atlas into Anaconda’s installation folder.
-	Type <code class="docutils literal notranslate"><span class="pre">which</span> <span class="pre">pip</span></code> or <code class="docutils literal notranslate"><span class="pre">which</span> <span class="pre">pip3</span></code> to find out the source of pip, and type
-	<code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">-m</span> <span class="pre">site</span></code> or <code class="docutils literal notranslate"><span class="pre">python3</span> <span class="pre">-m</span> <span class="pre">site</span></code> to find out where is more likely
-	Atlas will be installed.</p>
 </div>
 <div class="section" id="option-2-clone-the-github-repository">
 <h2>Option 2: Clone the Github repository<a class="headerlink" href="#option-2-clone-the-github-repository" title="Permalink to this headline">¶</a></h2>
@@ -234,14 +232,17 @@ git clone https://github.com/networkbiolab/atlas <span class="nv">$path</span>
 <span class="nb">echo</span> <span class="nb">export</span> <span class="nv">PYTHONPATH</span><span class="o">=</span><span class="s2">&quot;\$PYTHONPATH:\$path&quot;</span> &gt;&gt; <span class="nv">$HOME</span>/.profile
 </pre></div>
 </div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Adding the path to <code class="docutils literal notranslate"><span class="pre">$HOME/.profile</span></code> allows python to find the package
+installation folder after each user login. Similarly, adding the path to
+<code class="docutils literal notranslate"><span class="pre">$HOME/.bashrc</span></code> allows python to find the package after each terminal
+invocation. Other options include setting the <code class="docutils literal notranslate"><span class="pre">PYTHONPATH</span></code> environmental
+variable in a sh file (see the example folder) or invoke <code class="docutils literal notranslate"><span class="pre">python3</span> <span class="pre">setup.py</span> <span class="pre">clean</span> <span class="pre">build</span> <span class="pre">install</span></code>
+to install Atlas as it was downloaded from the PyPI server.</p>
+</div>
 </li>
 </ol>
-<p>	Adding the path to <code class="docutils literal notranslate"><span class="pre">$HOME/.profile</span></code> allows python to find the package
-	installation folder after each user login. Similarly, adding the path to
-	<code class="docutils literal notranslate"><span class="pre">$HOME/.bashrc</span></code> allows python to find the package after each terminal
-	invocation. Other options include setting the <code class="docutils literal notranslate"><span class="pre">PYTHONPATH</span></code> environmental
-	variable in a sh file (see the example folder) or invoke <code class="docutils literal notranslate"><span class="pre">python3</span> <span class="pre">setup.py</span> <span class="pre">clean</span> <span class="pre">build</span> <span class="pre">install</span></code>
-	to install Atlas as it was downloaded from the PyPI server.</p>
 </div>
 </div>
 
