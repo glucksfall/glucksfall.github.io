@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2020.1.18)  28 APR 2020 23:53
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2020.1.18)  29 APR 2020 01:01
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1167,29 +1167,22 @@ File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
 Chapter 2.
 [5
 
-]
-Overfull \vbox (2.68166pt too high) detected at line 331
- []
-
-[6]
+] [6]
 <Fig_Lactose_MetNetwork.png, id=172, 7568.275pt x 4009.98125pt>
 File: Fig_Lactose_MetNetwork.png Graphic file (type png)
 <use Fig_Lactose_MetNetwork.png>
 Package pdftex.def Info: Fig_Lactose_MetNetwork.png  used on input line 339.
 (pdftex.def)             Requested size: 469.66704pt x 248.84879pt.
+ [7]
 LaTeX Font Info:    Try loading font information for TS1+pcr on input line 348.
 
  (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ts1pcr.fd
 File: ts1pcr.fd 2001/06/04 font definitions for TS1/pcr.
-) [7 <./Fig_Lactose_MetNetwork.png (PNG copy)>]
-Underfull \vbox (badness 10000) detected at line 504
+)
+Underfull \vbox (badness 2591) detected at line 504
  []
 
-
-Overfull \vbox (2.68169pt too high) detected at line 504
- []
-
-[8]
+[8 <./Fig_Lactose_MetNetwork.png (PNG copy)>]
 Underfull \vbox (badness 10000) detected at line 504
  []
 
@@ -1198,36 +1191,44 @@ Overfull \vbox (2.68169pt too high) detected at line 504
  []
 
 [9]
+Underfull \vbox (badness 10000) detected at line 504
+ []
+
+
+Overfull \vbox (2.68169pt too high) detected at line 504
+ []
+
+[10]
 Underfull \hbox (badness 5133) in paragraph at lines 524--528
 []\T1/ptm/b/n/10 Plotting\T1/ptm/m/n/10 . The model can be ob-served only with 
 the in-stan-ta-tion of \T1/pcr/m/n/10 Observables \T1/ptm/m/n/10 ([][]More here
 [][]).
  []
 
-[10]
-<Fig_Lactose_PPINetwork.png, id=194, 1513.655pt x 715.67375pt>
+[11]
+<Fig_Lactose_PPINetwork.png, id=198, 1513.655pt x 715.67375pt>
 File: Fig_Lactose_PPINetwork.png Graphic file (type png)
 <use Fig_Lactose_PPINetwork.png>
 Package pdftex.def Info: Fig_Lactose_PPINetwork.png  used on input line 560.
 (pdftex.def)             Requested size: 469.75943pt x 222.09682pt.
 LaTeX Font Info:    Font shape `T1/pcr/bx/n' in size <9> not available
 (Font)              Font shape `T1/pcr/b/n' tried instead on input line 570.
- [11 <./Fig_Lactose_PPINetwork.png (PNG copy)>]
+ [12 <./Fig_Lactose_PPINetwork.png (PNG copy)>]
 Underfull \hbox (badness 5133) in paragraph at lines 627--632
 []\T1/ptm/b/n/10 Plotting\T1/ptm/m/n/10 . The model can be ob-served only with 
 the in-stan-ta-tion of \T1/pcr/m/n/10 Observables \T1/ptm/m/n/10 ([][]More here
 [][]).
  []
 
-[12] [13]
+[13]
 Underfull \vbox (badness 10000) detected at line 772
  []
 
 
-Overfull \vbox (2.68169pt too high) detected at line 772
+Underfull \vbox (badness 10000) detected at line 772
  []
 
-[14]
+[14] [15]
 Underfull \hbox (badness 5133) in paragraph at lines 793--798
 []\T1/ptm/b/n/10 Plotting\T1/ptm/m/n/10 . The model can be ob-served only with 
 the in-stan-ta-tion of \T1/pcr/m/n/10 Observables \T1/ptm/m/n/10 ([][]More here
@@ -1236,16 +1237,12 @@ the in-stan-ta-tion of \T1/pcr/m/n/10 Observables \T1/ptm/m/n/10 ([][]More here
 
 LaTeX Font Info:    Font shape `T1/pcr/m/it' in size <9> not available
 (Font)              Font shape `T1/pcr/m/sl' tried instead on input line 818.
-[15]
-Underfull \vbox (badness 2538) detected at line 1104
+
+Overfull \vbox (3.18321pt too high) detected at line 849
  []
 
 [16]
-Underfull \vbox (badness 10000) detected at line 1104
- []
-
-
-Overfull \vbox (2.68169pt too high) detected at line 1104
+Underfull \vbox (badness 2538) detected at line 1104
  []
 
 [17]
@@ -1279,16 +1276,8 @@ the in-stan-ta-tion of \T1/pcr/m/n/10 Observables \T1/ptm/m/n/10 ([][]More here
 [][]).
  []
 
-[21]
-Underfull \vbox (badness 2538) detected at line 1654
- []
-
-[22]
+[21] [22]
 Underfull \vbox (badness 10000) detected at line 1654
- []
-
-
-Overfull \vbox (2.68169pt too high) detected at line 1654
  []
 
 [23]
@@ -1347,31 +1336,41 @@ Underfull \vbox (badness 10000) detected at line 1654
 Overfull \vbox (2.68169pt too high) detected at line 1654
  []
 
-[30] [31]
+[30]
+Underfull \vbox (badness 10000) detected at line 1654
+ []
+
+
+Overfull \vbox (2.68169pt too high) detected at line 1654
+ []
+
+[31]
 Underfull \hbox (badness 5133) in paragraph at lines 1670--1674
 []\T1/ptm/b/n/10 Plotting\T1/ptm/m/n/10 . The model can be ob-served only with 
 the in-stan-ta-tion of \T1/pcr/m/n/10 Observables \T1/ptm/m/n/10 ([][]More here
 [][]).
  []
 
-
-Overfull \vbox (1.1832pt too high) detected at line 1757
+[32]
+Overfull \vbox (2.68167pt too high) detected at line 1757
  []
 
-[32]
-<Fig_GenomeGraphs.png, id=305, 7568.275pt x 3252.15pt>
+[33]
+<Fig_GenomeGraphs.png, id=310, 7568.275pt x 3252.15pt>
 File: Fig_GenomeGraphs.png Graphic file (type png)
 <use Fig_GenomeGraphs.png>
 Package pdftex.def Info: Fig_GenomeGraphs.png  used on input line 1764.
 (pdftex.def)             Requested size: 469.66704pt x 201.81978pt.
- [33 <./Fig_GenomeGraphs.png (PNG copy)>]
+ [34 <./Fig_GenomeGraphs.png (PNG copy)>]
 Underfull \hbox (badness 5133) in paragraph at lines 1828--1832
 []\T1/ptm/b/n/10 Plotting\T1/ptm/m/n/10 . The model can be ob-served only with 
 the in-stan-ta-tion of \T1/pcr/m/n/10 Observables \T1/ptm/m/n/10 ([][]More here
 [][]).
  []
 
-[34]
+[35] [36
+
+]
 Chapter 3.
 LaTeX Font Info:    Font shape `TS1/pcr/m/it' in size <9> not available
 (Font)              Font shape `TS1/pcr/m/sl' tried instead on input line 1862.
@@ -1380,29 +1379,27 @@ LaTeX Font Info:    Try loading font information for TS1+ptm on input line 1888
 .
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ts1ptm.fd
 File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
-) [35
-
-] [36]
+) [37] [38]
 Chapter 4.
-[37
+[39
 
 ]
-<Fig_Arabinose.png, id=338, 506.1309pt x 213.1965pt>
+<Fig_Arabinose.png, id=347, 506.1309pt x 213.1965pt>
 File: Fig_Arabinose.png Graphic file (type png)
 <use Fig_Arabinose.png>
 Package pdftex.def Info: Fig_Arabinose.png  used on input line 1966.
 (pdftex.def)             Requested size: 469.75467pt x 197.88031pt.
- [38 <./Fig_Arabinose.png>]
+ [40 <./Fig_Arabinose.png>]
 Chapter 5.
-[39
+[41
 
-] [40
+] [42
 
 ]
 Chapter 6.
 (./atlas.ind)
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 2013.
- [41]
+ [43]
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 2013.
  (./atlas.aux)
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 2013.
@@ -1413,13 +1410,13 @@ Package rerunfilecheck Info: File `atlas.out' has not changed.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 2013.
  ) 
 Here is how much of TeX's memory you used:
- 13769 strings out of 492982
- 191006 string characters out of 6134896
- 1297622 words of memory out of 5000000
+ 13771 strings out of 492982
+ 191020 string characters out of 6134896
+ 1321121 words of memory out of 5000000
  16939 multiletter control sequences out of 15000+600000
  50946 words of font info for 74 fonts, out of 8000000 for 9000
  1142 hyphenation exceptions out of 8191
- 37i,11n,45p,721b,490s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 37i,11n,45p,721b,529s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texliv
 e/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/share/texlive/texmf
 -dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/share/texlive/texmf-dist/f
@@ -1429,10 +1426,10 @@ ro8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></u
 sr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texliv
 e/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fo
 nts/type1/urw/times/utmri8a.pfb>
-Output written on atlas.pdf (45 pages, 2340955 bytes).
+Output written on atlas.pdf (47 pages, 2342481 bytes).
 PDF statistics:
- 413 PDF objects out of 1000 (max. 8388607)
- 343 compressed objects within 4 object streams
- 74 named destinations out of 1000 (max. 500000)
+ 421 PDF objects out of 1000 (max. 8388607)
+ 349 compressed objects within 4 object streams
+ 76 named destinations out of 1000 (max. 500000)
  153 words of extra memory for PDF output out of 10000 (max. 10000000)
 
