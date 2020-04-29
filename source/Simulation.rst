@@ -15,3 +15,9 @@ hood. See :ref:`Plotting-page` for a simple example on how to plot simulation re
    :encoding: latin-1
    :linenos:
    :emphasize-lines: 7,8
+
+.. note::
+    Please follow the instructions at `BioNetGen documentation <https://github.com/RuleWorld/bionetgen>`_
+    and at `KaSim <https://github.com/Kappa-Dev/KaSim>`_ to install the stochactic simulators.
+    For network-based simulations (Ordinary Differential Equations and Gillespie`s algorithm),
+    BioNetGen is required to perform the network generation.
